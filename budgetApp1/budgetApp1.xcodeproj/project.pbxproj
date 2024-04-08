@@ -19,7 +19,7 @@
 		4CC71A3A2BB2ACFE009E2B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC71A382BB2ACFE009E2B53 /* LaunchScreen.storyboard */; };
 		4CC71A442BB2ADD0009E2B53 /* BudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A432BB2ADD0009E2B53 /* BudgetModel.swift */; };
 		4CC71A482BB2B8F8009E2B53 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A472BB2B8F8009E2B53 /* AccountModel.swift */; };
-		4CC71A4A2BB2C532009E2B53 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A492BB2C532009E2B53 /* BudgetRepository.swift */; };
+		4CC71A4A2BB2C532009E2B53 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A492BB2C532009E2B53 /* Repository.swift */; };
 		4CC71A4D2BB2C65C009E2B53 /* Service Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A4C2BB2C65C009E2B53 /* Service Errors.swift */; };
 		4CC71A4F2BB2D19E009E2B53 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +39,7 @@
 		4CC71A3B2BB2ACFE009E2B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CC71A432BB2ADD0009E2B53 /* BudgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetModel.swift; sourceTree = "<group>"; };
 		4CC71A472BB2B8F8009E2B53 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
-		4CC71A492BB2C532009E2B53 /* BudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
+		4CC71A492BB2C532009E2B53 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		4CC71A4C2BB2C65C009E2B53 /* Service Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service Errors.swift"; sourceTree = "<group>"; };
 		4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,9 +97,16 @@
 			isa = PBXGroup;
 			children = (
 				4CC71A432BB2ADD0009E2B53 /* BudgetModel.swift */,
-				4CC71A492BB2C532009E2B53 /* BudgetRepository.swift */,
 			);
 			name = BudgetRepository;
+			sourceTree = "<group>";
+		};
+		4C398F822BC46D53004FA950 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				4CC71A492BB2C532009E2B53 /* Repository.swift */,
+			);
+			name = Repository;
 			sourceTree = "<group>";
 		};
 		4C67D81B2BBF2C9C0060BC06 /* Custom Cells */ = {
@@ -129,6 +136,7 @@
 		4CC71A2C2BB2ACFB009E2B53 /* budgetApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				4C398F822BC46D53004FA950 /* Repository */,
 				4C398F752BC3D6AA004FA950 /* Service Layer */,
 				4C398F802BC3D828004FA950 /* Budget */,
 				4C398F762BC3D6DD004FA950 /* Account */,
@@ -221,7 +229,7 @@
 				4C67D8182BBD80AB0060BC06 /* AccountViewModel.swift in Sources */,
 				4CC71A2E2BB2ACFB009E2B53 /* AppDelegate.swift in Sources */,
 				4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */,
-				4CC71A4A2BB2C532009E2B53 /* BudgetRepository.swift in Sources */,
+				4CC71A4A2BB2C532009E2B53 /* Repository.swift in Sources */,
 				4CC71A302BB2ACFB009E2B53 /* SceneDelegate.swift in Sources */,
 				4C67D81F2BBF2D170060BC06 /* AccountCell.swift in Sources */,
 				4CC71A4F2BB2D19E009E2B53 /* BudgetViewModel.swift in Sources */,
