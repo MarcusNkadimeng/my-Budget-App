@@ -129,9 +129,9 @@
 		4CC71A2C2BB2ACFB009E2B53 /* budgetApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				4C398F752BC3D6AA004FA950 /* Service Layer */,
 				4C398F802BC3D828004FA950 /* Budget */,
 				4C398F762BC3D6DD004FA950 /* Account */,
-				4C398F752BC3D6AA004FA950 /* Service Layer */,
 				4C67D81B2BBF2C9C0060BC06 /* Custom Cells */,
 				4CC71A2D2BB2ACFB009E2B53 /* AppDelegate.swift */,
 				4CC71A2F2BB2ACFB009E2B53 /* SceneDelegate.swift */,
