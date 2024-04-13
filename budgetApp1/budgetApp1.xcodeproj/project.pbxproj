@@ -22,6 +22,8 @@
 		4CC71A4A2BB2C532009E2B53 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A492BB2C532009E2B53 /* Repository.swift */; };
 		4CC71A4D2BB2C65C009E2B53 /* Service Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A4C2BB2C65C009E2B53 /* Service Errors.swift */; };
 		4CC71A4F2BB2D19E009E2B53 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */; };
+		4CDD803E2BCB3BD200BF1947 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */; };
+		4CDD80402BCB40B600BF1947 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD803F2BCB40B600BF1947 /* TransactionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		4CC71A492BB2C532009E2B53 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		4CC71A4C2BB2C65C009E2B53 /* Service Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service Errors.swift"; sourceTree = "<group>"; };
 		4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
+		4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		4CDD803F2BCB40B600BF1947 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		4CC71A2C2BB2ACFB009E2B53 /* budgetApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				4CDD803C2BCB3B8B00BF1947 /* Transactions */,
 				4C398F822BC46D53004FA950 /* Repository */,
 				4C398F752BC3D6AA004FA950 /* Service Layer */,
 				4C398F802BC3D828004FA950 /* Budget */,
@@ -148,6 +153,15 @@
 				4CC71A3B2BB2ACFE009E2B53 /* Info.plist */,
 			);
 			path = budgetApp1;
+			sourceTree = "<group>";
+		};
+		4CDD803C2BCB3B8B00BF1947 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */,
+				4CDD803F2BCB40B600BF1947 /* TransactionViewModel.swift */,
+			);
+			name = Transactions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CDD80402BCB40B600BF1947 /* TransactionViewModel.swift in Sources */,
+				4CDD803E2BCB3BD200BF1947 /* TransactionModel.swift in Sources */,
 				4CC71A482BB2B8F8009E2B53 /* AccountModel.swift in Sources */,
 				4CC71A442BB2ADD0009E2B53 /* BudgetModel.swift in Sources */,
 				4CC71A322BB2ACFB009E2B53 /* BudgetViewController.swift in Sources */,
