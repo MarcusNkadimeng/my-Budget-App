@@ -16,8 +16,7 @@ class AccountViewModel {
  
     private var repository: AccountRepositoryType?
     private weak var delegate: AccountViewModelDelegate?
-    var AccountList: [Account]?
-//    var accData: AccountDataClass?
+    private var AccountList: [Account]?
     
     init(repository: AccountRepositoryType, delegate: AccountViewModelDelegate) {
         self.repository = repository
@@ -36,8 +35,6 @@ class AccountViewModel {
         repository?.getAccounts(completion: { [weak self] result in
             switch result {
             case .success(let response):
-//                self?.accData = response.data
-//                print(self?.accData)
                 self?.AccountList = response.data.accounts
                 self?.delegate?.reloadView()
                 print(response.data.accounts)

@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
-        <!--budgetTracker-->
+        <!--Accounts-->
         <scene sceneID="mVp-AL-bHJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="budgetTracker" id="PgQ-UQ-GiA" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Accounts" id="PgQ-UQ-GiA" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="1bf-ZE-rjE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vld-EU-hfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

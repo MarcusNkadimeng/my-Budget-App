@@ -40,10 +40,6 @@ class BudgetViewModel {
             switch result {
             case .success(let response):
                 self?.budgetList = response.data.budgets
-//                for budgets in budgetList {
-//                    print(budgets)
-//                }
-//                print(self?.budgetList)
                 self?.delegate?.reloadView()
             case .failure(let error):
                 self?.delegate?.show(error: error.rawValue)
