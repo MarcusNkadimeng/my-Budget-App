@@ -16,13 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon2" translatesAutoresizingMaskIntoConstraints="NO" id="OnQ-hW-4Yk">
-                                <rect key="frame" x="76" y="315" width="240" height="177"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="GOy-gQ-kWW">
+                                <rect key="frame" x="9.6666666666666572" y="298.33333333333331" width="373.66666666666674" height="255.33333333333331"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="AppIcon2" translatesAutoresizingMaskIntoConstraints="NO" id="OnQ-hW-4Yk">
+                                        <rect key="frame" x="108.66666666666664" y="0.0" width="156.33333333333337" height="209.33333333333334"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The easiest way to watch your pockets." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTf-GT-Dnd">
+                                        <rect key="frame" x="1.3333333333333712" y="237.33333333333331" width="371" height="18"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W5" family="Hiragino Sans" pointSize="18"/>
+                                        <color key="textColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GOy-gQ-kWW" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.95" id="A8h-zm-J10"/>
+                            <constraint firstItem="GOy-gQ-kWW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XYt-ri-dKh"/>
+                            <constraint firstItem="GOy-gQ-kWW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="XpV-zH-uEd"/>
+                            <constraint firstItem="GOy-gQ-kWW" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.3" id="kCg-Yy-8Ur"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

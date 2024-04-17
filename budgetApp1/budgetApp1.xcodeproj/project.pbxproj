@@ -29,6 +29,12 @@
 		4CDD80492BCC1EFA00BF1947 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD80472BCC1EFA00BF1947 /* TransactionTableViewCell.swift */; };
 		4CDD804A2BCC1EFA00BF1947 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD80482BCC1EFA00BF1947 /* TransactionTableViewCell.xib */; };
 		4CDD804E2BCDA1FE00BF1947 /* AccountViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD804C2BCDA1FE00BF1947 /* AccountViewCell.xib */; };
+		4CDD80512BCFAB3B00BF1947 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD80502BCFAB3B00BF1947 /* LoginScreen.storyboard */; };
+		4CDD80532BCFB2B900BF1947 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD80522BCFB2B900BF1947 /* LoginViewController.swift */; };
+		4CDD80572BCFB9EF00BF1947 /* ProceedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD80562BCFB9EF00BF1947 /* ProceedAlert.swift */; };
+		4CDD80592BCFBA6100BF1947 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD80582BCFBA6100BF1947 /* SignUpViewController.swift */; };
+		4CDD805B2BCFBAA100BF1947 /* SignUpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD805A2BCFBAA100BF1947 /* SignUpScreen.storyboard */; };
+		4CDD805D2BCFBBDD00BF1947 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD805C2BCFBBDD00BF1947 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +62,12 @@
 		4CDD80472BCC1EFA00BF1947 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		4CDD80482BCC1EFA00BF1947 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		4CDD804C2BCDA1FE00BF1947 /* AccountViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewCell.xib; sourceTree = "<group>"; };
+		4CDD80502BCFAB3B00BF1947 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
+		4CDD80522BCFB2B900BF1947 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4CDD80562BCFB9EF00BF1947 /* ProceedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProceedAlert.swift; sourceTree = "<group>"; };
+		4CDD80582BCFBA6100BF1947 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4CDD805A2BCFBAA100BF1947 /* SignUpScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpScreen.storyboard; sourceTree = "<group>"; };
+		4CDD805C2BCFBBDD00BF1947 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +165,8 @@
 		4CC71A2C2BB2ACFB009E2B53 /* budgetApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				4CDD80552BCFB9D000BF1947 /* Alerts */,
+				4CDD804F2BCFAB1300BF1947 /* Authentication */,
 				4CDD803C2BCB3B8B00BF1947 /* Transactions */,
 				4C398F822BC46D53004FA950 /* Repository */,
 				4C398F752BC3D6AA004FA950 /* Service Layer */,
@@ -177,6 +191,26 @@
 				4CDD80452BCBF46000BF1947 /* Transactions.storyboard */,
 			);
 			name = Transactions;
+			sourceTree = "<group>";
+		};
+		4CDD804F2BCFAB1300BF1947 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4CDD80502BCFAB3B00BF1947 /* LoginScreen.storyboard */,
+				4CDD80522BCFB2B900BF1947 /* LoginViewController.swift */,
+				4CDD80582BCFBA6100BF1947 /* SignUpViewController.swift */,
+				4CDD805A2BCFBAA100BF1947 /* SignUpScreen.storyboard */,
+				4CDD805C2BCFBBDD00BF1947 /* UserModel.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		4CDD80552BCFB9D000BF1947 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				4CDD80562BCFB9EF00BF1947 /* ProceedAlert.swift */,
+			);
+			name = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +277,8 @@
 				4CC71A352BB2ACFB009E2B53 /* BudgetOverview.storyboard in Resources */,
 				4CDD804A2BCC1EFA00BF1947 /* TransactionTableViewCell.xib in Resources */,
 				4CDD804E2BCDA1FE00BF1947 /* AccountViewCell.xib in Resources */,
+				4CDD805B2BCFBAA100BF1947 /* SignUpScreen.storyboard in Resources */,
+				4CDD80512BCFAB3B00BF1947 /* LoginScreen.storyboard in Resources */,
 				4CDD80462BCBF46000BF1947 /* Transactions.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,12 +296,16 @@
 				4CC71A482BB2B8F8009E2B53 /* AccountModel.swift in Sources */,
 				4CC71A442BB2ADD0009E2B53 /* BudgetModel.swift in Sources */,
 				4CC71A322BB2ACFB009E2B53 /* BudgetViewController.swift in Sources */,
+				4CDD80592BCFBA6100BF1947 /* SignUpViewController.swift in Sources */,
 				4CC71A4D2BB2C65C009E2B53 /* Service Errors.swift in Sources */,
 				4C67D8182BBD80AB0060BC06 /* AccountViewModel.swift in Sources */,
+				4CDD80572BCFB9EF00BF1947 /* ProceedAlert.swift in Sources */,
 				4CC71A2E2BB2ACFB009E2B53 /* AppDelegate.swift in Sources */,
 				4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */,
 				4CDD80442BCBF1BE00BF1947 /* TransactionViewController.swift in Sources */,
 				4CC71A4A2BB2C532009E2B53 /* Repository.swift in Sources */,
+				4CDD80532BCFB2B900BF1947 /* LoginViewController.swift in Sources */,
+				4CDD805D2BCFBBDD00BF1947 /* UserModel.swift in Sources */,
 				4CC71A302BB2ACFB009E2B53 /* SceneDelegate.swift in Sources */,
 				4C67D81F2BBF2D170060BC06 /* AccountViewCell.swift in Sources */,
 				4CC71A4F2BB2D19E009E2B53 /* BudgetViewModel.swift in Sources */,

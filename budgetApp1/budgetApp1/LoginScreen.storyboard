@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="budgetApp1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="LNY-Ox-vHt">
+                                <rect key="frame" x="88.333333333333329" y="234" width="216.33333333333337" height="384"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon2" translatesAutoresizingMaskIntoConstraints="NO" id="ox8-bm-lH1">
+                                        <rect key="frame" x="30" y="0.0" width="156.33333333333334" height="148"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="dJH-ZB-fi7">
+                                        <rect key="frame" x="0.0" y="192" width="216.33333333333334" height="112"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bcj-Lg-FTd">
+                                                <rect key="frame" x="0.0" y="0.0" width="216.33333333333334" height="34"/>
+                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ve4-aB-9LL">
+                                                <rect key="frame" x="0.0" y="78" width="216.33333333333334" height="34"/>
+                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wi8-fe-aqx">
+                                        <rect key="frame" x="54.000000000000021" y="348" width="108.33333333333331" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yH-Sg-zqm">
+                                                <rect key="frame" x="0.0" y="0.0" width="108.33333333333333" height="36"/>
+                                                <color key="tintColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Login">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="HiraginoSans-W6"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="loginClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YOg-1v-fVz"/>
+                                                    <segue destination="k8K-M7-Jfy" kind="show" identifier="loginSegue" id="DUD-aK-xDA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wi8-fe-aqx" firstAttribute="width" secondItem="LNY-Ox-vHt" secondAttribute="width" multiplier="0.5" id="OW7-tj-IC9"/>
+                                    <constraint firstItem="dJH-ZB-fi7" firstAttribute="height" secondItem="LNY-Ox-vHt" secondAttribute="height" multiplier="0.291667" id="TiZ-lv-dTt"/>
+                                    <constraint firstItem="dJH-ZB-fi7" firstAttribute="width" secondItem="LNY-Ox-vHt" secondAttribute="width" id="Z1k-nb-nWs"/>
+                                    <constraint firstItem="wi8-fe-aqx" firstAttribute="height" secondItem="LNY-Ox-vHt" secondAttribute="height" multiplier="0.09375" id="lgk-tb-F3C"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LNY-Ox-vHt" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.450704" id="0lw-Ua-AaF"/>
+                            <constraint firstItem="LNY-Ox-vHt" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="8cP-WD-480"/>
+                            <constraint firstItem="LNY-Ox-vHt" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.55" id="D6g-D4-ksF"/>
+                            <constraint firstItem="LNY-Ox-vHt" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="icl-ku-cBW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordField" destination="Ve4-aB-9LL" id="YtY-wt-3LM"/>
+                        <outlet property="usernameField" destination="bcj-Lg-FTd" id="RHb-Is-6Z4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+        </scene>
+        <!--BudgetOverview-->
+        <scene sceneID="JyB-mm-K3K">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BudgetOverview" id="k8K-M7-Jfy" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4K3-wd-krq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SK2-u5-5dm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="-17"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AppIcon2" width="156.5" height="148"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
