@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Account View Controller-->
+        <!--Accounts-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="AccountViewController" customModule="budgetApp1" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,18 +58,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozo-L6-vnf">
-                                <rect key="frame" x="159" y="694" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="Oeu-TE-Az1" kind="show" id="1kf-S8-9Zx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sbv-MP-2hN" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="2yR-S8-pdy"/>
                             <constraint firstItem="sbv-MP-2hN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="FRw-c6-MNW"/>
@@ -77,6 +68,10 @@
                             <constraint firstItem="sbv-MP-2hN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pUb-t4-6XP"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Accounts" image="baseball.diamond.bases" catalog="system" id="uzY-5v-Mto">
+                        <color key="badgeColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="sbv-MP-2hN" id="xda-OB-fI6"/>
                     </connections>
@@ -85,23 +80,11 @@
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
-        <!--Transactions-->
-        <scene sceneID="xnv-sx-UVT">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Transactions" id="Oeu-TE-Az1" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ERZ-yX-HRs"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Akp-iI-rWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="943" y="-87"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="baseball.diamond.bases" catalog="system" width="128" height="67"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

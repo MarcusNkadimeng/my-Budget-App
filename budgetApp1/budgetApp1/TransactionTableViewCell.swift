@@ -9,14 +9,14 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var TransactionNameLabel: UILabel!
-    @IBOutlet weak var TransactionAmountLabel: UILabel!
+    @IBOutlet weak var transactionNameLabel: UILabel!
+    @IBOutlet weak var transactionAmountLabel: UILabel!
     
     static let identifier = "TransactionTableViewCell"
     
-    func populateWith(transaction: Transaction){
-        TransactionNameLabel.text = transaction.categoryName
-        TransactionAmountLabel.text = String(transaction.amount)
+    func populateWith(transaction: Transaction) {
+        transactionNameLabel.text = transaction.categoryName
+        transactionAmountLabel.text = String(Double(transaction.amount) / 1000.00)
     }
     
     override func awakeFromNib() {

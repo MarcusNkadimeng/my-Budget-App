@@ -11,7 +11,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    var user1 = user.init(username: "", password: "", fullname: "", emailAddress: "")
+    var user2 = User(username: "", password: "", fullname: "", emailAddress: "")
+    var user1 = User.init(username: "", password: "", fullname: "", emailAddress: "")
     
     @IBAction func loginClicked(_ sender: Any) {
         guard let username = usernameField.text else { return }
@@ -21,7 +22,6 @@ class LoginViewController: UIViewController {
             performSegue(withIdentifier: "loginSegue", sender: self)
         }
         else {
-//            let alert2 = Alert.authenticationAlert(on: UIViewController)
             let alertController = UIAlertController(
                             title: "Invalid credentials",
                             message: "Enter valid username and password",
@@ -31,9 +31,7 @@ class LoginViewController: UIViewController {
                 NSLog("The \"OK\" alert occured.")
             }))
             present(alertController, animated: true, completion: nil)
-            
         }
-
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -18,8 +18,8 @@ class AccountViewCell: UITableViewCell {
     
     func populateWith(account: Account){
         accountNameLabel.text = account.name
-        accountTypeLabel.text = account.type
-        balanceLabel.text = String(account.balance)
+        accountTypeLabel.text = "Cleared Balance (R)"
+        balanceLabel.text = String(Double(account.balance)/1000.00)
     }
     
     static func nib() -> UINib {

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Transaction View Controller-->
+        <!--Transactions-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="TransactionViewController" customModule="budgetApp1" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,25 +16,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D0p-hK-Q0A">
-                                <rect key="frame" x="0.0" y="248" width="393" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CL-zc-Jov">
+                                <rect key="frame" x="0.0" y="211" width="393" height="568"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D0p-hK-Q0A">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="568"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TransactionTableViewCell" id="JQd-Hl-OV9">
+                                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JQd-Hl-OV9" id="xex-UH-yrr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TransactionTableViewCell" id="JQd-Hl-OV9">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JQd-Hl-OV9" id="xex-UH-yrr">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="D0p-hK-Q0A" secondAttribute="trailing" id="76o-eJ-WBK"/>
+                                    <constraint firstItem="D0p-hK-Q0A" firstAttribute="top" secondItem="1CL-zc-Jov" secondAttribute="top" id="Ztf-wE-EEc"/>
+                                    <constraint firstItem="D0p-hK-Q0A" firstAttribute="leading" secondItem="1CL-zc-Jov" secondAttribute="leading" id="n6h-Sc-oGv"/>
+                                    <constraint firstAttribute="bottom" secondItem="D0p-hK-Q0A" secondAttribute="bottom" id="xCk-34-IpV"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="6FR-Sw-wKY">
+                                <rect key="frame" x="-2" y="155" width="395" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="96" translatesAutoresizingMaskIntoConstraints="NO" id="kdt-q1-cMD">
+                                        <rect key="frame" x="0.0" y="0.0" width="395" height="48"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiZ-eU-KSu">
+                                                <rect key="frame" x="0.0" y="0.0" width="149.66666666666666" height="48"/>
+                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount (R)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFQ-Nk-6Nh">
+                                                <rect key="frame" x="245.66666666666663" y="0.0" width="149.33333333333337" height="48"/>
+                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kdt-q1-cMD" firstAttribute="width" secondItem="6FR-Sw-wKY" secondAttribute="width" id="TSy-8i-oEX"/>
+                                    <constraint firstItem="kdt-q1-cMD" firstAttribute="height" secondItem="6FR-Sw-wKY" secondAttribute="height" id="gzM-g8-sZz"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1CL-zc-Jov" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1cJ-Fc-NOf"/>
+                            <constraint firstItem="1CL-zc-Jov" firstAttribute="top" secondItem="6FR-Sw-wKY" secondAttribute="bottom" constant="8" id="5Is-CI-HTj"/>
+                            <constraint firstItem="6FR-Sw-wKY" firstAttribute="width" secondItem="1CL-zc-Jov" secondAttribute="width" multiplier="1.00509" id="BVd-Cb-b59"/>
+                            <constraint firstItem="1CL-zc-Jov" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ZRW-pB-OK9"/>
+                            <constraint firstItem="1CL-zc-Jov" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.666667" id="rFO-Hh-lsN"/>
+                            <constraint firstItem="1CL-zc-Jov" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="vHe-4T-THC"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Transactions" image="bitcoinsign.square.fill" catalog="system" id="rXB-8M-v2a">
+                        <color key="badgeColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="D0p-hK-Q0A" id="W67-es-NKY"/>
                     </connections>
@@ -45,6 +95,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bitcoinsign.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

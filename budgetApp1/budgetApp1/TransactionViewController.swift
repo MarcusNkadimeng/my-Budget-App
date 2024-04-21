@@ -9,6 +9,7 @@ import UIKit
 
 class TransactionViewController: UIViewController {
 
+    let uiSpecs = UISpecs()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,13 +19,15 @@ class TransactionViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         viewModel.getTransactions()
-
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: TransactionTableViewCell.identifier)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 1.0, right: 0)
+        tableView.layer.borderWidth = 2.0
+        tableView.layer.borderColor = uiSpecs.appCustomColor.cgColor
     }
 
 }
@@ -32,7 +35,7 @@ class TransactionViewController: UIViewController {
 // MARK: - TableView Delegate
 extension TransactionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.TransactionListCount
+        return viewModel.transactionListCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,7 +45,6 @@ extension TransactionViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
 }
-
 
 // MARK: - ViewModel Delegate
 extension TransactionViewController: TransactionViewModelDelegate {

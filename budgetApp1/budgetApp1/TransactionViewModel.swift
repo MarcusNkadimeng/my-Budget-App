@@ -15,33 +15,31 @@ protocol TransactionViewModelDelegate: AnyObject {
 class TransactionViewModel {
     
     private var repository: TransactionRepositoryType?
-    private var delegate: TransactionViewModelDelegate?
+    private weak var delegate: TransactionViewModelDelegate?
     
-    private var TransactionList: [Transaction]?
+    private var transactionList: [Transaction]?
     
     init(repository: TransactionRepositoryType, delegate: TransactionViewModelDelegate) {
         self.repository = repository
         self.delegate = delegate
     }
     
-    var TransactionListCount: Int {
-        return TransactionList?.count ?? 0
+    var transactionListCount: Int {
+        return transactionList?.count ?? 0
     }
     
     func transaction(atIndex: Int) -> Transaction?{
-        return TransactionList?[atIndex] ?? nil
+        return transactionList?[atIndex] ?? nil
     }
     
     func getTransactions() {
         repository?.getTransactions(completion: {   [weak self] result in
             switch result {
             case .success(let response):
-                self?.TransactionList = response.data.transactions
+                self?.transactionList = response.data.transactions
                 self?.delegate?.reloadView()
-                print(response.data.transactions)
             case .failure(let error):
                 self?.delegate?.show(error: error.rawValue)
-                print(error.rawValue)
             }
         })
     }

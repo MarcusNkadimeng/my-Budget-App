@@ -9,7 +9,6 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
-    
     @IBOutlet weak var fullnameField: UITextField!
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
@@ -17,23 +16,9 @@ class SignUpViewController: UIViewController {
     
     var signedUp = false
     
-    @IBAction func signedUpClicked(_ sender: Any) {
-        guard let username = usernameField.text else { return }
-        guard let password = passwordField.text else { return }
-        
-        if (username != "" && password != "") {
-            signedUp = true
-            print("user has signed up with ff credentials:", username, password)
-        }
-        else {
-            signedUp = false
-            print("Please sign up")
-        }
-    }
+    @IBAction func signedUpClicked(_ sender: Any) { }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,12 +28,21 @@ class SignUpViewController: UIViewController {
             guard let fullname = fullnameField.text else { return }
             guard let emailAddress = emailAddressField.text else { return }
             
-            let primaryUser = user(username: username, password: password, fullname: fullname, emailAddress: emailAddress)
+            let primaryUser = User(username: username, password: password, fullname: fullname, emailAddress: emailAddress)
             
-            if let LoginViewController = segue.destination as? LoginViewController {
-                LoginViewController.user1 = primaryUser
-                print("new user:",primaryUser, "has been passed to login")
-                
+            if let loginViewController = segue.destination as? LoginViewController {
+                loginViewController.user1 = primaryUser
+                signedUp = true
+            } else {
+                let alertController = UIAlertController(
+                                title: "Incomplete user details",
+                                message: "Enter user information",
+                                preferredStyle: .alert
+                            )
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("The \"OK\" alert occured.")
+                }))
+                present(alertController, animated: true, completion: nil)
             }
         }
     }

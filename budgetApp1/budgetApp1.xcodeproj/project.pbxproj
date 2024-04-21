@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C37FB242BD43D200060ADB6 /* UISpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB232BD43D200060ADB6 /* UISpecs.swift */; };
 		4C67D8162BBD54880060BC06 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C67D8152BBD54880060BC06 /* Accounts.storyboard */; };
 		4C67D8182BBD80AB0060BC06 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */; };
 		4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C37FB232BD43D200060ADB6 /* UISpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpecs.swift; sourceTree = "<group>"; };
 		4C67D8152BBD54880060BC06 /* Accounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
 		4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C37FB222BD43CFF0060ADB6 /* UI Specifications */ = {
+			isa = PBXGroup;
+			children = (
+				4C37FB232BD43D200060ADB6 /* UISpecs.swift */,
+			);
+			name = "UI Specifications";
+			sourceTree = "<group>";
+		};
 		4C398F752BC3D6AA004FA950 /* Service Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 		4CC71A2C2BB2ACFB009E2B53 /* budgetApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				4C37FB222BD43CFF0060ADB6 /* UI Specifications */,
 				4CDD80552BCFB9D000BF1947 /* Alerts */,
 				4CDD804F2BCFAB1300BF1947 /* Authentication */,
 				4CDD803C2BCB3B8B00BF1947 /* Transactions */,
@@ -220,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CC71A3E2BB2ACFE009E2B53 /* Build configuration list for PBXNativeTarget "budgetApp1" */;
 			buildPhases = (
+				4C37FB252BD531A60060ADB6 /* Run SwiftLint */,
 				4CC71A262BB2ACFB009E2B53 /* Sources */,
 				4CC71A272BB2ACFB009E2B53 /* Frameworks */,
 				4CC71A282BB2ACFB009E2B53 /* Resources */,
@@ -285,6 +297,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4C37FB252BD531A60060ADB6 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n \nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4CC71A262BB2ACFB009E2B53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -306,6 +339,7 @@
 				4CC71A4A2BB2C532009E2B53 /* Repository.swift in Sources */,
 				4CDD80532BCFB2B900BF1947 /* LoginViewController.swift in Sources */,
 				4CDD805D2BCFBBDD00BF1947 /* UserModel.swift in Sources */,
+				4C37FB242BD43D200060ADB6 /* UISpecs.swift in Sources */,
 				4CC71A302BB2ACFB009E2B53 /* SceneDelegate.swift in Sources */,
 				4C67D81F2BBF2D170060BC06 /* AccountViewCell.swift in Sources */,
 				4CC71A4F2BB2D19E009E2B53 /* BudgetViewModel.swift in Sources */,
@@ -371,7 +405,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -434,7 +468,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -460,6 +494,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = budgetApp1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -487,6 +522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = budgetApp1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
