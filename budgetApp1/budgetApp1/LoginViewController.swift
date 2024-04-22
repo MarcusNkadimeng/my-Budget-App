@@ -8,17 +8,16 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet private weak var usernameField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
     
-    var user2 = User(username: "", password: "", fullname: "", emailAddress: "")
-    var user1 = User.init(username: "", password: "", fullname: "", emailAddress: "")
+    var userTwo = User(username: "", password: "", fullname: "", emailAddress: "")
     
     @IBAction func loginClicked(_ sender: Any) {
         guard let username = usernameField.text else { return }
         guard let password = passwordField.text else { return }
         
-        if (username == user1.username && password == user1.password) {
+        if (username == userTwo.username && password == userTwo.password) {
             performSegue(withIdentifier: "loginSegue", sender: self)
         }
         else {
@@ -37,7 +36,4 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
-
-
 }

@@ -75,7 +75,6 @@
                         <constraints>
                             <constraint firstItem="1CL-zc-Jov" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1cJ-Fc-NOf"/>
                             <constraint firstItem="1CL-zc-Jov" firstAttribute="top" secondItem="6FR-Sw-wKY" secondAttribute="bottom" constant="8" id="5Is-CI-HTj"/>
-                            <constraint firstItem="6FR-Sw-wKY" firstAttribute="width" secondItem="1CL-zc-Jov" secondAttribute="width" multiplier="1.00509" id="BVd-Cb-b59"/>
                             <constraint firstItem="1CL-zc-Jov" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ZRW-pB-OK9"/>
                             <constraint firstItem="1CL-zc-Jov" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.666667" id="rFO-Hh-lsN"/>
                             <constraint firstItem="1CL-zc-Jov" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="vHe-4T-THC"/>

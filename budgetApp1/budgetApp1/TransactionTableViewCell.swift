@@ -9,10 +9,8 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var transactionNameLabel: UILabel!
-    @IBOutlet weak var transactionAmountLabel: UILabel!
-    
-    static let identifier = "TransactionTableViewCell"
+    @IBOutlet private weak var transactionNameLabel: UILabel!
+    @IBOutlet private weak var transactionAmountLabel: UILabel!
     
     func populateWith(transaction: Transaction) {
         transactionNameLabel.text = transaction.categoryName
@@ -21,16 +19,9 @@ class TransactionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     static func nib() -> UINib {
         return UINib(nibName: "TransactionTableViewCell", bundle: nil)
-    }
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-    
+    } 
 }

@@ -31,7 +31,7 @@ class AccountViewModel {
         return accountList?[atIndex] ?? nil
     }
     
-    func getAccounts() {
+    func fetchAccounts() {
         repository?.getAccounts(completion: { [weak self] result in
             switch result {
             case .success(let response):

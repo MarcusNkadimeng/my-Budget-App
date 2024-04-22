@@ -32,7 +32,7 @@ class TransactionViewModel {
         return transactionList?[atIndex] ?? nil
     }
     
-    func getTransactions() {
+    func fetchTransactions() {
         repository?.getTransactions(completion: {   [weak self] result in
             switch result {
             case .success(let response):

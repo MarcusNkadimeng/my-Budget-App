@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C37FB242BD43D200060ADB6 /* UISpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB232BD43D200060ADB6 /* UISpecs.swift */; };
+		4C37FB282BD6B8560060ADB6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB272BD6B8560060ADB6 /* Constants.swift */; };
 		4C67D8162BBD54880060BC06 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C67D8152BBD54880060BC06 /* Accounts.storyboard */; };
 		4C67D8182BBD80AB0060BC06 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */; };
 		4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		4C37FB232BD43D200060ADB6 /* UISpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpecs.swift; sourceTree = "<group>"; };
+		4C37FB272BD6B8560060ADB6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4C67D8152BBD54880060BC06 /* Accounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
 		4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 				4C37FB232BD43D200060ADB6 /* UISpecs.swift */,
 			);
 			name = "UI Specifications";
+			sourceTree = "<group>";
+		};
+		4C37FB262BD6B8410060ADB6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4C37FB272BD6B8560060ADB6 /* Constants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		4C398F752BC3D6AA004FA950 /* Service Layer */ = {
@@ -175,12 +185,13 @@
 		4CC71A2C2BB2ACFB009E2B53 /* budgetApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				4C37FB262BD6B8410060ADB6 /* Constants */,
 				4C37FB222BD43CFF0060ADB6 /* UI Specifications */,
 				4CDD80552BCFB9D000BF1947 /* Alerts */,
+				4C398F752BC3D6AA004FA950 /* Service Layer */,
 				4CDD804F2BCFAB1300BF1947 /* Authentication */,
 				4CDD803C2BCB3B8B00BF1947 /* Transactions */,
 				4C398F822BC46D53004FA950 /* Repository */,
-				4C398F752BC3D6AA004FA950 /* Service Layer */,
 				4C398F802BC3D828004FA950 /* Budget */,
 				4C398F762BC3D6DD004FA950 /* Account */,
 				4C67D81B2BBF2C9C0060BC06 /* Custom Cells */,
@@ -334,6 +345,7 @@
 				4C67D8182BBD80AB0060BC06 /* AccountViewModel.swift in Sources */,
 				4CDD80572BCFB9EF00BF1947 /* ProceedAlert.swift in Sources */,
 				4CC71A2E2BB2ACFB009E2B53 /* AppDelegate.swift in Sources */,
+				4C37FB282BD6B8560060ADB6 /* Constants.swift in Sources */,
 				4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */,
 				4CDD80442BCBF1BE00BF1947 /* TransactionViewController.swift in Sources */,
 				4CC71A4A2BB2C532009E2B53 /* Repository.swift in Sources */,

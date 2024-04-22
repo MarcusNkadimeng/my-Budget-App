@@ -9,18 +9,24 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var fullnameField: UITextField!
-    @IBOutlet weak var emailAddressField: UITextField!
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    // MARK: - Text fields
+    @IBOutlet private weak var fullnameField: UITextField!
+    @IBOutlet private weak var emailAddressField: UITextField!
+    @IBOutlet private weak var usernameField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
     
-    var signedUp = false
+    // MARK: - signUp token
+    private var signedUp = false
     
-    @IBAction func signedUpClicked(_ sender: Any) { }
+    @IBAction func signedUpClicked(_ sender: Any) { 
+        signedUp = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: - Segue to validate credentials and log in
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signUpSegue" {
             guard let username = usernameField.text else { return }
@@ -31,8 +37,7 @@ class SignUpViewController: UIViewController {
             let primaryUser = User(username: username, password: password, fullname: fullname, emailAddress: emailAddress)
             
             if let loginViewController = segue.destination as? LoginViewController {
-                loginViewController.user1 = primaryUser
-                signedUp = true
+                loginViewController.userTwo = primaryUser
             } else {
                 let alertController = UIAlertController(
                                 title: "Incomplete user details",

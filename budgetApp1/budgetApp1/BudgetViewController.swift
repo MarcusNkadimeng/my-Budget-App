@@ -23,9 +23,7 @@ class BudgetViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel = BudgetViewModel(repository: BudgetRepository(), delegate: self)
-        viewModel?.getBudgets()
-        // Do any additional setup after loading the view.
-         
+        viewModel?.fetchBudgets()
     }
 
     private func fillUI() {
@@ -40,7 +38,6 @@ class BudgetViewController: UIViewController {
         startDateLabel.text = budgetList.first?.firstMonth
         endDateLabel.text = budgetList.first?.lastMonth
     }
-
 }
 
 // MARK: - ViewModel Delegate
@@ -54,4 +51,3 @@ extension BudgetViewController: ViewModelDelegate {
         
     }
 }
-

@@ -13,18 +13,18 @@ class AccountViewController: UIViewController {
     
     private lazy var viewModel = AccountViewModel(repository: AccountRepository(), delegate: self)
     
-    let uiSpecs = UISpecs()
+    private let uiSpecs = UISpecs()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        viewModel.getAccounts()
+        viewModel.fetchAccounts()
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(AccountViewCell.nib(), forCellReuseIdentifier: AccountViewCell.identifier)
+        tableView.register(AccountViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.AccountViewCellIdentifier)
     }
 }
 
@@ -32,21 +32,19 @@ class AccountViewController: UIViewController {
 
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.accountListCount
+        viewModel.accountListCount
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        1
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 2
+        2
     }
     
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        100.0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -56,16 +54,14 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountViewCell.identifier) as? AccountViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.AccountViewCellIdentifier) as? AccountViewCell else { return UITableViewCell() }
         guard let account = viewModel.account(atIndex: indexPath.section) else { return UITableViewCell() }
         cell.populateWith(account: account)
-        cell.accountNameLabel.textColor = uiSpecs.appCustomColor2
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cornerRadius: CGFloat = 18.0
-        cell.backgroundColor = UIColor.clear
         
         let layer = CAShapeLayer()
         let pathRef = CGMutablePath()
@@ -89,7 +85,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         
         layer.path = pathRef
         layer.fillColor = UIColor.white.cgColor
-        layer.strokeColor = uiSpecs.appCustomColor.cgColor
+        layer.strokeColor = uiSpecs.primaryColourOne.cgColor
         layer.lineWidth = 3.0
         
         let testView = UIView(frame: bounds)

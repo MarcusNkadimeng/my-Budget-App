@@ -35,7 +35,7 @@ class BudgetViewModel {
         return budgetList?[atIndex] ?? nil
     }
     
-    func getBudgets() {
+    func fetchBudgets() {
         repository?.getBudgets(completion: { [weak self] result in
             switch result {
             case .success(let response):

@@ -9,7 +9,7 @@ import UIKit
 
 class TransactionViewController: UIViewController {
 
-    let uiSpecs = UISpecs()
+    private let uiSpecs = UISpecs()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,16 +18,16 @@ class TransactionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        viewModel.getTransactions()
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: TransactionTableViewCell.identifier)
+        tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.TransactionViewCellIdentifier)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 1.0, right: 0)
         tableView.layer.borderWidth = 2.0
-        tableView.layer.borderColor = uiSpecs.appCustomColor.cgColor
+        tableView.layer.borderColor = uiSpecs.primaryColourOne.cgColor
+        viewModel.fetchTransactions()
     }
 
 }
@@ -35,11 +35,11 @@ class TransactionViewController: UIViewController {
 // MARK: - TableView Delegate
 extension TransactionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.transactionListCount
+        viewModel.transactionListCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.identifier) as? TransactionTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.TransactionViewCellIdentifier) as? TransactionTableViewCell else { return UITableViewCell() }
         guard let transaction = viewModel.transaction(atIndex: indexPath.item) else { return UITableViewCell() }
         cell.populateWith(transaction: transaction)
         return cell

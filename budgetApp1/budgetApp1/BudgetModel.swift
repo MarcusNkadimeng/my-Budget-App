@@ -41,7 +41,6 @@ struct Budget: Codable {
     }
 }
 
-
 // MARK: - CurrencyFormat
 struct CurrencyFormat: Codable {
     let isoCode, exampleFormat: String
