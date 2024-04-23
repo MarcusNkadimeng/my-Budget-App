@@ -9,12 +9,14 @@ import UIKit
 
 class AccountViewController: UIViewController {
 
+    // MARK: - variables
     @IBOutlet private var tableView: UITableView!
-    
     private lazy var viewModel = AccountViewModel(repository: AccountRepository(), delegate: self)
     
+    // MARK: - UISpecs Dependency
     private let uiSpecs = UISpecs()
     
+    // MARK: - functions
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -29,7 +31,6 @@ class AccountViewController: UIViewController {
 }
 
 // MARK: - TableView Delegate
-
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,7 +63,6 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cornerRadius: CGFloat = 18.0
-        
         let layer = CAShapeLayer()
         let pathRef = CGMutablePath()
         let bounds = cell.bounds.insetBy(dx: 7, dy: 0)

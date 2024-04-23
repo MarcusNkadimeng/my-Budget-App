@@ -57,7 +57,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="signedUpClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rO8-1c-c1R"/>
+                                    <action selector="signUpClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8CD-ip-Wrp"/>
                                     <segue destination="2IY-O1-nwO" kind="show" identifier="signUpSegue" id="Ek5-wa-2TD"/>
                                 </connections>
                             </button>

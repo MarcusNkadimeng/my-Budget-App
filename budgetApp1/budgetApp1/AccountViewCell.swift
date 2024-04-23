@@ -9,11 +9,14 @@ import UIKit
 
 class AccountViewCell: UITableViewCell {
     
+    // MARK: - IBOutlets
     @IBOutlet private weak var accountNameLabel: UILabel!
     @IBOutlet private weak var accountTypeLabel: UILabel!
     @IBOutlet private weak var balanceLabel: UILabel!
     
     private let uiSpecs = UISpecs()
+    
+    // MARK: - functions
     func populateWith(account: Account) {
         accountNameLabel.text = account.name
         accountTypeLabel.text = UIComponents.accountTypeLabel
@@ -23,7 +26,7 @@ class AccountViewCell: UITableViewCell {
     }
     
     static func nib() -> UINib {
-        UINib(nibName: "AccountViewCell", bundle: nil)
+        UINib(nibName: NibIdentifiers.AccountViewCellIdentifier, bundle: nil)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

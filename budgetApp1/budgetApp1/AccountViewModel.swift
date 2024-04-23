@@ -24,11 +24,11 @@ class AccountViewModel {
     }
     
     var accountListCount: Int {
-        return accountList?.count ?? 0
+        accountList?.count ?? 0
     }
     
     func account(atIndex: Int) -> Account? {
-        return accountList?[atIndex] ?? nil
+        accountList?[atIndex]
     }
     
     func fetchAccounts() {

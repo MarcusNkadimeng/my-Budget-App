@@ -28,11 +28,11 @@ class BudgetViewModel {
     }
     
     var budgetListCount: Int {
-        return budgetList?.count ?? 0
+        budgetList?.count ?? 0
     }
     
     func budget(atIndex: Int) -> Budget? {
-        return budgetList?[atIndex] ?? nil
+        budgetList?[atIndex]
     }
     
     func fetchBudgets() {

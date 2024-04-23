@@ -9,12 +9,14 @@ import UIKit
 
 class TransactionViewController: UIViewController {
 
+    // MARK: - UISpecs Dependency
     private let uiSpecs = UISpecs()
     
+    // MARK: - variables
     @IBOutlet weak var tableView: UITableView!
-    
     private lazy var viewModel = TransactionViewModel(repository: TransactionRepository(), delegate: self)
     
+    // MARK: - functions
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -29,7 +31,6 @@ class TransactionViewController: UIViewController {
         tableView.layer.borderColor = uiSpecs.primaryColourOne.cgColor
         viewModel.fetchTransactions()
     }
-
 }
 
 // MARK: - TableView Delegate

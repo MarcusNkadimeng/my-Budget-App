@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C37FB242BD43D200060ADB6 /* UISpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB232BD43D200060ADB6 /* UISpecs.swift */; };
 		4C37FB282BD6B8560060ADB6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB272BD6B8560060ADB6 /* Constants.swift */; };
+		4C37FB2A2BD77A3A0060ADB6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB292BD77A3A0060ADB6 /* UserViewModel.swift */; };
 		4C67D8162BBD54880060BC06 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C67D8152BBD54880060BC06 /* Accounts.storyboard */; };
 		4C67D8182BBD80AB0060BC06 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */; };
 		4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		4C37FB232BD43D200060ADB6 /* UISpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpecs.swift; sourceTree = "<group>"; };
 		4C37FB272BD6B8560060ADB6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4C37FB292BD77A3A0060ADB6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		4C67D8152BBD54880060BC06 /* Accounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
 		4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				4CDD80582BCFBA6100BF1947 /* SignUpViewController.swift */,
 				4CDD805A2BCFBAA100BF1947 /* SignUpScreen.storyboard */,
 				4CDD805C2BCFBBDD00BF1947 /* UserModel.swift */,
+				4C37FB292BD77A3A0060ADB6 /* UserViewModel.swift */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CDD80402BCB40B600BF1947 /* TransactionViewModel.swift in Sources */,
+				4C37FB2A2BD77A3A0060ADB6 /* UserViewModel.swift in Sources */,
 				4CDD803E2BCB3BD200BF1947 /* TransactionModel.swift in Sources */,
 				4CDD80492BCC1EFA00BF1947 /* TransactionTableViewCell.swift in Sources */,
 				4CC71A482BB2B8F8009E2B53 /* AccountModel.swift in Sources */,

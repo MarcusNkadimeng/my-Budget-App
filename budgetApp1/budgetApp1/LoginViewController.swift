@@ -1,39 +1,36 @@
-//
-//  LoginViewController.swift
-//  budgetApp1
-//
-//  Created by Lehlohonolo Nkadimeng on 2024/04/17.
-//
-
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    // MARK: - IBOutlets
     @IBOutlet private weak var usernameField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
     
-    var userTwo = User(username: "", password: "", fullname: "", emailAddress: "")
+    let userVM = UserViewModel.shared // Use shared instance
+    private var loggedInUser: User?
     
     @IBAction func loginClicked(_ sender: Any) {
-        guard let username = usernameField.text else { return }
-        guard let password = passwordField.text else { return }
-        
-        if (username == userTwo.username && password == userTwo.password) {
-            performSegue(withIdentifier: "loginSegue", sender: self)
+        guard let username = usernameField.text,
+              let password = passwordField.text else {
+            return
         }
-        else {
+        
+        if let user = userVM.login(username: username, password: password) {
+            loggedInUser = user
+            performSegue(withIdentifier: Segues.loginSegue, sender: self)
+        } else {
             let alertController = UIAlertController(
-                            title: "Invalid credentials",
-                            message: "Enter valid username and password",
-                            preferredStyle: .alert
-                        )
-            alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-            }))
+                title: UIComponents.userAlertTitle,
+                message: UIComponents.userAlertMessage,
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(title: UIComponents.uiAlertAction, style: .default))
             present(alertController, animated: true, completion: nil)
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
+    
 }

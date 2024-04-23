@@ -25,4 +25,16 @@ struct NibIdentifiers {
 // MARK: - UI Stuff
 struct UIComponents {
     static let accountTypeLabel = "Cleared Balance (R)"
+    static let userAlertTitle = "Login Failed!"
+    static let userAlertMessage = "Enter valid username and password"
+    static let userAlertTitleTwo = "Incomplete user details"
+    static let userAlertMessageTwo = "Enter user information"
+    static let uiAlertAction = "OK"
+    static let uiALertComment = "Default action"
+}
+
+// MARK: - Segues
+struct Segues {
+    static let signUpSegue = "signUpSegue"
+    static let loginSegue = "loginSegue"
 }

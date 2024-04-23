@@ -25,11 +25,11 @@ class TransactionViewModel {
     }
     
     var transactionListCount: Int {
-        return transactionList?.count ?? 0
+        transactionList?.count ?? 0
     }
     
-    func transaction(atIndex: Int) -> Transaction?{
-        return transactionList?[atIndex] ?? nil
+    func transaction(atIndex: Int) -> Transaction? {
+        transactionList?[atIndex]
     }
     
     func fetchTransactions() {
