@@ -3,19 +3,19 @@ import UIKit
 class LoginViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet private weak var usernameField: UITextField!
-    @IBOutlet private weak var passwordField: UITextField!
+    @IBOutlet private weak var username: UITextField!
+    @IBOutlet private weak var password: UITextField!
     
-    let userVM = UserViewModel.shared // Use shared instance
+    let userViewModel = UserViewModel.shared // Use shared instance
     private var loggedInUser: User?
     
     @IBAction func loginClicked(_ sender: Any) {
-        guard let username = usernameField.text,
-              let password = passwordField.text else {
+        guard let username = username.text,
+              let password = password.text else {
             return
         }
         
-        if let user = userVM.login(username: username, password: password) {
+        if let user = userViewModel.login(username: username, password: password) {
             loggedInUser = user
             performSegue(withIdentifier: Segues.loginSegue, sender: self)
         } else {
@@ -28,9 +28,4 @@ class LoginViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
 }

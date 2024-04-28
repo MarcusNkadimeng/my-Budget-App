@@ -14,16 +14,13 @@ class BudgetViewController: UIViewController {
     @IBOutlet private weak var endDateLabel: UILabel!
     @IBOutlet private weak var startDateLabel: UILabel!
     
-    private var viewModel: BudgetViewModel? {
-        didSet {
-            viewModel?.fetchBudgets()
-        }
-    }
+    private var viewModel: BudgetViewModel?
     
-    // MARK: - functions
+    // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = BudgetViewModel(repository: BudgetRepository(), delegate: self)
+        viewModel?.fetchBudgets()
     }
 
     private func updateView(withBudget budget: Budget) {
@@ -37,13 +34,10 @@ class BudgetViewController: UIViewController {
 extension BudgetViewController: ViewModelDelegate {
     
     func reloadView() {
-        guard let budget = viewModel?.budgetList?.first else {
-            return
-        }
+        guard let budget = viewModel?.budgetList?.first else { return }
         updateView(withBudget: budget)
     }
     
     func show(error: String) {
-        
     }
 }

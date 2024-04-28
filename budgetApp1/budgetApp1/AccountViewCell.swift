@@ -19,7 +19,7 @@ class AccountViewCell: UITableViewCell {
     // MARK: - functions
     func populateWith(account: Account) {
         accountNameLabel.text = account.name
-        accountTypeLabel.text = UIComponents.accountTypeLabel
+        accountTypeLabel.text = UIComponents.accountClearedBalance
         balanceLabel.text = String(Double(account.balance) / 1000.00)
         accountNameLabel.textColor = uiSpecs.primaryColourTwo
         backgroundColor = UIColor.clear

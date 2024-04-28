@@ -72,10 +72,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="emailAddressField" destination="Mmi-4w-amb" id="e9T-Q4-R3X"/>
-                        <outlet property="fullnameField" destination="Ijv-mg-Usk" id="bNG-uf-oMa"/>
-                        <outlet property="passwordField" destination="vfI-Ce-GB3" id="XVj-Dk-Q7F"/>
-                        <outlet property="usernameField" destination="Xf5-iN-btZ" id="822-Bw-jqF"/>
+                        <outlet property="emailAddress" destination="Mmi-4w-amb" id="CPq-jK-Fv2"/>
+                        <outlet property="fullname" destination="Ijv-mg-Usk" id="JkX-wX-RIn"/>
+                        <outlet property="password" destination="vfI-Ce-GB3" id="ivu-4t-jsL"/>
+                        <outlet property="username" destination="Xf5-iN-btZ" id="PVc-GD-rdY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

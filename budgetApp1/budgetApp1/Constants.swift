@@ -24,7 +24,7 @@ struct NibIdentifiers {
 
 // MARK: - UI Stuff
 struct UIComponents {
-    static let accountTypeLabel = "Cleared Balance (R)"
+    static let accountClearedBalance = "Cleared Balance (R)"
     static let userAlertTitle = "Login Failed!"
     static let userAlertMessage = "Enter valid username and password"
     static let userAlertTitleTwo = "Incomplete user details"
