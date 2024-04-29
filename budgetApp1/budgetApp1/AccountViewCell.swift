@@ -11,7 +11,7 @@ class AccountViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
     @IBOutlet private weak var accountNameLabel: UILabel!
-    @IBOutlet private weak var accountTypeLabel: UILabel!
+    @IBOutlet private weak var accountClearedLabel: UILabel!
     @IBOutlet private weak var balanceLabel: UILabel!
     
     private let uiSpecs = UISpecs()
@@ -19,7 +19,7 @@ class AccountViewCell: UITableViewCell {
     // MARK: - functions
     func populateWith(account: Account) {
         accountNameLabel.text = account.name
-        accountTypeLabel.text = UIComponents.accountClearedBalance
+        accountClearedLabel.text = UIComponents.accountClearedBalance
         balanceLabel.text = String(Double(account.balance) / 1000.00)
         accountNameLabel.textColor = uiSpecs.primaryColourTwo
         backgroundColor = UIColor.clear

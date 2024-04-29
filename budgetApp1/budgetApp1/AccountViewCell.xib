@@ -70,8 +70,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="accountClearedLabel" destination="MOO-C5-EDU" id="uOw-fk-LTZ"/>
                 <outlet property="accountNameLabel" destination="ee1-GH-4ND" id="dfk-39-3WP"/>
-                <outlet property="accountTypeLabel" destination="MOO-C5-EDU" id="3zC-lZ-d9R"/>
                 <outlet property="balanceLabel" destination="Zup-4z-EMQ" id="Bi8-iP-Has"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="46.478873239436624"/>
