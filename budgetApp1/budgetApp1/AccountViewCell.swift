@@ -26,7 +26,7 @@ class AccountViewCell: UITableViewCell {
     }
     
     static func nib() -> UINib {
-        UINib(nibName: NibIdentifiers.AccountViewCellIdentifier, bundle: nil)
+        UINib(nibName: NibIdentifiers.accountViewCellIdentifier, bundle: nil)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

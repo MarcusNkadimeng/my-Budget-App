@@ -26,7 +26,7 @@ class AccountViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(AccountViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.AccountViewCellIdentifier)
+        tableView.register(AccountViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.accountViewCellIdentifier)
     }
 }
 
@@ -55,7 +55,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.AccountViewCellIdentifier) as? AccountViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.accountViewCellIdentifier) as? AccountViewCell else { return UITableViewCell() }
         guard let account = viewModel.account(atIndex: indexPath.section) else { return UITableViewCell() }
         cell.populateWith(account: account)
         return cell
