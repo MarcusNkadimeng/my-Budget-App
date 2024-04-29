@@ -16,11 +16,7 @@ class BudgetViewModel {
     
     private var repository: BudgetRepositoryType?
     private weak var delegate: ViewModelDelegate?
-    var budgetList: [Budget]? {
-        didSet {
-            delegate?.reloadView()
-        }
-    }
+    var budgetList: [Budget]?
     
     init(repository: BudgetRepositoryType, delegate: ViewModelDelegate) {
         self.repository = repository
@@ -28,15 +24,15 @@ class BudgetViewModel {
     }
     
     var budgetListCount: Int {
-        return budgetList?.count ?? 0
+        budgetList?.count ?? 0
     }
     
     func budget(atIndex: Int) -> Budget? {
-        return budgetList?[atIndex] ?? nil
+        budgetList?[atIndex]
     }
     
-    func getBudgets() {
-        repository?.getBudgets(completion: { [weak self] result in
+    func fetchBudgets() {
+        repository?.getBudgets { [weak self] result in
             switch result {
             case .success(let response):
                 self?.budgetList = response.data.budgets
@@ -44,6 +40,6 @@ class BudgetViewModel {
             case .failure(let error):
                 self?.delegate?.show(error: error.rawValue)
             }
-        })
+        }
     }
 }

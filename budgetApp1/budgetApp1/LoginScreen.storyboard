@@ -25,12 +25,12 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="dJH-ZB-fi7">
                                         <rect key="frame" x="0.0" y="192" width="216.33333333333334" height="112"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bcj-Lg-FTd">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bcj-Lg-FTd">
                                                 <rect key="frame" x="0.0" y="0.0" width="216.33333333333334" height="34"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ve4-aB-9LL">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ve4-aB-9LL">
                                                 <rect key="frame" x="0.0" y="78" width="216.33333333333334" height="34"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -80,8 +80,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordField" destination="Ve4-aB-9LL" id="YtY-wt-3LM"/>
-                        <outlet property="usernameField" destination="bcj-Lg-FTd" id="RHb-Is-6Z4"/>
+                        <outlet property="password" destination="Ve4-aB-9LL" id="HIa-s6-YhJ"/>
+                        <outlet property="username" destination="bcj-Lg-FTd" id="bsR-JY-4wa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -41,7 +41,7 @@ class APIHandler {
                 return
             }
             
-            guard let data = data else {
+            guard let data else {
                 DispatchQueue.main.async {
                     completion(.failure(.serverError))
                 }
@@ -62,4 +62,3 @@ class APIHandler {
         dataTask.resume()
     }
 }
-

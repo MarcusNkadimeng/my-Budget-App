@@ -9,21 +9,24 @@ import UIKit
 
 class AccountViewCell: UITableViewCell {
     
+    // MARK: - IBOutlets
+    @IBOutlet private weak var accountNameLabel: UILabel!
+    @IBOutlet private weak var accountClearedLabel: UILabel!
+    @IBOutlet private weak var balanceLabel: UILabel!
     
-    @IBOutlet weak var accountNameLabel: UILabel!
-    @IBOutlet weak var accountTypeLabel: UILabel!
-    @IBOutlet weak var balanceLabel: UILabel!
+    private let uiSpecs = UISpecs()
     
-    static let identifier = "AccountViewCell"
-    
-    func populateWith(account: Account){
+    // MARK: - functions
+    func populateWith(account: Account) {
         accountNameLabel.text = account.name
-        accountTypeLabel.text = account.type
-        balanceLabel.text = String(account.balance)
+        accountClearedLabel.text = UIComponents.accountClearedBalance
+        balanceLabel.text = String(Double(account.balance) / 1000.00)
+        accountNameLabel.textColor = uiSpecs.primaryColourTwo
+        backgroundColor = UIColor.clear
     }
     
     static func nib() -> UINib {
-        return UINib(nibName: "AccountViewCell", bundle: nil)
+        UINib(nibName: NibIdentifiers.accountViewCellIdentifier, bundle: nil)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

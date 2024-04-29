@@ -32,7 +32,7 @@ struct Transaction: Codable {
     let approved: Bool
     let flagColor, flagName: String?
     let accountID: String
-    let accountName: String;
+    let accountName: String
     let payeeID, payeeName, categoryID, categoryName: String
     let transferAccountID, transferTransactionID, matchedTransactionID: String?
     let importID, importPayeeName: String?

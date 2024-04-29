@@ -26,18 +26,18 @@ protocol TransactionRepositoryType: AnyObject {
 class BudgetRepository: BudgetRepositoryType {
     
     func getBudgets(completion: @escaping (BudgetsResult)) {
-        APIHandler.request(endpoint: "https://api.ynab.com/v1/budgets?access_token=t_Ikm7Q2U94be-lmSn4blgh1sjIEf1dMF7Tv8jguvpU", method: .GET, completion: completion)
+        APIHandler.request(endpoint: URLConstants.budgetURL, method: .GET, completion: completion)
     }
 }
 
 class AccountRepository: AccountRepositoryType {
     func getAccounts(completion: @escaping (AccountResult)) {
-        APIHandler.request(endpoint: "https://api.ynab.com/v1/budgets/2b0c25e3-0d5e-411d-a019-2522faa22c2b/accounts?access_token=t_Ikm7Q2U94be-lmSn4blgh1sjIEf1dMF7Tv8jguvpU", method: .GET, completion: completion)
+        APIHandler.request(endpoint: URLConstants.accountsURL, method: .GET, completion: completion)
     }
 }
 
 class TransactionRepository: TransactionRepositoryType {
     func getTransactions(completion: @escaping (TransactionResult)) {
-        APIHandler.request(endpoint: "https://api.ynab.com/v1/budgets/2b0c25e3-0d5e-411d-a019-2522faa22c2b/accounts/0515719a-f641-422b-8341-7073d5358dbe/transactions?access_token=t_Ikm7Q2U94be-lmSn4blgh1sjIEf1dMF7Tv8jguvpU", method: .GET, completion: completion)
+        APIHandler.request(endpoint: URLConstants.transactionsURL, method: .GET, completion: completion)
     }
 }

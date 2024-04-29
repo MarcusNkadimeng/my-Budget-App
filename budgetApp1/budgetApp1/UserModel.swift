@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: User dataclass
 
-struct user {
+struct User {
     var password: String
     var username: String
     var fullname: String

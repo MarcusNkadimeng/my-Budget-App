@@ -9,49 +9,34 @@ import UIKit
 
 class BudgetViewController: UIViewController {
     
-    private var viewModel: BudgetViewModel? {
-        didSet {
-            fillUI()
-        }
-    }
+    // MARK: - IBOutlets
+    @IBOutlet private weak var budgetNameLabel: UILabel!
+    @IBOutlet private weak var endDateLabel: UILabel!
+    @IBOutlet private weak var startDateLabel: UILabel!
     
-    @IBOutlet weak var budgetNameLabel: UILabel!
-    @IBOutlet weak var endDateLabel: UILabel!
-    @IBOutlet weak var startDateLabel: UILabel!
+    private lazy var viewModel = BudgetViewModel(repository: BudgetRepository(), delegate: self)
     
+    // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel = BudgetViewModel(repository: BudgetRepository(), delegate: self)
-        viewModel?.getBudgets()
-        // Do any additional setup after loading the view.
-         
+        viewModel.fetchBudgets()
     }
 
-    private func fillUI() {
-        if !isViewLoaded {
-            return
-        }
-        
-        guard let viewModel = viewModel, let budgetList = viewModel.budgetList, !budgetList.isEmpty else {
-            return
-        }
-        budgetNameLabel.text = budgetList.first?.name
-        startDateLabel.text = budgetList.first?.firstMonth
-        endDateLabel.text = budgetList.first?.lastMonth
+    private func updateView(withBudget budget: Budget) {
+        budgetNameLabel.text = budget.name
+        startDateLabel.text = budget.firstMonth
+        endDateLabel.text = budget.lastMonth
     }
-
 }
 
 // MARK: - ViewModel Delegate
-
 extension BudgetViewController: ViewModelDelegate {
     
     func reloadView() {
-        fillUI()
+        guard let budget = viewModel.budgetList?.first else { return }
+        updateView(withBudget: budget)
     }
+    
     func show(error: String) {
-        
     }
 }
-
