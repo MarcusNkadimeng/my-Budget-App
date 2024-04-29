@@ -33,7 +33,7 @@ class TransactionViewModel {
     }
     
     func fetchTransactions() {
-        repository?.getTransactions(completion: {   [weak self] result in
+        repository?.getTransactions {   [weak self] result in
             switch result {
             case .success(let response):
                 self?.transactionList = response.data.transactions
@@ -41,6 +41,6 @@ class TransactionViewModel {
             case .failure(let error):
                 self?.delegate?.show(error: error.rawValue)
             }
-        })
+        }
     }
 }

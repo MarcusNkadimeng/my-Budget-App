@@ -32,7 +32,7 @@ class AccountViewModel {
     }
     
     func fetchAccounts() {
-        repository?.getAccounts(completion: { [weak self] result in
+        repository?.getAccounts { [weak self] result in
             switch result {
             case .success(let response):
                 self?.accountList = response.data.accounts
@@ -40,6 +40,6 @@ class AccountViewModel {
             case .failure(let error):
                 self?.delegate?.show(error: error.rawValue)
             }
-        })
+        }
     }
 }
