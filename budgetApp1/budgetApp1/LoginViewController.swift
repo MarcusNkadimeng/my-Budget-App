@@ -2,21 +2,21 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    // MARK: - IBOutlets
+    // MARK: - variables
     @IBOutlet private weak var username: UITextField!
     @IBOutlet private weak var password: UITextField!
     
-    let userViewModel = UserViewModel.shared // Use shared instance
-    private var loggedInUser: User?
+    private lazy var userViewModel = UserViewModel(authenticationRepository: AuthenticationRepository())
+    
+    private var loggedInStatus = false
     
     @IBAction func loginClicked(_ sender: Any) {
         guard let username = username.text,
-              let password = password.text else {
-            return
-        }
+              let password = password.text else { return }
         
-        if let user = userViewModel.login(username: username, password: password) {
-            loggedInUser = user
+        loggedInStatus = userViewModel.login(username: username, password: password)
+        
+        if loggedInStatus == true {
             performSegue(withIdentifier: Segues.loginSegue, sender: self)
         } else {
             let alertController = UIAlertController(

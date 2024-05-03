@@ -2,20 +2,28 @@ import Foundation
 
 class UserViewModel {
     
-    // MARK: - Singleton instantiation of ViewModel
-    static let shared = UserViewModel()
+    let authenticationRepository: AuthenticationRepositoryType
     
-    private var users: [User] = []
+    private var userData = [UserEntity]()
+    let coreDataHandler = CoreDataHandler()
     
-    private init() {}
-    
-    func createUser(username: String, password: String, fullname: String, emailAddress: String) -> User {
-        let user = User(username: username, password: password, fullname: fullname, emailAddress: emailAddress)
-        users.append(user)
-        return user
+    init(authenticationRepository: AuthenticationRepositoryType) {
+        self.authenticationRepository = authenticationRepository
     }
     
-    func login(username: String, password: String) -> User? {
-        users.first { $0.username == username && $0.password == password }
+    func fetchAllUsers() {
+        do {
+            try userData = coreDataHandler.context.fetch(UserEntity.fetchRequest())
+        } catch {
+            print("Error fetching users: \(AuthError.failedTofetchUsers)")
+        }
+    }
+    
+    func createUser(username: String, password: String, fullname: String, emailAddress: String) {
+        authenticationRepository.createUser(fullName: fullname, password: password, emailAddress: emailAddress, username: username)
+    }
+    
+    func login(username: String, password: String) -> Bool {
+        authenticationRepository.loginUser(username: username, password: password)
     }
 }
