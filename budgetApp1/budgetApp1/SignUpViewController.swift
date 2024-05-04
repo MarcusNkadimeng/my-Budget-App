@@ -3,6 +3,7 @@ import UIKit
 class SignUpViewController: UIViewController {
 
     // MARK: - IBOutlets
+    
     @IBOutlet private weak var fullname: UITextField!
     @IBOutlet private weak var emailAddress: UITextField!
     @IBOutlet private weak var username: UITextField!
@@ -12,6 +13,7 @@ class SignUpViewController: UIViewController {
    
     private lazy var userViewModel = UserViewModel(authenticationRepository: AuthenticationRepository())
     
+    // MARK: - IBActions
     @IBAction func signUpClicked(_ sender: Any) {
         guard let username = username.text,
               let password = password.text,

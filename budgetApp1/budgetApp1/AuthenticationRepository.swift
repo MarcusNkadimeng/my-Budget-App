@@ -5,16 +5,11 @@
 //  Created by Lehlohonolo Nkadimeng on 2024/04/30.
 //
 
-import Foundation
 import UIKit
 
-typealias Username = (Result<String, AuthError>) -> Void
-typealias Password = (Result<String, AuthError>) -> Void
-typealias SignUpResult = (Result<Bool, AuthError>) -> Void
-
 protocol AuthenticationRepositoryType: AnyObject {
-    func fetchUsername(username: String)
-    func fetchPassword(password: String)
+    func fetchUsername(username: String, completion: @escaping (Result<[UserEntity], Error>) -> Void)
+    func fetchPassword(password: String, completion: @escaping (Result<[UserEntity], Error>) -> Void)
     func createUser(fullName: String, password: String, emailAddress: String, username: String)
     func loginUser(username: String, password: String) -> Bool
 }
@@ -29,20 +24,12 @@ class AuthenticationRepository: AuthenticationRepositoryType {
     
     // MARK: - Functions
     
-    func fetchUsername(username: String) {
-        do {
-            try userData = coreDataHandler.context.fetch(UserEntity.fetchRequest())
-        } catch {
-            print("Error fetching username: \(AuthError.failedTofetchUsername)")
-        }
+    func fetchUsername(username: String, completion: @escaping (Result<[UserEntity], Error>) -> Void) {
+        coreDataHandler.fetchUsername(username: username, completion: completion)
     }
     
-    func fetchPassword(password: String) {
-        do {
-            try userData = coreDataHandler.context.fetch(UserEntity.fetchRequest())
-        } catch {
-            print("Error fetching password: \(AuthError.failedTofetchUsername)")
-        }
+    func fetchPassword(password: String, completion: @escaping (Result<[UserEntity], Error>) -> Void) {
+        coreDataHandler.fetchPassword(password: password, completion: completion)
     }
     
     func createUser(fullName: String, password: String, emailAddress: String, username: String) {
@@ -51,21 +38,26 @@ class AuthenticationRepository: AuthenticationRepositoryType {
     
     func loginUser(username: String, password: String) -> Bool {
         if !coreDataHandler.checkIfUserHasAccount(username: username) {
-            print("User account does not exist. Please create account.")
-        }
-        fetchUsername(username: username)
-        guard let user = userData.first(where: { $0.username == username })
-        else {
-            print("Error: User data not found for username: \(username)")
-                    return false
-        }
-        
-        if user.password == password {
-            print("Login successful with user: \(username) and \(password)")
-            return true
-        } else {
-            print("Incorrect password")
             return false
         }
+        
+        var successfulLogin = false
+        
+        fetchUsername(username: username) { result in
+            switch result {
+            case .success(let users):
+                guard let user = users.first(where: { $0.username == username }) else {
+                    return
+                }
+                if user.password == password {
+                    successfulLogin = true
+                } else {
+                    successfulLogin = false
+                }
+            case .failure(let error):
+                print("Error fetching username: \(error)")
+            }
+        }
+        return successfulLogin
     }
 }

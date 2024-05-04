@@ -12,10 +12,8 @@ class UserViewModel {
     }
     
     func fetchAllUsers() {
-        do {
-            try userData = coreDataHandler.context.fetch(UserEntity.fetchRequest())
-        } catch {
-            print("Error fetching users: \(AuthError.failedTofetchUsers)")
+        func fetchAllUsers(completion: @escaping (Result<[UserEntity], Error>) -> Void) {
+            coreDataHandler.fetchAllUsers(completion: completion)
         }
     }
     

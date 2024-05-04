@@ -2,21 +2,22 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    // MARK: - variables
+    // MARK: - IBOutlets
     @IBOutlet private weak var username: UITextField!
     @IBOutlet private weak var password: UITextField!
     
+    // MARK: - Variables
     private lazy var userViewModel = UserViewModel(authenticationRepository: AuthenticationRepository())
-    
     private var loggedInStatus = false
     
+    // MARK: - IBOutlets
     @IBAction func loginClicked(_ sender: Any) {
         guard let username = username.text,
               let password = password.text else { return }
         
         loggedInStatus = userViewModel.login(username: username, password: password)
         
-        if loggedInStatus == true {
+        if loggedInStatus {
             performSegue(withIdentifier: Segues.loginSegue, sender: self)
         } else {
             let alertController = UIAlertController(
@@ -28,4 +29,5 @@ class LoginViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
         }
     }
+    
 }
