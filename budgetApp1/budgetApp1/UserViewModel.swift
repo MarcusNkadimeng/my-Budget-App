@@ -10,8 +10,13 @@ class UserViewModel {
         self.authenticationRepository = authenticationRepository
     }
     
-    func fetchAllUsers() -> Result<[UserEntity], Error> {
-        authenticationRepository.fetchAllUsers()
+    func fetchAllUsers() {
+        switch authenticationRepository.fetchAllUsers() {
+        case .success(let users):
+            userData = users
+        case .failure(let error):
+            print("Error fetching users: \(error)")
+        }
     }
     
     func createUser(username: String, password: String, fullname: String, emailAddress: String) {
