@@ -16,12 +16,9 @@ protocol AuthenticationRepositoryType: AnyObject {
 class AuthenticationRepository: AuthenticationRepositoryType {
     
     // MARK: - Variables
-    
-    private var userSignedUp = false
     private let coreDataHandler = CoreDataHandler()
     
     // MARK: - Functions
-    
     func fetchAllUsers() -> Result<[UserEntity], Error> {
         coreDataHandler.fetchAllUsers()
     }
@@ -31,15 +28,11 @@ class AuthenticationRepository: AuthenticationRepositoryType {
     }
     
     func loginUser(username: String, password: String) -> Bool {
-        var successfulLogin = false
-        
         if !coreDataHandler.checkIfUserHasAccount(username: username, password: password) {
             print("Error fetching username: \(AuthError.failedToFetchUser)")
-            successfulLogin = false
             return false
         } else {
-            successfulLogin = true
+            return true
         }
-        return successfulLogin
     }
 }
