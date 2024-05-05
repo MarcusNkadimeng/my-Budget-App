@@ -10,9 +10,7 @@ import UIKit
 
 protocol CoreDataHandlerType {
     func createUser(fullName: String, password: String, emailAddress: String, username: String) -> Void
-    func checkIfUserHasAccount(username: String) -> Bool
-    func fetchUsername(username: String, completion: @escaping (Result<[UserEntity], Error>) -> Void)
-    func fetchPassword(password: String, completion: @escaping (Result<[UserEntity], Error>) -> Void)
+    func checkIfUserHasAccount(username: String, password: String) -> Bool
     func fetchAllUsers(completion: @escaping (Result<[UserEntity], Error>) -> Void)
 
 }
@@ -32,10 +30,10 @@ class CoreDataHandler: CoreDataHandlerType {
     
     // MARK: - Public CRUD functions
     
-    func checkIfUserHasAccount(username: String) -> Bool {
+    func checkIfUserHasAccount(username: String, password: String) -> Bool {
         
         let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "username == %@", username)
+        fetchRequest.predicate = NSPredicate(format: "username == %@ AND password == %@", username, password)
         do {
             let results = try context.fetch(fetchRequest)
             if !results.isEmpty {
@@ -46,28 +44,6 @@ class CoreDataHandler: CoreDataHandlerType {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             return false
-        }
-    }
-    
-    func fetchUsername(username: String, completion: @escaping (Result<[UserEntity], Error>) -> Void) {
-        let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "username == %@", username)
-        do {
-            let results = try context.fetch(fetchRequest)
-            completion(.success(results))
-        } catch {
-            completion(.failure(AuthError.failedTofetchUsername))
-        }
-    }
-    
-    func fetchPassword(password: String, completion: @escaping (Result<[UserEntity], Error>) -> Void) {
-        let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "password == %@", password)
-        do {
-            let results = try context.fetch(fetchRequest)
-            completion(.success(results))
-        } catch {
-            completion(.failure(AuthError.failedTofetchUsername))
         }
     }
     
@@ -82,7 +58,7 @@ class CoreDataHandler: CoreDataHandlerType {
     }
     
     func createUser(fullName: String, password: String, emailAddress: String, username: String) {
-        if !checkIfUserHasAccount(username: username) {
+        if !checkIfUserHasAccount(username: username, password: password) {
             let user = UserEntity(context: context)
             user.username = username
             user.password = password

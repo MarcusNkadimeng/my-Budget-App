@@ -21,4 +21,5 @@ enum AuthError: String, Error {
     case failedTofetchUsername
     case failedTofetchPassword
     case failedTofetchUsers
+    case failedToFetchUser
 }
