@@ -11,8 +11,7 @@ import UIKit
 protocol CoreDataHandlerType {
     func createUser(fullName: String, password: String, emailAddress: String, username: String) -> Void
     func checkIfUserHasAccount(username: String, password: String) -> Bool
-    func fetchAllUsers(completion: @escaping (Result<[UserEntity], Error>) -> Void)
-
+    func fetchAllUsers() -> Result<[UserEntity], Error>
 }
 
 class CoreDataHandler: CoreDataHandlerType {
@@ -47,13 +46,13 @@ class CoreDataHandler: CoreDataHandlerType {
         }
     }
     
-    func fetchAllUsers(completion: @escaping (Result<[UserEntity], Error>) -> Void) {
+    func fetchAllUsers() -> Result<[UserEntity], Error> {
         let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         do {
             let users = try context.fetch(fetchRequest)
-            completion(.success(users))
+            return .success(users)
         } catch {
-            completion(.failure(AuthError.failedTofetchUsers))
+            return .failure(AuthError.failedTofetchUsers)
         }
     }
     
