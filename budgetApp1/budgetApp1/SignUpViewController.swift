@@ -9,8 +9,9 @@ class SignUpViewController: UIViewController {
     @IBOutlet private weak var password: UITextField!
     
     // MARK: - Variables
-    let userViewModel = UserViewModel.shared // Use shared instance
+    private lazy var userViewModel = UserViewModel(authenticationRepository: AuthenticationRepository())
     
+    // MARK: - IBActions
     @IBAction func signUpClicked(_ sender: Any) {
         guard let username = username.text,
               let password = password.text,
@@ -18,9 +19,6 @@ class SignUpViewController: UIViewController {
               let emailAddress = emailAddress.text else {
             return
         }
-        _ = userViewModel.createUser(username: username,
-                                     password: password,
-                                     fullname: fullname,
-                                     emailAddress: emailAddress)
+        userViewModel.createUser(username: username, password: password, fullname: fullname, emailAddress: emailAddress)
     }
 }
