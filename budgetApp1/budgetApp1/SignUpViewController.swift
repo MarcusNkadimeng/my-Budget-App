@@ -10,7 +10,6 @@ class SignUpViewController: UIViewController {
     
     // MARK: - Variables
     private lazy var userViewModel = UserViewModel(authenticationRepository: AuthenticationRepository())
-    
     // MARK: - IBActions
     @IBAction func signUpClicked(_ sender: Any) {
         guard let username = username.text,
@@ -19,6 +18,19 @@ class SignUpViewController: UIViewController {
               let emailAddress = emailAddress.text else {
             return
         }
-        userViewModel.createUser(username: username, password: password, fullname: fullname, emailAddress: emailAddress)
+        let isUserSignedUp = userViewModel.createUser(username: username, password: password, fullname: fullname, emailAddress: emailAddress)
+        
+        if isUserSignedUp {
+            performSegue(withIdentifier: Segues.signUpSegue, sender: self)
+        } else {
+            let alertController = UIAlertController(
+                title: UIComponents.userAlertTitleThree,
+                message: UIComponents.userAlertMessageThree,
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(title: UIComponents.uiAlertAction, style: .default))
+            present(alertController, animated: true, completion: nil)
+        }
+
     }
 }

@@ -9,9 +9,8 @@ import CoreData
 import UIKit
 
 protocol CoreDataHandlerType {
-    func createUser(fullName: String, password: String, emailAddress: String, username: String) -> Void
+    func createUser(fullName: String, password: String, emailAddress: String, username: String) -> Bool
     func checkIfUserHasAccount(username: String, password: String) -> Bool
-    func fetchAllUsers() -> Result<[UserEntity], Error>
 }
 
 class CoreDataHandler: CoreDataHandlerType {
@@ -46,17 +45,7 @@ class CoreDataHandler: CoreDataHandlerType {
         }
     }
     
-    func fetchAllUsers() -> Result<[UserEntity], Error> {
-        let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
-        do {
-            let users = try context.fetch(fetchRequest)
-            return .success(users)
-        } catch {
-            return .failure(AuthError.failedTofetchUsers)
-        }
-    }
-    
-    func createUser(fullName: String, password: String, emailAddress: String, username: String) {
+    func createUser(fullName: String, password: String, emailAddress: String, username: String) -> Bool {
         if !checkIfUserHasAccount(username: username, password: password) {
             let user = UserEntity(context: context)
             user.username = username
@@ -64,9 +53,9 @@ class CoreDataHandler: CoreDataHandlerType {
             user.fullName = fullName
             user.emailAddress = emailAddress
             saveContext()
-        } else {
-            print("User with \(username) already exists")
+            return true
         }
+        return false
     }
     
     // MARK: - Core Data Saving support
