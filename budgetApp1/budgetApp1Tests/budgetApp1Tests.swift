@@ -72,7 +72,6 @@ class MockAuthenticationRepository: AuthenticationRepositoryType {
         createdPassword = password
         createdFullName = fullName
         createdEmailAddress = emailAddress
-        createUserCalled = true
         if createUserCalled {
             return createUserCalled
         }
@@ -82,10 +81,7 @@ class MockAuthenticationRepository: AuthenticationRepositoryType {
     func loginUser(username: String, password: String) -> Bool {
         let expectedUsername = "testUser"
         let expectedPassword = "testPassword"
-        if username == expectedUsername && password == expectedPassword {
-            return true
-        }
-        return false
+        return username == expectedUsername && password == expectedPassword
     }
 }
 
