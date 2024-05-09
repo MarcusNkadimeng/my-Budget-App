@@ -54,9 +54,8 @@ class CoreDataHandler: CoreDataHandlerType {
             user.emailAddress = emailAddress
             saveContext()
             return true
-        } else {
-            return false
         }
+        return false
     }
     
     // MARK: - Core Data Saving support
