@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ukd-FR-JoB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -89,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
-        <!--Transactions-->
+        <!--Tracker-->
         <scene sceneID="34A-9F-ha0">
             <objects>
-                <viewControllerPlaceholder storyboardName="Transactions" id="yer-Sc-QV2" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Tracker" id="yer-Sc-QV2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Transactions" image="bitcoinsign.square.fill" catalog="system" id="iR7-k0-Mvv">
                         <color key="badgeColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>

@@ -15,8 +15,8 @@ class TransactionTableViewCell: UITableViewCell {
     
     // MARK: - functions
     func populateWith(transaction: Transaction) {
-        transactionNameLabel.text = transaction.categoryName
-        transactionAmountLabel.text = String(Double(transaction.amount) / 1000.00)
+        transactionNameLabel.text = transaction.memo
+        transactionAmountLabel.text = String(format: "%.2f", Double(transaction.amount) / 1000.00)
     }
     
     override func awakeFromNib() {

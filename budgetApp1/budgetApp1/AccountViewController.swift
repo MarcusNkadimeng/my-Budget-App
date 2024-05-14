@@ -93,6 +93,23 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         testView.backgroundColor = UIColor.clear
         cell.backgroundView = testView
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectedAccount = viewModel.account(atIndex: indexPath.section) else {
+            return
+        }
+        performSegue(withIdentifier: Segues.accountTransactionsSegue, sender: selectedAccount)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.accountTransactionsSegue,
+            let selectedIndexPath = tableView.indexPathForSelectedRow,
+            let navigationController = segue.destination as? UINavigationController,
+            let accountTransactionsVC = navigationController.topViewController as? AccountTransactionsViewController {
+            let selectedAccount = viewModel.account(atIndex: selectedIndexPath.section)
+            accountTransactionsVC.selectedAccount = selectedAccount
+        }
+    }
 }
 
 // MARK: - ViewModel Delegate

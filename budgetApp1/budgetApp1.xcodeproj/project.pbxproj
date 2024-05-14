@@ -15,6 +15,9 @@
 		4C37FB572BE3C3BD0060ADB6 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB562BE3C3BD0060ADB6 /* CoreDataHandler.swift */; };
 		4C37FB5A2BE4F19E0060ADB6 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB592BE4F19E0060ADB6 /* APIHandler.swift */; };
 		4C3D32102BE8D6EA00D7B4D3 /* budgetApp1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D320F2BE8D6EA00D7B4D3 /* budgetApp1Tests.swift */; };
+		4C3D32182BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D32172BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift */; };
+		4C3D321A2BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D32192BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift */; };
+		4C3D321C2BF10A4900D7B4D3 /* AccountTransactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3D321B2BF10A4900D7B4D3 /* AccountTransactions.storyboard */; };
 		4C67D8162BBD54880060BC06 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C67D8152BBD54880060BC06 /* Accounts.storyboard */; };
 		4C67D8182BBD80AB0060BC06 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */; };
 		4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */; };
@@ -31,9 +34,9 @@
 		4CC71A4D2BB2C65C009E2B53 /* Service Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A4C2BB2C65C009E2B53 /* Service Errors.swift */; };
 		4CC71A4F2BB2D19E009E2B53 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */; };
 		4CDD803E2BCB3BD200BF1947 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */; };
-		4CDD80402BCB40B600BF1947 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD803F2BCB40B600BF1947 /* TransactionViewModel.swift */; };
-		4CDD80442BCBF1BE00BF1947 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD80432BCBF1BE00BF1947 /* TransactionViewController.swift */; };
-		4CDD80462BCBF46000BF1947 /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD80452BCBF46000BF1947 /* Transactions.storyboard */; };
+		4CDD80402BCB40B600BF1947 /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD803F2BCB40B600BF1947 /* TrackerViewModel.swift */; };
+		4CDD80442BCBF1BE00BF1947 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD80432BCBF1BE00BF1947 /* TrackerViewController.swift */; };
+		4CDD80462BCBF46000BF1947 /* Tracker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD80452BCBF46000BF1947 /* Tracker.storyboard */; };
 		4CDD80492BCC1EFA00BF1947 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD80472BCC1EFA00BF1947 /* TransactionTableViewCell.swift */; };
 		4CDD804A2BCC1EFA00BF1947 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD80482BCC1EFA00BF1947 /* TransactionTableViewCell.xib */; };
 		4CDD804E2BCDA1FE00BF1947 /* AccountViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD804C2BCDA1FE00BF1947 /* AccountViewCell.xib */; };
@@ -65,6 +68,9 @@
 		4C37FB592BE4F19E0060ADB6 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		4C3D320D2BE8D6EA00D7B4D3 /* budgetApp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = budgetApp1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3D320F2BE8D6EA00D7B4D3 /* budgetApp1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetApp1Tests.swift; sourceTree = "<group>"; };
+		4C3D32172BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTransactionsViewController.swift; sourceTree = "<group>"; };
+		4C3D32192BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTransactionsViewModel.swift; sourceTree = "<group>"; };
+		4C3D321B2BF10A4900D7B4D3 /* AccountTransactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountTransactions.storyboard; sourceTree = "<group>"; };
 		4C67D8152BBD54880060BC06 /* Accounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
 		4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -83,9 +89,9 @@
 		4CC71A4C2BB2C65C009E2B53 /* Service Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service Errors.swift"; sourceTree = "<group>"; };
 		4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 		4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
-		4CDD803F2BCB40B600BF1947 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
-		4CDD80432BCBF1BE00BF1947 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
-		4CDD80452BCBF46000BF1947 /* Transactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
+		4CDD803F2BCB40B600BF1947 /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
+		4CDD80432BCBF1BE00BF1947 /* TrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
+		4CDD80452BCBF46000BF1947 /* Tracker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tracker.storyboard; sourceTree = "<group>"; };
 		4CDD80472BCC1EFA00BF1947 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		4CDD80482BCC1EFA00BF1947 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		4CDD804C2BCDA1FE00BF1947 /* AccountViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewCell.xib; sourceTree = "<group>"; };
@@ -210,6 +216,16 @@
 			path = budgetApp1Tests;
 			sourceTree = "<group>";
 		};
+		4C3D32162BF109DD00D7B4D3 /* AccountTransactions */ = {
+			isa = PBXGroup;
+			children = (
+				4C3D32172BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift */,
+				4C3D32192BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift */,
+				4C3D321B2BF10A4900D7B4D3 /* AccountTransactions.storyboard */,
+			);
+			name = AccountTransactions;
+			sourceTree = "<group>";
+		};
 		4C67D81B2BBF2C9C0060BC06 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +265,7 @@
 				4CDD80552BCFB9D000BF1947 /* Alerts */,
 				4C398F752BC3D6AA004FA950 /* Service Layer */,
 				4CDD804F2BCFAB1300BF1947 /* Authentication */,
+				4C3D32162BF109DD00D7B4D3 /* AccountTransactions */,
 				4CDD803C2BCB3B8B00BF1947 /* Transactions */,
 				4C398F822BC46D53004FA950 /* Repository */,
 				4C398F802BC3D828004FA950 /* Budget */,
@@ -267,9 +284,9 @@
 			isa = PBXGroup;
 			children = (
 				4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */,
-				4CDD803F2BCB40B600BF1947 /* TransactionViewModel.swift */,
-				4CDD80432BCBF1BE00BF1947 /* TransactionViewController.swift */,
-				4CDD80452BCBF46000BF1947 /* Transactions.storyboard */,
+				4CDD803F2BCB40B600BF1947 /* TrackerViewModel.swift */,
+				4CDD80432BCBF1BE00BF1947 /* TrackerViewController.swift */,
+				4CDD80452BCBF46000BF1947 /* Tracker.storyboard */,
 			);
 			name = Transactions;
 			sourceTree = "<group>";
@@ -388,12 +405,13 @@
 				4CC71A3A2BB2ACFE009E2B53 /* LaunchScreen.storyboard in Resources */,
 				4CC71A372BB2ACFE009E2B53 /* Assets.xcassets in Resources */,
 				4C67D8162BBD54880060BC06 /* Accounts.storyboard in Resources */,
+				4C3D321C2BF10A4900D7B4D3 /* AccountTransactions.storyboard in Resources */,
 				4CC71A352BB2ACFB009E2B53 /* BudgetOverview.storyboard in Resources */,
 				4CDD804A2BCC1EFA00BF1947 /* TransactionTableViewCell.xib in Resources */,
 				4CDD804E2BCDA1FE00BF1947 /* AccountViewCell.xib in Resources */,
 				4CDD805B2BCFBAA100BF1947 /* SignUpScreen.storyboard in Resources */,
 				4CDD80512BCFAB3B00BF1947 /* LoginScreen.storyboard in Resources */,
-				4CDD80462BCBF46000BF1947 /* Transactions.storyboard in Resources */,
+				4CDD80462BCBF46000BF1947 /* Tracker.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CDD80402BCB40B600BF1947 /* TransactionViewModel.swift in Sources */,
+				4CDD80402BCB40B600BF1947 /* TrackerViewModel.swift in Sources */,
 				4C37FB2A2BD77A3A0060ADB6 /* UserViewModel.swift in Sources */,
 				4CDD803E2BCB3BD200BF1947 /* TransactionModel.swift in Sources */,
 				4CDD80492BCC1EFA00BF1947 /* TransactionTableViewCell.swift in Sources */,
@@ -444,6 +462,7 @@
 				4CDD80592BCFBA6100BF1947 /* SignUpViewController.swift in Sources */,
 				4C37FB2D2BDFF1990060ADB6 /* userModel.xcdatamodeld in Sources */,
 				4C37FB542BE0C7700060ADB6 /* AuthenticationRepository.swift in Sources */,
+				4C3D32182BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift in Sources */,
 				4CC71A4D2BB2C65C009E2B53 /* Service Errors.swift in Sources */,
 				4C67D8182BBD80AB0060BC06 /* AccountViewModel.swift in Sources */,
 				4C37FB5A2BE4F19E0060ADB6 /* APIHandler.swift in Sources */,
@@ -451,10 +470,11 @@
 				4CC71A2E2BB2ACFB009E2B53 /* AppDelegate.swift in Sources */,
 				4C37FB282BD6B8560060ADB6 /* Constants.swift in Sources */,
 				4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */,
-				4CDD80442BCBF1BE00BF1947 /* TransactionViewController.swift in Sources */,
+				4CDD80442BCBF1BE00BF1947 /* TrackerViewController.swift in Sources */,
 				4CC71A4A2BB2C532009E2B53 /* Repository.swift in Sources */,
 				4CDD80532BCFB2B900BF1947 /* LoginViewController.swift in Sources */,
 				4CDD805D2BCFBBDD00BF1947 /* UserModel.swift in Sources */,
+				4C3D321A2BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift in Sources */,
 				4C37FB242BD43D200060ADB6 /* UISpecs.swift in Sources */,
 				4CC71A302BB2ACFB009E2B53 /* SceneDelegate.swift in Sources */,
 				4C67D81F2BBF2D170060BC06 /* AccountViewCell.swift in Sources */,

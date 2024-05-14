@@ -14,6 +14,7 @@ struct URLConstants {
     static let budgetURL = baseURL + "budgets" + accessToken
     static let accountsURL = baseURL + "budgets/2b0c25e3-0d5e-411d-a019-2522faa22c2b/accounts" + accessToken
     static let transactionsURL = baseURL + "budgets/2b0c25e3-0d5e-411d-a019-2522faa22c2b/accounts/0515719a-f641-422b-8341-7073d5358dbe/transactions" + accessToken
+    static let accountTransactionURL = baseURL + "budgets/2b0c25e3-0d5e-411d-a019-2522faa22c2b/accounts/"
 }
 
 // MARK: - nib identifiers
@@ -33,10 +34,12 @@ struct UIComponents {
     static let userAlertMessageTwo = "Enter user information"
     static let uiAlertAction = "OK"
     static let uiALertComment = "Default action"
+    static let accountFatalError = "Selected account is nil"
 }
 
 // MARK: - Segues
 struct Segues {
     static let signUpSegue = "signUpSegue"
     static let loginSegue = "loginSegue"
+    static let accountTransactionsSegue = "ShowAccountTransactions"
 }
