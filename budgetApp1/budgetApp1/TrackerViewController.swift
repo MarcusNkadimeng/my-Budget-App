@@ -13,7 +13,7 @@ class TrackerViewController: UIViewController {
     private let uiSpecs = UISpecs()
     
     // MARK: - variables
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - functions
     

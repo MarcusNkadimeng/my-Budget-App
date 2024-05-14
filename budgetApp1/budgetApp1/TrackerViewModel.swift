@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol TrackerViewModelDelegate: AnyObject {
+protocol TrackerViewModelProtocol: AnyObject {
     func reloadView()
     func show(error: String)
 }
@@ -17,10 +17,10 @@ class TrackerViewModel {
     
     // MARK: - Variables
     private var repository: TransactionRepositoryType?
-    private weak var delegate: TrackerViewModelDelegate?
+    private weak var delegate: TrackerViewModelProtocol?
     private var transactionList: [Transaction]?
 
-    init(repository: TransactionRepositoryType, delegate: TrackerViewModelDelegate) {
+    init(repository: TransactionRepositoryType, delegate: TrackerViewModelProtocol) {
         self.repository = repository
         self.delegate = delegate
         fetchTransactions()

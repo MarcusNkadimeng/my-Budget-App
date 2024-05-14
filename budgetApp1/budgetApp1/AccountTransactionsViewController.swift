@@ -13,26 +13,30 @@ class AccountTransactionsViewController: UIViewController {
     private let uiSpecs = UISpecs()
     
     // MARK: - Variables
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var accountNameLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var segmentedControl: UISegmentedControl!
+    @IBOutlet private weak var accountNameLabel: UILabel!
+    private lazy var viewModel = AccountTransactionsViewModel(repository: TransactionRepository(), delegate: self)
     var selectedAccount: Account?
-    
-    private lazy var viewModel: AccountTransactionsViewModel = {
-        guard let selectedAccount = selectedAccount else {
-            fatalError(UIComponents.accountFatalError)
-        }
-        let repository = TransactionRepository()
-        return AccountTransactionsViewModel(repository: repository, delegate: self, accountID: selectedAccount.id)
-    }()
 
     // MARK: - functions
+    @IBAction func segmentedChange(_ sender: AnyObject) {
+        viewModel.filterTransactions(segmentIndex: sender.selectedSegmentIndex)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.fetchTransactionsForAccount(accountID: selectedAccount?.id ?? "")
+        setupTableView()
+        setUpSegmentedControl()
+        setUpAccountDetailsLayout()
+    }
+    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.TransactionViewCellIdentifier)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 1.0, right: 0)
-        viewModel.fetchTransactionsForAccount(accountID: selectedAccount?.id ?? "")
     }
     
     private func setUpSegmentedControl() {
@@ -43,17 +47,6 @@ class AccountTransactionsViewController: UIViewController {
     private func setUpAccountDetailsLayout() {
         accountNameLabel.text = selectedAccount?.name
         accountNameLabel.textColor = uiSpecs.primaryColourOne
-    }
-    
-    @IBAction func segmentedChange(_ sender: AnyObject) {
-        viewModel.filterTransactions(segmentIndex: sender.selectedSegmentIndex)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupTableView()
-        setUpSegmentedControl()
-        setUpAccountDetailsLayout()
     }
 }
 

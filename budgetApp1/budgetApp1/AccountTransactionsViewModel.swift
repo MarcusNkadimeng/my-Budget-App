@@ -19,13 +19,12 @@ class AccountTransactionsViewModel {
     private var repository: TransactionRepositoryType?
     private weak var delegate: AccountsTransactionViewModelDelegate?
     private var transactionList: [Transaction]?
-    internal var expenses: [Transaction]?
-    internal var income: [Transaction]?
+    var expenses: [Transaction]?
+    var income: [Transaction]?
     
-    init(repository: TransactionRepositoryType, delegate: AccountsTransactionViewModelDelegate, accountID: String) {
+    init(repository: TransactionRepositoryType, delegate: AccountsTransactionViewModelDelegate) {
         self.repository = repository
         self.delegate = delegate
-        fetchTransactionsForAccount(accountID: accountID)
     }
     
     // MARK: - Functions
