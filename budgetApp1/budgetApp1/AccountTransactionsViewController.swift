@@ -52,6 +52,10 @@ class AccountTransactionsViewController: UIViewController {
 
 // MARK: - TableView Delegate
 extension AccountTransactionsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60.0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentedControl.selectedSegmentIndex == 0 {
             viewModel.expenses?.count ?? 0

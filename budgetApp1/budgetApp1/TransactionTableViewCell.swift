@@ -9,6 +9,9 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
+    // MARK: - UISpecs dependency
+    private let uiSpecs = UISpecs()
+    
     // MARK: - IBOutlets
     @IBOutlet private weak var transactionNameLabel: UILabel!
     @IBOutlet private weak var transactionAmountLabel: UILabel!
@@ -21,6 +24,24 @@ class TransactionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let separatorHeight: CGFloat = 3.0
+        
+        for subview in self.subviews {
+            if subview != contentView && subview.frame.height < 2 {
+                subview.removeFromSuperview()
+            }
+        }
+        
+        let separatorView = UIView(frame: CGRect(x: 16, y: self.bounds.height - separatorHeight, width: self.bounds.width - 32, height: separatorHeight))
+        separatorView.backgroundColor = uiSpecs.primaryColourOne
+        self.addSubview(separatorView)
+        self.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
 
     static func nib() -> UINib {

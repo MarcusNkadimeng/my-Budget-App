@@ -17,8 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sbv-MP-2hN">
-                                <rect key="frame" x="0.0" y="59" width="393" height="561"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tYb-1R-QFx">
+                                <rect key="frame" x="0.0" y="69" width="393" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNz-fm-iDH">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="28"/>
+                                        <color key="textColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sbv-MP-2hN">
+                                <rect key="frame" x="0.0" y="134" width="393" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountViewCell" rowHeight="130" id="9Tg-CS-ucQ" customClass="AccountCell" customModule="budgetApp1" customModuleProvider="target">
@@ -63,10 +74,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sbv-MP-2hN" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="2yR-S8-pdy"/>
-                            <constraint firstItem="sbv-MP-2hN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="FRw-c6-MNW"/>
-                            <constraint firstItem="sbv-MP-2hN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="aIJ-hT-Mab"/>
-                            <constraint firstItem="sbv-MP-2hN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pUb-t4-6XP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tYb-1R-QFx" secondAttribute="trailing" id="7mM-Nv-CPq"/>
+                            <constraint firstItem="sbv-MP-2hN" firstAttribute="top" secondItem="tYb-1R-QFx" secondAttribute="bottom" constant="15" id="86B-x2-xHW"/>
+                            <constraint firstItem="sbv-MP-2hN" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="Njx-9S-jb4"/>
+                            <constraint firstItem="tYb-1R-QFx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Y6P-I4-Xes"/>
+                            <constraint firstItem="sbv-MP-2hN" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.773474" id="gjg-zK-o4x"/>
+                            <constraint firstItem="sbv-MP-2hN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hAV-Br-Iya"/>
+                            <constraint firstItem="sbv-MP-2hN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="yV1-Wu-C6c"/>
+                            <constraint firstItem="tYb-1R-QFx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="zDt-mL-Hch"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Accounts" image="baseball.diamond.bases" catalog="system" id="uzY-5v-Mto">
@@ -74,6 +89,7 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="accountHeaderLabel" destination="tNz-fm-iDH" id="FtX-rL-G7y"/>
                         <outlet property="tableView" destination="sbv-MP-2hN" id="xda-OB-fI6"/>
                         <segue destination="Afz-ey-MVO" kind="show" identifier="ShowAccountTransactions" id="Dpt-o6-sef"/>
                     </connections>

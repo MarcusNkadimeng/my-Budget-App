@@ -18,6 +18,8 @@
 		4C3D32182BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D32172BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift */; };
 		4C3D321A2BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D32192BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift */; };
 		4C3D321C2BF10A4900D7B4D3 /* AccountTransactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3D321B2BF10A4900D7B4D3 /* AccountTransactions.storyboard */; };
+		4C3D321E2BF43EEB00D7B4D3 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D321D2BF43EEB00D7B4D3 /* BudgetRepository.swift */; };
+		4C3D32202BF43FBF00D7B4D3 /* TransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D321F2BF43FBF00D7B4D3 /* TransactionsRepository.swift */; };
 		4C67D8162BBD54880060BC06 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C67D8152BBD54880060BC06 /* Accounts.storyboard */; };
 		4C67D8182BBD80AB0060BC06 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */; };
 		4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */; };
@@ -30,7 +32,7 @@
 		4CC71A3A2BB2ACFE009E2B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC71A382BB2ACFE009E2B53 /* LaunchScreen.storyboard */; };
 		4CC71A442BB2ADD0009E2B53 /* BudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A432BB2ADD0009E2B53 /* BudgetModel.swift */; };
 		4CC71A482BB2B8F8009E2B53 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A472BB2B8F8009E2B53 /* AccountModel.swift */; };
-		4CC71A4A2BB2C532009E2B53 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A492BB2C532009E2B53 /* Repository.swift */; };
+		4CC71A4A2BB2C532009E2B53 /* AccountsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A492BB2C532009E2B53 /* AccountsRepository.swift */; };
 		4CC71A4D2BB2C65C009E2B53 /* Service Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A4C2BB2C65C009E2B53 /* Service Errors.swift */; };
 		4CC71A4F2BB2D19E009E2B53 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */; };
 		4CDD803E2BCB3BD200BF1947 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */; };
@@ -71,6 +73,8 @@
 		4C3D32172BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTransactionsViewController.swift; sourceTree = "<group>"; };
 		4C3D32192BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTransactionsViewModel.swift; sourceTree = "<group>"; };
 		4C3D321B2BF10A4900D7B4D3 /* AccountTransactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountTransactions.storyboard; sourceTree = "<group>"; };
+		4C3D321D2BF43EEB00D7B4D3 /* BudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
+		4C3D321F2BF43FBF00D7B4D3 /* TransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRepository.swift; sourceTree = "<group>"; };
 		4C67D8152BBD54880060BC06 /* Accounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
 		4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +89,7 @@
 		4CC71A3B2BB2ACFE009E2B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CC71A432BB2ADD0009E2B53 /* BudgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetModel.swift; sourceTree = "<group>"; };
 		4CC71A472BB2B8F8009E2B53 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
-		4CC71A492BB2C532009E2B53 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		4CC71A492BB2C532009E2B53 /* AccountsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRepository.swift; sourceTree = "<group>"; };
 		4CC71A4C2BB2C65C009E2B53 /* Service Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service Errors.swift"; sourceTree = "<group>"; };
 		4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 		4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
@@ -165,7 +169,8 @@
 		4C398F762BC3D6DD004FA950 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				4C398F782BC3D6F8004FA950 /* AccountRepository */,
+				4CC71A472BB2B8F8009E2B53 /* AccountModel.swift */,
+				4CC71A492BB2C532009E2B53 /* AccountsRepository.swift */,
 				4C67D8192BBD8AD10060BC06 /* AccountViewController.swift */,
 				4C67D8172BBD80AB0060BC06 /* AccountViewModel.swift */,
 				4C67D8152BBD54880060BC06 /* Accounts.storyboard */,
@@ -173,37 +178,21 @@
 			name = Account;
 			sourceTree = "<group>";
 		};
-		4C398F782BC3D6F8004FA950 /* AccountRepository */ = {
-			isa = PBXGroup;
-			children = (
-				4CC71A472BB2B8F8009E2B53 /* AccountModel.swift */,
-			);
-			path = AccountRepository;
-			sourceTree = "<group>";
-		};
 		4C398F802BC3D828004FA950 /* Budget */ = {
 			isa = PBXGroup;
 			children = (
-				4C398F812BC3D84A004FA950 /* BudgetRepository */,
-				4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */,
+				4CC71A432BB2ADD0009E2B53 /* BudgetModel.swift */,
+				4C3D321D2BF43EEB00D7B4D3 /* BudgetRepository.swift */,
 				4CC71A312BB2ACFB009E2B53 /* BudgetViewController.swift */,
+				4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */,
 				4CC71A332BB2ACFB009E2B53 /* BudgetOverview.storyboard */,
 			);
 			name = Budget;
 			sourceTree = "<group>";
 		};
-		4C398F812BC3D84A004FA950 /* BudgetRepository */ = {
-			isa = PBXGroup;
-			children = (
-				4CC71A432BB2ADD0009E2B53 /* BudgetModel.swift */,
-			);
-			name = BudgetRepository;
-			sourceTree = "<group>";
-		};
 		4C398F822BC46D53004FA950 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				4CC71A492BB2C532009E2B53 /* Repository.swift */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -219,6 +208,8 @@
 		4C3D32162BF109DD00D7B4D3 /* AccountTransactions */ = {
 			isa = PBXGroup;
 			children = (
+				4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */,
+				4C3D321F2BF43FBF00D7B4D3 /* TransactionsRepository.swift */,
 				4C3D32172BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift */,
 				4C3D32192BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift */,
 				4C3D321B2BF10A4900D7B4D3 /* AccountTransactions.storyboard */,
@@ -266,7 +257,7 @@
 				4C398F752BC3D6AA004FA950 /* Service Layer */,
 				4CDD804F2BCFAB1300BF1947 /* Authentication */,
 				4C3D32162BF109DD00D7B4D3 /* AccountTransactions */,
-				4CDD803C2BCB3B8B00BF1947 /* Transactions */,
+				4CDD803C2BCB3B8B00BF1947 /* Tracker */,
 				4C398F822BC46D53004FA950 /* Repository */,
 				4C398F802BC3D828004FA950 /* Budget */,
 				4C398F762BC3D6DD004FA950 /* Account */,
@@ -280,15 +271,14 @@
 			path = budgetApp1;
 			sourceTree = "<group>";
 		};
-		4CDD803C2BCB3B8B00BF1947 /* Transactions */ = {
+		4CDD803C2BCB3B8B00BF1947 /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */,
 				4CDD803F2BCB40B600BF1947 /* TrackerViewModel.swift */,
 				4CDD80432BCBF1BE00BF1947 /* TrackerViewController.swift */,
 				4CDD80452BCBF46000BF1947 /* Tracker.storyboard */,
 			);
-			name = Transactions;
+			name = Tracker;
 			sourceTree = "<group>";
 		};
 		4CDD804F2BCFAB1300BF1947 /* Authentication */ = {
@@ -471,10 +461,12 @@
 				4C37FB282BD6B8560060ADB6 /* Constants.swift in Sources */,
 				4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */,
 				4CDD80442BCBF1BE00BF1947 /* TrackerViewController.swift in Sources */,
-				4CC71A4A2BB2C532009E2B53 /* Repository.swift in Sources */,
+				4CC71A4A2BB2C532009E2B53 /* AccountsRepository.swift in Sources */,
 				4CDD80532BCFB2B900BF1947 /* LoginViewController.swift in Sources */,
+				4C3D321E2BF43EEB00D7B4D3 /* BudgetRepository.swift in Sources */,
 				4CDD805D2BCFBBDD00BF1947 /* UserModel.swift in Sources */,
 				4C3D321A2BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift in Sources */,
+				4C3D32202BF43FBF00D7B4D3 /* TransactionsRepository.swift in Sources */,
 				4C37FB242BD43D200060ADB6 /* UISpecs.swift in Sources */,
 				4CC71A302BB2ACFB009E2B53 /* SceneDelegate.swift in Sources */,
 				4C67D81F2BBF2D170060BC06 /* AccountViewCell.swift in Sources */,

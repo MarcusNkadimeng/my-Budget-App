@@ -26,7 +26,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tracker" image="bitcoinsign.square.fill" catalog="system" id="rXB-8M-v2a">
+                    <tabBarItem key="tabBarItem" title="Tracker" image="slider.vertical.3" catalog="system" id="rXB-8M-v2a">
                         <color key="badgeColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -37,7 +37,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bitcoinsign.square.fill" catalog="system" width="128" height="114"/>
+        <image name="slider.vertical.3" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

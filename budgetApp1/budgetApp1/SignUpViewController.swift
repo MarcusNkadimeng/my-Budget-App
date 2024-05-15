@@ -10,6 +10,7 @@ class SignUpViewController: UIViewController {
     
     // MARK: - Variables
     private lazy var userViewModel = UserViewModel(authenticationRepository: AuthenticationRepository())
+    
     // MARK: - IBActions
     @IBAction func signUpClicked(_ sender: Any) {
         guard let username = username.text,

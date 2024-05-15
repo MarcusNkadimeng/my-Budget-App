@@ -27,13 +27,33 @@ class AccountTransactionsViewModel {
         self.delegate = delegate
     }
     
+    var transactionListCount: Int {
+        transactionList?.count ?? 0
+    }
+    
     // MARK: - Functions
+    
+    func transaction(atIndex: Int) -> Transaction? {
+        transactionList?[atIndex]
+    }
+    
     func fetchTransactionsForAccount(accountID: String) {
         repository?.fetchTransactionsForAccount(accountID: accountID) { [weak self] result in
             switch result {
             case .success(let transactionData):
                 self?.transactionList = transactionData.data.transactions
                 self?.filterTransactions(segmentIndex: 0)
+            case .failure(let error):
+                self?.delegate?.show(error: error.rawValue)
+            }
+        }
+    }
+    
+    func fetchTransactions() {
+        repository?.getTransactions {   [weak self] result in
+            switch result {
+            case .success(let transactionData):
+                self?.transactionList = Array(transactionData.data.transactions.prefix(5))
             case .failure(let error):
                 self?.delegate?.show(error: error.rawValue)
             }
