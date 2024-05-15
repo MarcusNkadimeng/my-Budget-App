@@ -70,9 +70,9 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.accountTransactionsSegue,
            let selectedIndexPath = tableView.indexPathForSelectedRow,
-           let accountTransactionsVC = segue.destination as? AccountTransactionsViewController {
+           let accountTransactionsViewController = segue.destination as? AccountTransactionsViewController {
             let selectedAccount = viewModel.account(atIndex: selectedIndexPath.row)
-            accountTransactionsVC.selectedAccount = selectedAccount
+            accountTransactionsViewController.selectedAccount = selectedAccount
         }
     }
 }

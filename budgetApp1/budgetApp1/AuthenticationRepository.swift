@@ -24,7 +24,6 @@ class AuthenticationRepository: AuthenticationRepositoryType {
     
     func loginUser(username: String, password: String) -> Bool {
         if !coreDataHandler.checkIfUserHasAccount(username: username, password: password) {
-            print("Error fetching username: \(AuthError.failedToFetchUser)")
             return false
         } else {
             return true
