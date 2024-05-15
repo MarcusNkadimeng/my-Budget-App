@@ -4,8 +4,6 @@ class UserViewModel {
     
     let authenticationRepository: AuthenticationRepositoryType
     
-    var userData = [UserEntity]()
-    
     init(authenticationRepository: AuthenticationRepositoryType) {
         self.authenticationRepository = authenticationRepository
     }

@@ -46,7 +46,7 @@
                                             <segment title="Expenses"/>
                                             <segment title="Income"/>
                                         </segments>
-                                        <color key="selectedSegmentTintColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="selectedSegmentTintColor" red="0.38431376220000002" green="0.27450981740000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="segmentedChange:" destination="Y6W-OH-hqX" eventType="valueChanged" id="p6K-uj-66S"/>
                                         </connections>

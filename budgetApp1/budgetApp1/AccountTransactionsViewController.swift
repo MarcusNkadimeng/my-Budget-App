@@ -20,7 +20,7 @@ class AccountTransactionsViewController: UIViewController {
     var selectedAccount: Account?
 
     // MARK: - functions
-    @IBAction func segmentedChange(_ sender: AnyObject) {
+    @IBAction private func segmentedChange(_ sender: AnyObject) {
         viewModel.filterTransactions(segmentIndex: sender.selectedSegmentIndex)
     }
     
@@ -40,7 +40,7 @@ class AccountTransactionsViewController: UIViewController {
     }
     
     private func setUpSegmentedControl() {
-        segmentedControl.layer.borderColor = uiSpecs.primaryColourOne.cgColor
+        segmentedControl.layer.borderColor = uiSpecs.accentColour.cgColor
         segmentedControl.layer.borderWidth = 2.0
     }
     
@@ -85,6 +85,6 @@ extension AccountTransactionsViewController: AccountsTransactionViewModelDelegat
     }
     
     func show(error: String) {
-        
+        print("Warning: \(AuthError.failedTofetchTransactions)")
     }
 }

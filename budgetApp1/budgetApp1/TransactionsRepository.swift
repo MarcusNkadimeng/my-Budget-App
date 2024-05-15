@@ -11,13 +11,13 @@ typealias TransactionResult = (Result<TransactionData, APIError>) -> Void
 
 // MARK: - Repository Type
 protocol TransactionRepositoryType: AnyObject {
-    func getTransactions(completion: @escaping(TransactionResult))
+    func fetchTransactions(completion: @escaping(TransactionResult))
     func fetchTransactionsForAccount(accountID: String, completion: @escaping(TransactionResult))
 }
 
 // MARK: - Repository
 class TransactionRepository: TransactionRepositoryType {
-    func getTransactions(completion: @escaping (TransactionResult)) {
+    func fetchTransactions(completion: @escaping (TransactionResult)) {
         APIHandler.request(endpoint: URLConstants.transactionsURL, method: .GET, completion: completion)
     }
     

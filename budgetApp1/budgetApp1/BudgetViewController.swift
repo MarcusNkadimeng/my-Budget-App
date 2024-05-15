@@ -16,9 +16,9 @@ class BudgetViewController: UIViewController {
     @IBOutlet private weak var budgetNameLabel: UILabel!
     @IBOutlet private weak var endDateLabel: UILabel!
     @IBOutlet private weak var startDateLabel: UILabel!
-    @IBOutlet weak var toDateLabel: UILabel!
-    @IBOutlet weak var recentTransactionsLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var toDateLabel: UILabel!
+    @IBOutlet private weak var recentTransactionsLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
     
     private lazy var budgetViewModel = BudgetViewModel(repository: BudgetRepository(), delegate: self)
     private lazy var transactionViewModel = AccountTransactionsViewModel(repository: TransactionRepository(), delegate: self)
@@ -36,7 +36,7 @@ class BudgetViewController: UIViewController {
         startDateLabel.text = budget.firstMonth
         endDateLabel.text = budget.lastMonth
         toDateLabel.text = "–"
-        recentTransactionsLabel.text = "Most recent transactions"
+        recentTransactionsLabel.text = UIComponents.recentTransactionLabel
     }
     
     private func setupTableView() {
@@ -44,7 +44,7 @@ class BudgetViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.TransactionViewCellIdentifier)
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = uiSpecs.primaryColourOne
+        tableView.separatorColor = uiSpecs.tetiaryColour
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
@@ -72,10 +72,10 @@ extension BudgetViewController: ViewModelDelegate, AccountsTransactionViewModelD
     func reloadView() {
         guard let budget = budgetViewModel.budgetList?.first else { return }
         updateView(withBudget: budget)
-        
         tableView.reloadData()
     }
     
     func show(error: String) {
+        print("Warning: \(AuthError.failedTofetchBudgets)")
     }
 }

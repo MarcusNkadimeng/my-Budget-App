@@ -190,13 +190,6 @@
 			name = Budget;
 			sourceTree = "<group>";
 		};
-		4C398F822BC46D53004FA950 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Repository;
-			sourceTree = "<group>";
-		};
 		4C3D320E2BE8D6EA00D7B4D3 /* budgetApp1Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,7 +251,6 @@
 				4CDD804F2BCFAB1300BF1947 /* Authentication */,
 				4C3D32162BF109DD00D7B4D3 /* AccountTransactions */,
 				4CDD803C2BCB3B8B00BF1947 /* Tracker */,
-				4C398F822BC46D53004FA950 /* Repository */,
 				4C398F802BC3D828004FA950 /* Budget */,
 				4C398F762BC3D6DD004FA950 /* Account */,
 				4C67D81B2BBF2C9C0060BC06 /* Custom Cells */,

@@ -21,7 +21,7 @@ class AccountViewCell: UITableViewCell {
         accountNameLabel.text = account.name
         accountClearedLabel.text = UIComponents.accountClearedBalance
         balanceLabel.text = String(format: "%.2f", Double(account.balance) / 1000.00)
-        accountNameLabel.textColor = uiSpecs.primaryColourTwo
+        accountNameLabel.textColor = uiSpecs.primaryColourOne
         backgroundColor = UIColor.clear
     }
     
@@ -37,7 +37,7 @@ class AccountViewCell: UITableViewCell {
         }
         
         let separatorView = UIView(frame: CGRect(x: 16, y: self.bounds.height - separatorHeight, width: self.bounds.width - 32, height: separatorHeight))
-        separatorView.backgroundColor = uiSpecs.primaryColourOne
+        separatorView.backgroundColor = uiSpecs.tetiaryColour
         self.addSubview(separatorView)
         self.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
@@ -45,6 +45,7 @@ class AccountViewCell: UITableViewCell {
     static func nib() -> UINib {
         UINib(nibName: NibIdentifiers.accountViewCellIdentifier, bundle: nil)
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)

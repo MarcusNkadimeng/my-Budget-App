@@ -11,12 +11,12 @@ typealias BudgetsResult = (Result<BudgetData, APIError>) -> Void
 
 // MARK: - Repository Type
 protocol BudgetRepositoryType: AnyObject {
-    func getBudgets(completion: @escaping(BudgetsResult))
+    func fetchBudgets(completion: @escaping(BudgetsResult))
 }
 
 // MARK: - Repository
 class BudgetRepository: BudgetRepositoryType {
-    func getBudgets(completion: @escaping (BudgetsResult)) {
+    func fetchBudgets(completion: @escaping (BudgetsResult)) {
         APIHandler.request(endpoint: URLConstants.budgetURL, method: .GET, completion: completion)
     }
 }

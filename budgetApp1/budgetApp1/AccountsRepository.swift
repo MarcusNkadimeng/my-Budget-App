@@ -11,12 +11,12 @@ typealias AccountResult = (Result<AccountData, APIError>) -> Void
 
 // MARK: - Repository Type
 protocol AccountRepositoryType: AnyObject {
-    func getAccounts(completion: @escaping(AccountResult))
+    func fetchAccounts(completion: @escaping(AccountResult))
 }
 
 // MARK: - Repository
 class AccountRepository: AccountRepositoryType {
-    func getAccounts(completion: @escaping (AccountResult)) {
+    func fetchAccounts(completion: @escaping (AccountResult)) {
         APIHandler.request(endpoint: URLConstants.accountsURL, method: .GET, completion: completion)
     }
 }

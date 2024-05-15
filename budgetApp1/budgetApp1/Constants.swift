@@ -35,6 +35,8 @@ struct UIComponents {
     static let uiAlertAction = "OK"
     static let uiALertComment = "Default action"
     static let accountFatalError = "Selected account is nil"
+    static let accountScreenHeader = "Accounts"
+    static let recentTransactionLabel = "Most recent transactions"
 }
 
 // MARK: - Segues

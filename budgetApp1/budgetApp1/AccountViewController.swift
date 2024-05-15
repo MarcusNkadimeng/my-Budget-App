@@ -11,7 +11,7 @@ class AccountViewController: UIViewController {
 
     // MARK: - variables
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet weak var accountHeaderLabel: UILabel!
+    @IBOutlet private weak var accountHeaderLabel: UILabel!
     private lazy var viewModel = AccountViewModel(repository: AccountRepository(), delegate: self)
     
     // MARK: - UISpecs Dependency
@@ -23,13 +23,13 @@ class AccountViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(AccountViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.accountViewCellIdentifier)
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = uiSpecs.primaryColourOne
+        tableView.separatorColor = UIColor.black
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        accountHeaderLabel.text = "Accounts"
+        accountHeaderLabel.text = UIComponents.accountScreenHeader
         setupTableView()
         viewModel.fetchAccounts()
     }
@@ -44,10 +44,6 @@ class AccountViewController: UIViewController {
 
 // MARK: - TableView Delegate
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.accountListCount
@@ -73,7 +69,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.accountTransactionsSegue,
-            let selectedIndexPath = tableView.indexPathForSelectedRow,
+           let selectedIndexPath = tableView.indexPathForSelectedRow,
            let accountTransactionsVC = segue.destination as? AccountTransactionsViewController {
             let selectedAccount = viewModel.account(atIndex: selectedIndexPath.row)
             accountTransactionsVC.selectedAccount = selectedAccount
@@ -89,6 +85,6 @@ extension AccountViewController: AccountViewModelDelegate {
     }
     
     func show(error: String) {
-        
+        print("Warning: \(AuthError.failedTofetchAccounts)")
     }
 }

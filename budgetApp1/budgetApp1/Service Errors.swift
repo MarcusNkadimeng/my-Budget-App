@@ -22,4 +22,7 @@ enum AuthError: String, Error {
     case failedTofetchPassword
     case failedTofetchUsers
     case failedToFetchUser
+    case failedTofetchAccounts
+    case failedTofetchBudgets
+    case failedTofetchTransactions
 }

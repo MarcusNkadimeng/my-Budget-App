@@ -50,7 +50,7 @@ class AccountTransactionsViewModel {
     }
     
     func fetchTransactions() {
-        repository?.getTransactions {   [weak self] result in
+        repository?.fetchTransactions { [weak self] result in
             switch result {
             case .success(let transactionData):
                 self?.transactionList = Array(transactionData.data.transactions.prefix(5))

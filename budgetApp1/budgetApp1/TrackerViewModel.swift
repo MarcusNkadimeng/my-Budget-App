@@ -36,7 +36,7 @@ class TrackerViewModel {
     }
     
     func fetchTransactions() {
-        repository?.getTransactions {   [weak self] result in
+        repository?.fetchTransactions { [weak self] result in
             switch result {
             case .success(let response):
                 self?.transactionList = response.data.transactions

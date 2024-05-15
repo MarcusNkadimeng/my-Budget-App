@@ -39,7 +39,7 @@ class TransactionTableViewCell: UITableViewCell {
         }
         
         let separatorView = UIView(frame: CGRect(x: 16, y: self.bounds.height - separatorHeight, width: self.bounds.width - 32, height: separatorHeight))
-        separatorView.backgroundColor = uiSpecs.primaryColourOne
+        separatorView.backgroundColor = uiSpecs.tetiaryColour
         self.addSubview(separatorView)
         self.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }

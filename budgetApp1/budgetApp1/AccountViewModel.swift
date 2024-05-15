@@ -32,7 +32,7 @@ class AccountViewModel {
     }
     
     func fetchAccounts() {
-        repository?.getAccounts { [weak self] result in
+        repository?.fetchAccounts { [weak self] result in
             switch result {
             case .success(let response):
                 self?.accountList = response.data.accounts

@@ -32,7 +32,7 @@ class BudgetViewModel {
     }
     
     func fetchBudgets() {
-        repository?.getBudgets { [weak self] result in
+        repository?.fetchBudgets { [weak self] result in
             switch result {
             case .success(let response):
                 self?.budgetList = response.data.budgets
