@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CategoryHeaderTableViewCell" customModule="budgetApp1" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="n3Z-vy-4Jd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="vDb-fX-T0q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CategoryGroup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywf-pR-DY7">
+                                        <rect key="frame" x="0.0" y="0.0" width="188.66666666666666" height="16"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W5" family="Hiragino Sans" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4q-hw-FA6">
+                                        <rect key="frame" x="223.66666666666666" y="0.0" width="96.333333333333343" height="16"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W5" family="Hiragino Sans" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWY-yC-w7I">
+                                <rect key="frame" x="0.0" y="27" width="320" height="17"/>
+                                <color key="backgroundColor" red="0.38431376220000002" green="0.27450981740000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.47058826679999999" blue="0.85490196939999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="vDb-fX-T0q" firstAttribute="width" secondItem="n3Z-vy-4Jd" secondAttribute="width" id="K7T-Ig-aUo"/>
+                            <constraint firstItem="vDb-fX-T0q" firstAttribute="height" secondItem="n3Z-vy-4Jd" secondAttribute="height" multiplier="0.65" id="qU2-eQ-zkT"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="n3Z-vy-4Jd" secondAttribute="bottom" id="PHD-BV-CJ9"/>
+                    <constraint firstItem="n3Z-vy-4Jd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RAo-P5-dGz"/>
+                    <constraint firstAttribute="trailing" secondItem="n3Z-vy-4Jd" secondAttribute="trailing" id="Uv3-Ey-hiD"/>
+                    <constraint firstItem="n3Z-vy-4Jd" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="WoD-Ze-sni"/>
+                    <constraint firstItem="n3Z-vy-4Jd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eIy-0n-07V"/>
+                    <constraint firstItem="n3Z-vy-4Jd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tfB-lm-ERp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="categoryGroupLabel" destination="Ywf-pR-DY7" id="eTc-nY-5Fs"/>
+                <outlet property="categoryGroupTotal" destination="k4q-hw-FA6" id="puL-dY-1Le"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
+        </tableViewCell>
+    </objects>
+</document>
