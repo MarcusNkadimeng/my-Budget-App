@@ -40,7 +40,7 @@ struct UIComponents {
     static let accountFatalError = "Selected account is nil"
     static let accountScreenHeader = "Accounts"
     static let recentTransactionLabel = "Most recent transactions"
-    static let CategoryScreenHeader = "Category Tracker"
+    static let categoryScreenHeader = "Category Tracker"
 }
 
 // MARK: - Segues

@@ -27,7 +27,7 @@ class AccountViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
     
     override func layoutSubviews() {

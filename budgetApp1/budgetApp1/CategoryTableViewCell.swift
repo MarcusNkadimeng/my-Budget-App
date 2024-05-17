@@ -19,10 +19,6 @@ class CategoryTableViewCell: UITableViewCell {
         categoryBalanceLabel.text = "R" + "\(String(format: "%.2f", Double(balance) / 1000.00))"
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     static func nib() -> UINib {
         UINib(nibName: NibIdentifiers.categoryViewCellIdentifier, bundle: nil)
     }

@@ -22,7 +22,6 @@ class CategoryTrackerViewModel {
     init(repository: CategoryTrackerRepositoryType, delegate: CategoryTrackerViewModelProtocol) {
         self.repository = repository
         self.delegate = delegate
-        
     }
     
     var categoryListCount: Int {
@@ -53,27 +52,23 @@ class CategoryTrackerViewModel {
         groupedCategories.removeAll()
         categoryGroupBalances.removeAll()
         
-        guard let categoryGroups = categoryGroupList else {
-            return
-        }
+        guard let categoryGroups = categoryGroupList else { return }
         
         for categoryGroup in categoryGroups {
             let categories = categoryGroup.categories
             for category in categories {
-                if var group = groupedCategories[category.categoryGroupName] {
-                    group.append(category)
-                    groupedCategories[category.categoryGroupName] = group
-                } else {
-                    groupedCategories[category.categoryGroupName] = [category]
-                }
-                
-                if var balance = categoryGroupBalances[category.categoryGroupName] {
-                    balance += category.balance
-                    categoryGroupBalances[category.categoryGroupName] = balance
-                } else {
-                    categoryGroupBalances[category.categoryGroupName] = category.balance
-                }
+                groupedCategories[category.categoryGroupName, default: []].append(category)
+                categoryGroupBalances[category.categoryGroupName, default: 0] += category.balance
             }
         }
+    }
+    
+    func category(atIndexPath indexPath: IndexPath) -> Category? {
+        guard let categoryGroup = categoryGroup(atIndex: indexPath.section),
+              let categories = groupedCategories[categoryGroup.name],
+              indexPath.row < categories.count else {
+            return nil
+        }
+        return categories[indexPath.row]
     }
 }

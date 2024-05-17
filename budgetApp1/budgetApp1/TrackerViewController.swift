@@ -34,14 +34,12 @@ class TrackerViewController: UIViewController {
     private func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.layer.cornerRadius = 16
-        tableView.layer.masksToBounds = true
         tableView.register(CategoryHeaderTableViewCell.nib(), forHeaderFooterViewReuseIdentifier: NibIdentifiers.categoryGroupHeaderCellIdentifier)
         tableView.register(CategoryTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.categoryViewCellIdentifier)
     }
     
     private func setUpview() {
-        screenHeaderLabel.text = UIComponents.CategoryScreenHeader
+        screenHeaderLabel.text = UIComponents.categoryScreenHeader
     }
 }
 
@@ -66,12 +64,8 @@ extension TrackerViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.categoryViewCellIdentifier, for: indexPath) as? CategoryTableViewCell else {
             return UITableViewCell()
         }
-        if let categoryGroup = viewModel.categoryGroup(atIndex: indexPath.section),
-           let categories = viewModel.groupedCategories[categoryGroup.name],
-           indexPath.row < categories.count {
-            let category = categories[indexPath.row]
-            let balance = category.balance
-            cell.populateWith(category: category, balance: balance)
+        if let category = viewModel.category(atIndexPath: indexPath) {
+            cell.populateWith(category: category, balance: category.balance)
         }
         return cell
     }
@@ -84,11 +78,11 @@ extension TrackerViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        50
+        60
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        35
+        45
     }
 }
 
