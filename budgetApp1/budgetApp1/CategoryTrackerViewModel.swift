@@ -40,7 +40,6 @@ class CategoryTrackerViewModel {
             switch result {
             case .success(let response):
                 self?.categoryGroupList = response.data.categoryGroups
-                print(self?.categoryGroupList)
                 self?.delegate?.reloadView()
             case .failure(let error):
                 self?.delegate?.show(error: error.rawValue)
@@ -51,15 +50,12 @@ class CategoryTrackerViewModel {
     func groupCategories() {
         groupedCategories.removeAll()
         categoryGroupBalances.removeAll()
-        
+
         guard let categoryGroups = categoryGroupList else { return }
-        
-        for categoryGroup in categoryGroups {
-            let categories = categoryGroup.categories
-            for category in categories {
-                groupedCategories[category.categoryGroupName, default: []].append(category)
-                categoryGroupBalances[category.categoryGroupName, default: 0] += category.balance
-            }
+        let allCategories = categoryGroups.flatMap { $0.categories }
+        groupedCategories = Dictionary(grouping: allCategories, by: { $0.categoryGroupName })
+        categoryGroupBalances = allCategories.reduce(into: [:]) { result, category in
+            result[category.categoryGroupName, default: 0] += category.balance
         }
     }
     

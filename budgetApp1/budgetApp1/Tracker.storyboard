@@ -6,61 +6,40 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tracker-->
+        <!--Category Tracker-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="TrackerViewController" customModule="budgetApp1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Category Tracker" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="TrackerViewController" customModule="budgetApp1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UQY-eG-atr">
-                                <rect key="frame" x="0.0" y="120" width="393" height="639"/>
+                                <rect key="frame" x="10" y="59" width="373" height="700"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoryTableViewCell" id="9ze-Sl-Yi4">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="373" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9ze-Sl-Yi4" id="YwA-d7-g8j">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HjI-GQ-xRg">
-                                <rect key="frame" x="0.0" y="59" width="393" height="42.666666666666657"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBo-6X-NpF">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="42.666666666666664"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="28"/>
-                                        <color key="textColor" red="0.38431376220000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HjI-GQ-xRg" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.05" id="02l-3h-lqU"/>
-                            <constraint firstItem="UQY-eG-atr" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="09d-nN-2BF"/>
-                            <constraint firstItem="UQY-eG-atr" firstAttribute="top" secondItem="HjI-GQ-xRg" secondAttribute="bottom" constant="18.329999999999998" id="1J2-sf-z9V"/>
-                            <constraint firstItem="HjI-GQ-xRg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="32g-nW-9Bu"/>
-                            <constraint firstItem="UQY-eG-atr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4Jl-Fi-ZTq"/>
-                            <constraint firstItem="HjI-GQ-xRg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="EPw-Z7-eRz"/>
-                            <constraint firstAttribute="trailing" secondItem="HjI-GQ-xRg" secondAttribute="trailing" id="Xfd-zw-ln9"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UQY-eG-atr" secondAttribute="bottom" constant="10" id="Zjh-Ux-SNA"/>
-                            <constraint firstItem="HjI-GQ-xRg" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="b06-qp-NRb"/>
+                            <constraint firstItem="UQY-eG-atr" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-10" id="EOS-06-MIT"/>
+                            <constraint firstItem="UQY-eG-atr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="TGH-Ya-ePF"/>
+                            <constraint firstItem="UQY-eG-atr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="dkO-eY-cfG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UQY-eG-atr" secondAttribute="bottom" constant="10" id="mmI-GQ-Way"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tracker" image="slider.vertical.3" catalog="system" id="rXB-8M-v2a">
@@ -68,13 +47,54 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="screenHeaderLabel" destination="QBo-6X-NpF" id="sHB-zP-BoT"/>
                         <outlet property="tableView" destination="UQY-eG-atr" id="otS-yh-DLR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+        </scene>
+        <!--Category Tracker-->
+        <scene sceneID="2us-qf-0z6">
+            <objects>
+                <viewController title="Category Tracker" modalPresentationStyle="fullScreen" id="MQR-wM-FHS" customClass="TrackerViewController" customModule="budgetApp1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eeA-Yt-0mR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nKb-tu-srf">
+                                <rect key="frame" x="16" y="257" width="361" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EVm-b5-oCV">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fl2-p1-clF">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FD8-3L-KIP">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Im-Ti-sn0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tracker" image="slider.vertical.3" catalog="system" id="ai7-an-Ktp">
+                        <color key="badgeColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaV-2H-444" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861.83206106870227" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

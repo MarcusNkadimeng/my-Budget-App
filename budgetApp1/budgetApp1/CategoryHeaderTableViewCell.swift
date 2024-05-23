@@ -14,7 +14,6 @@ class CategoryHeaderTableViewCell: UITableViewHeaderFooterView {
     
     // MARK: - IBOutlets
     @IBOutlet private weak var categoryGroupLabel: UILabel!
-    @IBOutlet private weak var categoryGroupTotal: UILabel!
     
     // MARK: - Functions
     override func awakeFromNib() {
@@ -23,7 +22,6 @@ class CategoryHeaderTableViewCell: UITableViewHeaderFooterView {
     
     func populateWith(categoryGroup: CategoryGroup, totalBalance: Int) {
         categoryGroupLabel.text = categoryGroup.name
-        categoryGroupTotal.text = "R" + "\(String(format: "%.2f", Double(totalBalance) / 1000.00))"
     }
     
     override func layoutSubviews() {
