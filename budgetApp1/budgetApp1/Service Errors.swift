@@ -25,4 +25,5 @@ enum AuthError: String, Error {
     case failedTofetchAccounts
     case failedTofetchBudgets
     case failedTofetchTransactions
+    case failedTofetchCategoryGroups
 }

@@ -15,12 +15,16 @@ struct URLConstants {
     static let accountsURL = baseURL + "budgets/2b0c25e3-0d5e-411d-a019-2522faa22c2b/accounts" + accessToken
     static let transactionsURL = baseURL + "budgets/2b0c25e3-0d5e-411d-a019-2522faa22c2b/accounts/0515719a-f641-422b-8341-7073d5358dbe/transactions" + accessToken
     static let accountTransactionURL = baseURL + "budgets/2b0c25e3-0d5e-411d-a019-2522faa22c2b/accounts/"
+    static let categoryURL = baseURL + "budgets/2b0c25e3-0d5e-411d-a019-2522faa22c2b/categories" + accessToken
 }
 
 // MARK: - nib identifiers
 struct NibIdentifiers {
     static let accountViewCellIdentifier = "AccountViewCell"
     static let TransactionViewCellIdentifier = "TransactionTableViewCell"
+    static let categoryGroupHeaderCellIdentifier = "CategoryHeaderTableViewCell"
+    static let categoryViewCellIdentifier = "CategoryTableViewCell"
+    static let categoryGroupFootCellIdentifier = "CategoryFooterTableViewCell"
 }
 
 // MARK: - UI Stuff
@@ -37,6 +41,8 @@ struct UIComponents {
     static let accountFatalError = "Selected account is nil"
     static let accountScreenHeader = "Accounts"
     static let recentTransactionLabel = "Most recent transactions"
+    static let categoryScreenHeader = "Category Tracker"
+    static let categoryGroupTotalLabel = "Total"
 }
 
 // MARK: - Segues

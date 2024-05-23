@@ -11,7 +11,6 @@ class AccountViewController: UIViewController {
 
     // MARK: - variables
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet private weak var accountHeaderLabel: UILabel!
     private lazy var viewModel = AccountViewModel(repository: AccountRepository(), delegate: self)
     
     // MARK: - UISpecs Dependency
@@ -29,7 +28,6 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        accountHeaderLabel.text = UIComponents.accountScreenHeader
         setupTableView()
         viewModel.fetchAccounts()
     }
