@@ -13,30 +13,32 @@ class BudgetViewController: UIViewController {
     private let uiSpecs = UISpecs()
     
     // MARK: - IBOutlets
-    @IBOutlet private weak var budgetNameLabel: UILabel!
-    @IBOutlet private weak var endDateLabel: UILabel!
-    @IBOutlet private weak var startDateLabel: UILabel!
-    @IBOutlet private weak var toDateLabel: UILabel!
     @IBOutlet private weak var recentTransactionsLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var budgetCardTableView: UITableView!
+    @IBOutlet private weak var currentBalance: UILabel!
+    @IBOutlet private weak var currentBalanceLabel: UILabel!
+    @IBOutlet private weak var lastModified: UILabel!
+    @IBOutlet private weak var lastModifiedLabel: UILabel!
     
-    private lazy var budgetViewModel = BudgetViewModel(repository: BudgetRepository(), delegate: self)
-    private lazy var transactionViewModel = AccountTransactionsViewModel(repository: TransactionRepository(), delegate: self)
+    // MARK: - ViewModel
+    private lazy var overviewViewModel = OverviewViewModel(repository: BudgetRepository(), repositoryTwo: AccountRepository(), repositoryThree: TransactionRepository(), delegate: self)
     
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        budgetViewModel.fetchBudgets()
-        transactionViewModel.fetchTransactions()
+        overviewViewModel.fetchBudgets()
+        overviewViewModel.fetchAccounts()
+        overviewViewModel.fetchTransactions()
         setupTableView()
     }
 
     private func updateView(withBudget budget: Budget) {
-        budgetNameLabel.text = budget.name
-        startDateLabel.text = budget.firstMonth
-        endDateLabel.text = budget.lastMonth
-        toDateLabel.text = "–"
         recentTransactionsLabel.text = UIComponents.recentTransactionLabel
+        currentBalance.text = UIComponents.currentBalanceLabel
+        currentBalanceLabel.text = String(format: "%.2f", (overviewViewModel.budgetTotal)/1000)
+        lastModified.text = UIComponents.lastModifiedLabel
+        lastModifiedLabel.text = budget.lastModifiedOn
     }
     
     private func setupTableView() {
@@ -55,12 +57,12 @@ extension BudgetViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        transactionViewModel.transactionListCount
+        overviewViewModel.transactionListCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.TransactionViewCellIdentifier) as? TransactionTableViewCell else { return UITableViewCell() }
-        guard let transaction = transactionViewModel.transaction(atIndex: indexPath.item) else { return UITableViewCell() }
+        guard let transaction = overviewViewModel.transaction(atIndex: indexPath.item) else { return UITableViewCell() }
         cell.populateWith(transaction: transaction)
         return cell
     }
@@ -70,7 +72,7 @@ extension BudgetViewController: UITableViewDelegate, UITableViewDataSource {
 extension BudgetViewController: ViewModelDelegate, AccountsTransactionViewModelDelegate {
     
     func reloadView() {
-        guard let budget = budgetViewModel.budgetList?.first else { return }
+        guard let budget = overviewViewModel.budgetList?.first else { return }
         updateView(withBudget: budget)
         tableView.reloadData()
     }

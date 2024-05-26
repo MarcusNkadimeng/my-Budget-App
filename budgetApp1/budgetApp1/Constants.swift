@@ -25,6 +25,7 @@ struct NibIdentifiers {
     static let categoryGroupHeaderCellIdentifier = "CategoryHeaderTableViewCell"
     static let categoryViewCellIdentifier = "CategoryTableViewCell"
     static let categoryGroupFootCellIdentifier = "CategoryFooterTableViewCell"
+    static let budgetOverViewCellIdentifier = "BudgetOverviewTableViewCell"
 }
 
 // MARK: - UI Stuff
@@ -43,6 +44,8 @@ struct UIComponents {
     static let recentTransactionLabel = "Most recent transactions"
     static let categoryScreenHeader = "Category Tracker"
     static let categoryGroupTotalLabel = "Total"
+    static let currentBalanceLabel = "Current Balance"
+    static let lastModifiedLabel = "Last Modified"
 }
 
 // MARK: - Segues
