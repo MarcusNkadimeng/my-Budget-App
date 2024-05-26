@@ -44,7 +44,7 @@ struct UIComponents {
     static let recentTransactionLabel = "Most recent transactions"
     static let categoryScreenHeader = "Category Tracker"
     static let categoryGroupTotalLabel = "Total"
-    static let currentBalanceLabel = "Current Balance"
+    static let currentBalanceLabel = "Current Balance (R)"
     static let lastModifiedLabel = "Last Modified"
 }
 
