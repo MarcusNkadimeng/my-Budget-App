@@ -30,10 +30,10 @@ class TransactionTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let separatorHeight: CGFloat = 3.0
+        let separatorHeight: CGFloat = 2.0
         
         for subview in self.subviews {
-            if subview != contentView && subview.frame.height < 2 {
+            if subview != contentView && subview.frame.height < 1 {
                 subview.removeFromSuperview()
             }
         }

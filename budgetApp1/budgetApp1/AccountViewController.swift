@@ -21,9 +21,8 @@ class AccountViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AccountViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.accountViewCellIdentifier)
-        tableView.separatorStyle = .singleLine
-        tableView.separatorColor = UIColor.black
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
     
     override func viewDidLoad() {
@@ -48,7 +47,15 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100.0
+        110.0
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let spacing: CGFloat = 10
+        let insetFrame = cell.contentView.frame.inset(by: UIEdgeInsets(top: spacing / 2, left: 10, bottom: spacing / 2, right: 10))
+        cell.contentView.frame = insetFrame
+        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.layer.masksToBounds = true
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

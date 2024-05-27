@@ -30,7 +30,7 @@ struct NibIdentifiers {
 
 // MARK: - UI Stuff
 struct UIComponents {
-    static let accountClearedBalance = "Cleared Balance (R)"
+    static let accountClearedBalance = "Balance (R)"
     static let userAlertTitle = "Login Failed"
     static let userAlertTitleThree = "User creation failed"
     static let userAlertMessage = "Enter valid username and password"
@@ -46,6 +46,7 @@ struct UIComponents {
     static let categoryGroupTotalLabel = "Total"
     static let currentBalanceLabel = "Current Balance (R)"
     static let lastModifiedLabel = "Last Modified"
+    static let accountTypeLabel = "Account Type:"
 }
 
 // MARK: - Segues

@@ -16,12 +16,13 @@ class BudgetViewController: UIViewController {
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0) // Ensure UTC timezone
         return formatter
     }()
+    
     private let displayFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
-        formatter.timeStyle = .short
         return formatter
     }()
     
@@ -47,15 +48,19 @@ class BudgetViewController: UIViewController {
     }
 
     private func updateView(withBudget budget: Budget) {
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .short
         recentTransactionsLabel.text = UIComponents.recentTransactionLabel
         currentBalance.text = UIComponents.currentBalanceLabel
         currentBalanceLabel.text = String(format: "%.2f", (overviewViewModel.budgetTotal) / 1000)
         lastModified.text = UIComponents.lastModifiedLabel
-        if let date = dateFormatter.date(from: budget.lastModifiedOn) {
+        
+        let originalDateString = budget.lastModifiedOn
+        print("Original date string: \(originalDateString)")
+        
+        // Attempt to parse the date string
+        if let date = dateFormatter.date(from: originalDateString) {
             lastModifiedLabel.text = displayFormatter.string(from: date)
         } else {
+            print("Failed to parse date string: \(originalDateString)")
             lastModifiedLabel.text = "Invalid Date"
         }
     }
