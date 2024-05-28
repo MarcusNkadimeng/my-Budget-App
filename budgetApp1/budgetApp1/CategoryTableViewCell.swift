@@ -9,9 +9,6 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
     
-    // MARK: - UI Specifications class
-    private let uiSpecs = UISpecs()
-    
     // MARK: - IBOutlets
     @IBOutlet private weak var categoryNameLabel: UILabel!
     @IBOutlet private weak var categoryBalanceLabel: UILabel!

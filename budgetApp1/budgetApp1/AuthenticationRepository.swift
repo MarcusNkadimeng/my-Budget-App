@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AuthenticationRepositoryType: AnyObject {
-    func createUser(fullName: String, password: String, emailAddress: String, username: String) -> Bool
+    func createUser(password: String, username: String) -> Bool
     func loginUser(username: String, password: String) -> Bool
 }
 
@@ -18,8 +18,8 @@ class AuthenticationRepository: AuthenticationRepositoryType {
     private let coreDataHandler = CoreDataHandler()
     
     // MARK: - Functions
-    func createUser(fullName: String, password: String, emailAddress: String, username: String) -> Bool {
-        coreDataHandler.createUser(fullName: fullName, password: password, emailAddress: emailAddress, username: username)
+    func createUser(password: String, username: String) -> Bool {
+        coreDataHandler.createUser(password: password, username: username)
     }
     
     func loginUser(username: String, password: String) -> Bool {

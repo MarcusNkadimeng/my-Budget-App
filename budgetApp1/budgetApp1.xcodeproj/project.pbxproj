@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C37FB242BD43D200060ADB6 /* UISpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB232BD43D200060ADB6 /* UISpecs.swift */; };
 		4C37FB282BD6B8560060ADB6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB272BD6B8560060ADB6 /* Constants.swift */; };
 		4C37FB2A2BD77A3A0060ADB6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB292BD77A3A0060ADB6 /* UserViewModel.swift */; };
 		4C37FB2D2BDFF1990060ADB6 /* userModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB2B2BDFF1990060ADB6 /* userModel.xcdatamodeld */; };
@@ -70,7 +69,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C37FB232BD43D200060ADB6 /* UISpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpecs.swift; sourceTree = "<group>"; };
 		4C37FB272BD6B8560060ADB6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4C37FB292BD77A3A0060ADB6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		4C37FB2C2BDFF1990060ADB6 /* userModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = userModel.xcdatamodel; sourceTree = "<group>"; };
@@ -143,14 +141,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C37FB222BD43CFF0060ADB6 /* UI Specifications */ = {
-			isa = PBXGroup;
-			children = (
-				4C37FB232BD43D200060ADB6 /* UISpecs.swift */,
-			);
-			name = "UI Specifications";
-			sourceTree = "<group>";
-		};
 		4C37FB262BD6B8410060ADB6 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,7 +259,6 @@
 				4C37FB582BE4F1850060ADB6 /* API Handler */,
 				4C37FB552BE3C39D0060ADB6 /* CoreData */,
 				4C37FB262BD6B8410060ADB6 /* Constants */,
-				4C37FB222BD43CFF0060ADB6 /* UI Specifications */,
 				4CDD80552BCFB9D000BF1947 /* Alerts */,
 				4C398F752BC3D6AA004FA950 /* Service Layer */,
 				4CDD804F2BCFAB1300BF1947 /* Authentication */,
@@ -495,7 +484,6 @@
 				4C3D321A2BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift in Sources */,
 				4C3D32202BF43FBF00D7B4D3 /* TransactionsRepository.swift in Sources */,
 				4C3D32262BF5FF9B00D7B4D3 /* CategoryTrackerViewModel.swift in Sources */,
-				4C37FB242BD43D200060ADB6 /* UISpecs.swift in Sources */,
 				4CC71A302BB2ACFB009E2B53 /* SceneDelegate.swift in Sources */,
 				4C67D81F2BBF2D170060BC06 /* AccountViewCell.swift in Sources */,
 				4C3D32292BF6B11500D7B4D3 /* CategoryTableViewCell.swift in Sources */,

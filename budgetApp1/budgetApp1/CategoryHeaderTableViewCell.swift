@@ -8,9 +8,6 @@
 import UIKit
 
 class CategoryHeaderTableViewCell: UITableViewHeaderFooterView {
-
-    // MARK: - UISpecs Dependency
-    private let uiSpecs = UISpecs()
     
     // MARK: - IBOutlets
     @IBOutlet private weak var categoryGroupLabel: UILabel!
@@ -18,10 +15,6 @@ class CategoryHeaderTableViewCell: UITableViewHeaderFooterView {
     // MARK: - Functions
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-    
-    func populateWith(categoryGroup: CategoryGroup, totalBalance: Int) {
-        categoryGroupLabel.text = categoryGroup.name
     }
     
     override func layoutSubviews() {
@@ -33,8 +26,12 @@ class CategoryHeaderTableViewCell: UITableViewHeaderFooterView {
             }
         }
         let separatorView = UIView(frame: CGRect(x: 16, y: self.bounds.height - separatorHeight, width: self.bounds.width - 32, height: separatorHeight))
-        separatorView.backgroundColor = uiSpecs.tetiaryColour
+        separatorView.backgroundColor = UIColor.accent
         self.addSubview(separatorView)
+    }
+    
+    func populateWith(categoryGroup: CategoryGroup, totalBalance: Int) {
+        categoryGroupLabel.text = categoryGroup.name
     }
     
     static func nib() -> UINib {

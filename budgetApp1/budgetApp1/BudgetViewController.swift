@@ -9,9 +9,6 @@ import UIKit
 
 class BudgetViewController: UIViewController {
     
-    // MARK: - UISpecs Dependency
-    private let uiSpecs = UISpecs()
-    
     // MARK: - Date Formatter
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -69,7 +66,7 @@ class BudgetViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.TransactionViewCellIdentifier)
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = uiSpecs.tetiaryColour
+        tableView.separatorColor = UIColor.accent
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
         tableView.allowsSelection = false
     }

@@ -14,6 +14,18 @@ protocol ViewModelDelegate: AnyObject {
 
 class OverviewViewModel {
     
+    // MARK: - Computed variables
+    var budgetListCount: Int {
+        budgetList?.count ?? 0
+    }
+    
+    var accountListCount: Int {
+        accountList?.count ?? 0
+    }
+    
+    var transactionListCount: Int {
+        transactionList?.count ?? 0
+    }
     // MARK: - Variables
     private var repository: BudgetRepositoryType?
     private var repositoryTwo: AccountRepositoryType?
@@ -31,18 +43,7 @@ class OverviewViewModel {
         self.delegate = delegate
     }
     
-    var budgetListCount: Int {
-        budgetList?.count ?? 0
-    }
-    
-    var accountListCount: Int {
-        accountList?.count ?? 0
-    }
-    
-    var transactionListCount: Int {
-        transactionList?.count ?? 0
-    }
-    
+    // MARK: - Functions
     func account(atIndex: Int) -> Account? {
         accountList?[atIndex]
     }

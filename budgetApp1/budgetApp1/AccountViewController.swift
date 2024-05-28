@@ -13,22 +13,18 @@ class AccountViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     private lazy var viewModel = AccountViewModel(repository: AccountRepository(), delegate: self)
     
-    // MARK: - UISpecs Dependency
-    private let uiSpecs = UISpecs()
-    
     // MARK: - functions
-    private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(AccountViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.accountViewCellIdentifier)
-        tableView.separatorStyle = .none
-        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         viewModel.fetchAccounts()
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(AccountViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.accountViewCellIdentifier)
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
 }
 
@@ -41,14 +37,6 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let spacing: CGFloat = 10
-        let insetFrame = cell.contentView.frame.inset(by: UIEdgeInsets(top: spacing / 2, left: 10, bottom: spacing / 2, right: 10))
-        cell.contentView.frame = insetFrame
-        cell.contentView.layer.cornerRadius = 10
-        cell.contentView.layer.masksToBounds = true
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

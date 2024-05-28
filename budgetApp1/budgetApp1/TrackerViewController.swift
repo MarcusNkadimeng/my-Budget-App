@@ -8,9 +8,6 @@
 import UIKit
 
 class TrackerViewController: UIViewController {
-
-    // MARK: - UISpecs Dependency
-    private let uiSpecs = UISpecs()
     
     // MARK: - variables
     private lazy var viewModel = CategoryTrackerViewModel(repository: CategoryTrackerRepository(), delegate: self)

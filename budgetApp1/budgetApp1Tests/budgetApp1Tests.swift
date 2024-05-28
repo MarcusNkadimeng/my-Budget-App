@@ -35,7 +35,7 @@ class UserViewModelTest: XCTestCase {
         let mockRepository = MockAuthenticationRepository(context: mockContext)
         let viewModel = UserViewModel(authenticationRepository: mockRepository)
         
-        let userSignedUp = viewModel.createUser(username: "testUser", password: "testPassword", fullname: "Test User", emailAddress: "test@example.com")
+        let userSignedUp = viewModel.createUser(username: "testUser", password: "testPassword")
         XCTAssertTrue(userSignedUp)
     }
     
@@ -62,16 +62,12 @@ class MockAuthenticationRepository: AuthenticationRepositoryType {
     var createUserCalled = false
     var createdUsername: String?
     var createdPassword: String?
-    var createdFullName: String?
-    var createdEmailAddress: String?
     var loginResult: Bool?
     
     // MARK: - Functions
-    func createUser(fullName: String, password: String, emailAddress: String, username: String) -> Bool {
+    func createUser(password: String, username: String) -> Bool {
         createdUsername = username
         createdPassword = password
-        createdFullName = fullName
-        createdEmailAddress = emailAddress
         createUserCalled = true
         return createUserCalled
     }

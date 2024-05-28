@@ -9,9 +9,6 @@ import UIKit
 
 class AccountTransactionsViewController: UIViewController {
 
-    // MARK: - UISpecs Dependency
-    private let uiSpecs = UISpecs()
-    
     // MARK: - Variables
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
@@ -45,7 +42,7 @@ class AccountTransactionsViewController: UIViewController {
         segmentedControl.insertSegment(withTitle: "Expenses", at: 1, animated: false)
         segmentedControl.insertSegment(withTitle: "Income", at: 2, animated: false)
         segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.layer.borderColor = uiSpecs.accentColour.cgColor
+        segmentedControl.layer.borderColor = UIColor.tertiary.cgColor
         segmentedControl.layer.borderWidth = 2.0
         var selectedSegmentAttributes: [NSAttributedString.Key: Any] = [:]
         selectedSegmentAttributes[.foregroundColor] = UIColor.white
@@ -54,7 +51,7 @@ class AccountTransactionsViewController: UIViewController {
     
     private func setUpAccountDetailsLayout() {
         accountNameLabel.text = selectedAccount?.name
-        accountNameLabel.textColor = uiSpecs.primaryColourOne
+        accountNameLabel.textColor = UIColor.primary
     }
 }
 
@@ -67,7 +64,7 @@ extension AccountTransactionsViewController: UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            return viewModel.transactionListCount ?? 0
+            return viewModel.transactionListCount
         case 1:
             return viewModel.expenses?.count ?? 0
         case 2:
@@ -76,11 +73,9 @@ extension AccountTransactionsViewController: UITableViewDelegate, UITableViewDat
             return 0
         }
     }
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.TransactionViewCellIdentifier) as? TransactionTableViewCell else { return UITableViewCell() }
-        
         let transaction: Transaction?
         switch segmentedControl.selectedSegmentIndex {
         case 0:
@@ -92,7 +87,6 @@ extension AccountTransactionsViewController: UITableViewDelegate, UITableViewDat
         default:
             transaction = nil
         }
-        
         if let transaction = transaction {
             cell.populateWith(transaction: transaction)
         }
