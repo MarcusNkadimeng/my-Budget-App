@@ -30,13 +30,6 @@ class AccountViewController: UIViewController {
         setupTableView()
         viewModel.fetchAccounts()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: selectedIndexPath, animated: animated)
-        }
-    }
 }
 
 // MARK: - TableView Delegate
@@ -47,7 +40,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        110.0
+        UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -62,6 +55,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.accountViewCellIdentifier) as? AccountViewCell else { return UITableViewCell() }
         guard let account = viewModel.account(atIndex: indexPath.row) else { return UITableViewCell() }
         cell.populateWith(account: account)
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -78,6 +72,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
            let accountTransactionsViewController = segue.destination as? AccountTransactionsViewController {
             let selectedAccount = viewModel.account(atIndex: selectedIndexPath.row)
             accountTransactionsViewController.selectedAccount = selectedAccount
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
         }
     }
 }

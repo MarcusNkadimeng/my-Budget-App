@@ -16,7 +16,7 @@ class BudgetViewController: UIViewController {
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        formatter.timeZone = TimeZone(secondsFromGMT: 0) // Ensure UTC timezone
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
         return formatter
     }()
     
@@ -41,10 +41,7 @@ class BudgetViewController: UIViewController {
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        overviewViewModel.fetchBudgets()
-        overviewViewModel.fetchAccounts()
-        overviewViewModel.fetchTransactions()
-        setupTableView()
+        setUpScreen()
     }
 
     private func updateView(withBudget budget: Budget) {
@@ -52,17 +49,19 @@ class BudgetViewController: UIViewController {
         currentBalance.text = UIComponents.currentBalanceLabel
         currentBalanceLabel.text = String(format: "%.2f", (overviewViewModel.budgetTotal) / 1000)
         lastModified.text = UIComponents.lastModifiedLabel
-        
         let originalDateString = budget.lastModifiedOn
-        print("Original date string: \(originalDateString)")
-        
-        // Attempt to parse the date string
         if let date = dateFormatter.date(from: originalDateString) {
             lastModifiedLabel.text = displayFormatter.string(from: date)
         } else {
-            print("Failed to parse date string: \(originalDateString)")
             lastModifiedLabel.text = "Invalid Date"
         }
+    }
+    
+    private func setUpScreen() {
+        setupTableView()
+        overviewViewModel.fetchBudgets()
+        overviewViewModel.fetchAccounts()
+        overviewViewModel.fetchTransactions()
     }
     
     private func setupTableView() {
@@ -71,7 +70,8 @@ class BudgetViewController: UIViewController {
         tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.TransactionViewCellIdentifier)
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = uiSpecs.tetiaryColour
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
+        tableView.allowsSelection = false
     }
 }
 

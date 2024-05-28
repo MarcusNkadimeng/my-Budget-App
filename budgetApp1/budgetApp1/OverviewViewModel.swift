@@ -85,6 +85,7 @@ class OverviewViewModel {
             switch result {
             case .success(let transactionData):
                 self?.transactionList = Array(transactionData.data.transactions.prefix(5))
+                self?.delegate?.reloadView()
             case .failure(let error):
                 self?.delegate?.show(error: error.rawValue)
             }

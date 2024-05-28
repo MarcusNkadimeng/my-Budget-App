@@ -33,8 +33,17 @@ class AccountViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-//        separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupUI()
+    }
+    
+    static func nib() -> UINib {
+        UINib(nibName: NibIdentifiers.accountViewCellIdentifier, bundle: nil)
+    }
+    
     private func setupUI() {
         containerView.layer.cornerRadius = 10.0
         containerView.layer.masksToBounds = true
@@ -45,29 +54,5 @@ class AccountViewCell: UITableViewCell {
         containerView.layer.shadowOffset = CGSize(width: 0, height: 1)
         containerView.layer.shadowRadius = 5
         containerView.layer.masksToBounds = false
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupUI()
-    }
-    
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        let separatorHeight: CGFloat = 3.0
-//        for subview in self.subviews {
-//            if subview != contentView && subview.frame.height < 2 {
-//                subview.removeFromSuperview()
-//            }
-//        }
-//        let separatorView = UIView(frame: CGRect(x: 16, y: self.bounds.height - separatorHeight, width: self.bounds.width - 32, height: separatorHeight))
-//        separatorView.backgroundColor = uiSpecs.tetiaryColour
-//        self.addSubview(separatorView)
-//        self.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-//    }
-    
-    
-    static func nib() -> UINib {
-        UINib(nibName: NibIdentifiers.accountViewCellIdentifier, bundle: nil)
     }
 }
