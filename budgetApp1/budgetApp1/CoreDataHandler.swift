@@ -9,7 +9,7 @@ import CoreData
 import UIKit
 
 protocol CoreDataHandlerType {
-    func createUser(fullName: String, password: String, emailAddress: String, username: String) -> Bool
+    func createUser(password: String, username: String) -> Bool
     func checkIfUserHasAccount(username: String, password: String) -> Bool
 }
 
@@ -45,13 +45,11 @@ class CoreDataHandler: CoreDataHandlerType {
         }
     }
     
-    func createUser(fullName: String, password: String, emailAddress: String, username: String) -> Bool {
+    func createUser(password: String, username: String) -> Bool {
         if !checkIfUserHasAccount(username: username, password: password) {
             let user = UserEntity(context: context)
             user.username = username
             user.password = password
-            user.fullName = fullName
-            user.emailAddress = emailAddress
             saveContext()
             return true
         }

@@ -8,9 +8,6 @@
 import UIKit
 
 class TrackerViewController: UIViewController {
-
-    // MARK: - UISpecs Dependency
-    private let uiSpecs = UISpecs()
     
     // MARK: - variables
     private lazy var viewModel = CategoryTrackerViewModel(repository: CategoryTrackerRepository(), delegate: self)
@@ -22,19 +19,13 @@ class TrackerViewController: UIViewController {
         setUpTableView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: selectedIndexPath, animated: animated)
-        }
-    }
-    
     private func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CategoryHeaderTableViewCell.nib(), forHeaderFooterViewReuseIdentifier: NibIdentifiers.categoryGroupHeaderCellIdentifier)
         tableView.register(CategoryTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.categoryViewCellIdentifier)
         tableView.register(CategoryFooterTableViewCell.nib(), forHeaderFooterViewReuseIdentifier: NibIdentifiers.categoryGroupFootCellIdentifier)
+        tableView.allowsSelection = false
     }
 }
 

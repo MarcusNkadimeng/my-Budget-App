@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,15 +26,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="dJH-ZB-fi7">
                                         <rect key="frame" x="38.333333333333329" y="208.33333333333334" width="179" height="117.33333333333334"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bcj-Lg-FTd">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bcj-Lg-FTd">
                                                 <rect key="frame" x="0.0" y="0.0" width="179" height="49.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ve4-aB-9LL">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ve4-aB-9LL">
                                                 <rect key="frame" x="0.0" y="68.333333333333314" width="179" height="49"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -51,7 +52,7 @@
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="Login">
                                                                     <attributes>
-                                                                        <font key="NSFont" size="20" name="HiraginoSans-W6"/>
+                                                                        <font key="NSFont" size="28" name="HiraginoSans-W4"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -65,23 +66,28 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nb2-ev-BU4">
-                                                <rect key="frame" x="3.3333333333333286" y="67.333333333333258" width="249.33333333333337" height="54.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="67.333333333333258" width="255.66666666666666" height="54.666666666666657"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-fq-8QN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="249.33333333333334" height="54.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="255.66666666666666" height="54.666666666666664"/>
                                                         <color key="tintColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="New here? Sign up now." titleAlignment="center">
-                                                            <fontDescription key="titleFontDescription" name="HiraginoSans-W5" family="Hiragino Sans" pointSize="18"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="New here? Create account" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <segue destination="8eh-MI-U4S" kind="show" identifier="signUpSegue2" id="CMu-Bn-0a3"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="1HA-fq-8QN" firstAttribute="width" secondItem="Nb2-ev-BU4" secondAttribute="width" id="Bh5-Pq-Lvc"/>
+                                                    <constraint firstItem="1HA-fq-8QN" firstAttribute="height" secondItem="Nb2-ev-BU4" secondAttribute="height" id="cpS-7K-JfL"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="Nb2-ev-BU4" firstAttribute="width" secondItem="XpH-Q4-Dkw" secondAttribute="width" id="RIH-gS-ynr"/>
                                             <constraint firstItem="wi8-fe-aqx" firstAttribute="width" secondItem="XpH-Q4-Dkw" secondAttribute="width" multiplier="0.5" id="vPs-wb-LC1"/>
                                         </constraints>
                                     </stackView>

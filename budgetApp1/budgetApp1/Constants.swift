@@ -25,11 +25,12 @@ struct NibIdentifiers {
     static let categoryGroupHeaderCellIdentifier = "CategoryHeaderTableViewCell"
     static let categoryViewCellIdentifier = "CategoryTableViewCell"
     static let categoryGroupFootCellIdentifier = "CategoryFooterTableViewCell"
+    static let budgetOverViewCellIdentifier = "BudgetOverviewTableViewCell"
 }
 
 // MARK: - UI Stuff
 struct UIComponents {
-    static let accountClearedBalance = "Cleared Balance (R)"
+    static let accountClearedBalance = "Balance (R)"
     static let userAlertTitle = "Login Failed"
     static let userAlertTitleThree = "User creation failed"
     static let userAlertMessage = "Enter valid username and password"
@@ -43,6 +44,9 @@ struct UIComponents {
     static let recentTransactionLabel = "Most recent transactions"
     static let categoryScreenHeader = "Category Tracker"
     static let categoryGroupTotalLabel = "Total"
+    static let currentBalanceLabel = "Current Balance (R)"
+    static let lastModifiedLabel = "Last Modified"
+    static let accountTypeLabel = "Account Type:"
 }
 
 // MARK: - Segues

@@ -8,9 +8,6 @@
 import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
-
-    // MARK: - UISpecs dependency
-    private let uiSpecs = UISpecs()
     
     // MARK: - IBOutlets
     @IBOutlet private weak var transactionNameLabel: UILabel!
@@ -30,16 +27,16 @@ class TransactionTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let separatorHeight: CGFloat = 3.0
+        let separatorHeight: CGFloat = 2.0
         
         for subview in self.subviews {
-            if subview != contentView && subview.frame.height < 2 {
+            if subview != contentView && subview.frame.height < 1 {
                 subview.removeFromSuperview()
             }
         }
         
         let separatorView = UIView(frame: CGRect(x: 16, y: self.bounds.height - separatorHeight, width: self.bounds.width - 32, height: separatorHeight))
-        separatorView.backgroundColor = uiSpecs.tetiaryColour
+        separatorView.backgroundColor = UIColor.accent
         self.addSubview(separatorView)
         self.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }

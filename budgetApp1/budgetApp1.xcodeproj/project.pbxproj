@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C37FB242BD43D200060ADB6 /* UISpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB232BD43D200060ADB6 /* UISpecs.swift */; };
 		4C37FB282BD6B8560060ADB6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB272BD6B8560060ADB6 /* Constants.swift */; };
 		4C37FB2A2BD77A3A0060ADB6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB292BD77A3A0060ADB6 /* UserViewModel.swift */; };
 		4C37FB2D2BDFF1990060ADB6 /* userModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB2B2BDFF1990060ADB6 /* userModel.xcdatamodeld */; };
@@ -34,6 +33,7 @@
 		4C67D81F2BBF2D170060BC06 /* AccountViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67D81E2BBF2D170060BC06 /* AccountViewCell.swift */; };
 		4C6CA5BD2BFDF7050065871B /* CategoryFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CA5BB2BFDF7050065871B /* CategoryFooterTableViewCell.swift */; };
 		4C6CA5BE2BFDF7050065871B /* CategoryFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6CA5BC2BFDF7050065871B /* CategoryFooterTableViewCell.xib */; };
+		4C6CA5C42C01EB4B0065871B /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CA5C32C01EB4B0065871B /* OverviewViewModel.swift */; };
 		4CC71A2E2BB2ACFB009E2B53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A2D2BB2ACFB009E2B53 /* AppDelegate.swift */; };
 		4CC71A302BB2ACFB009E2B53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A2F2BB2ACFB009E2B53 /* SceneDelegate.swift */; };
 		4CC71A322BB2ACFB009E2B53 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A312BB2ACFB009E2B53 /* BudgetViewController.swift */; };
@@ -44,7 +44,6 @@
 		4CC71A482BB2B8F8009E2B53 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A472BB2B8F8009E2B53 /* AccountModel.swift */; };
 		4CC71A4A2BB2C532009E2B53 /* AccountsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A492BB2C532009E2B53 /* AccountsRepository.swift */; };
 		4CC71A4D2BB2C65C009E2B53 /* Service Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A4C2BB2C65C009E2B53 /* Service Errors.swift */; };
-		4CC71A4F2BB2D19E009E2B53 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */; };
 		4CDD803E2BCB3BD200BF1947 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */; };
 		4CDD80402BCB40B600BF1947 /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD803F2BCB40B600BF1947 /* TrackerViewModel.swift */; };
 		4CDD80462BCBF46000BF1947 /* Tracker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD80452BCBF46000BF1947 /* Tracker.storyboard */; };
@@ -70,7 +69,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C37FB232BD43D200060ADB6 /* UISpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpecs.swift; sourceTree = "<group>"; };
 		4C37FB272BD6B8560060ADB6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4C37FB292BD77A3A0060ADB6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		4C37FB2C2BDFF1990060ADB6 /* userModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = userModel.xcdatamodel; sourceTree = "<group>"; };
@@ -98,6 +96,7 @@
 		4C67D81E2BBF2D170060BC06 /* AccountViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewCell.swift; sourceTree = "<group>"; };
 		4C6CA5BB2BFDF7050065871B /* CategoryFooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFooterTableViewCell.swift; sourceTree = "<group>"; };
 		4C6CA5BC2BFDF7050065871B /* CategoryFooterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFooterTableViewCell.xib; sourceTree = "<group>"; };
+		4C6CA5C32C01EB4B0065871B /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
 		4CC71A2A2BB2ACFB009E2B53 /* budgetApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = budgetApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC71A2D2BB2ACFB009E2B53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CC71A2F2BB2ACFB009E2B53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +109,6 @@
 		4CC71A472BB2B8F8009E2B53 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		4CC71A492BB2C532009E2B53 /* AccountsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRepository.swift; sourceTree = "<group>"; };
 		4CC71A4C2BB2C65C009E2B53 /* Service Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service Errors.swift"; sourceTree = "<group>"; };
-		4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 		4CDD803D2BCB3BD200BF1947 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		4CDD803F2BCB40B600BF1947 /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
 		4CDD80452BCBF46000BF1947 /* Tracker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tracker.storyboard; sourceTree = "<group>"; };
@@ -143,14 +141,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C37FB222BD43CFF0060ADB6 /* UI Specifications */ = {
-			isa = PBXGroup;
-			children = (
-				4C37FB232BD43D200060ADB6 /* UISpecs.swift */,
-			);
-			name = "UI Specifications";
-			sourceTree = "<group>";
-		};
 		4C37FB262BD6B8410060ADB6 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,8 +192,8 @@
 				4CC71A432BB2ADD0009E2B53 /* BudgetModel.swift */,
 				4C3D321D2BF43EEB00D7B4D3 /* BudgetRepository.swift */,
 				4CC71A312BB2ACFB009E2B53 /* BudgetViewController.swift */,
-				4CC71A4E2BB2D19E009E2B53 /* BudgetViewModel.swift */,
 				4CC71A332BB2ACFB009E2B53 /* BudgetOverview.storyboard */,
+				4C6CA5C32C01EB4B0065871B /* OverviewViewModel.swift */,
 			);
 			name = Budget;
 			sourceTree = "<group>";
@@ -269,7 +259,6 @@
 				4C37FB582BE4F1850060ADB6 /* API Handler */,
 				4C37FB552BE3C39D0060ADB6 /* CoreData */,
 				4C37FB262BD6B8410060ADB6 /* Constants */,
-				4C37FB222BD43CFF0060ADB6 /* UI Specifications */,
 				4CDD80552BCFB9D000BF1947 /* Alerts */,
 				4C398F752BC3D6AA004FA950 /* Service Layer */,
 				4CDD804F2BCFAB1300BF1947 /* Authentication */,
@@ -490,14 +479,13 @@
 				4CDD80532BCFB2B900BF1947 /* LoginViewController.swift in Sources */,
 				4C3D322D2BF6C8D300D7B4D3 /* CategoryHeaderTableViewCell.swift in Sources */,
 				4C3D321E2BF43EEB00D7B4D3 /* BudgetRepository.swift in Sources */,
+				4C6CA5C42C01EB4B0065871B /* OverviewViewModel.swift in Sources */,
 				4CDD805D2BCFBBDD00BF1947 /* UserModel.swift in Sources */,
 				4C3D321A2BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift in Sources */,
 				4C3D32202BF43FBF00D7B4D3 /* TransactionsRepository.swift in Sources */,
 				4C3D32262BF5FF9B00D7B4D3 /* CategoryTrackerViewModel.swift in Sources */,
-				4C37FB242BD43D200060ADB6 /* UISpecs.swift in Sources */,
 				4CC71A302BB2ACFB009E2B53 /* SceneDelegate.swift in Sources */,
 				4C67D81F2BBF2D170060BC06 /* AccountViewCell.swift in Sources */,
-				4CC71A4F2BB2D19E009E2B53 /* BudgetViewModel.swift in Sources */,
 				4C3D32292BF6B11500D7B4D3 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

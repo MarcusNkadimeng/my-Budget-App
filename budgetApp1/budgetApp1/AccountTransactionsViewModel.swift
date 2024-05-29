@@ -21,6 +21,7 @@ class AccountTransactionsViewModel {
     private var transactionList: [Transaction]?
     var expenses: [Transaction]?
     var income: [Transaction]?
+    var allTransactions: [Transaction]?
     
     init(repository: TransactionRepositoryType, delegate: AccountsTransactionViewModelDelegate) {
         self.repository = repository
@@ -62,12 +63,16 @@ class AccountTransactionsViewModel {
     
     func filterTransactions(segmentIndex: Int) {
         guard let transactions = transactionList else { return }
-        if segmentIndex == 0 {
+        switch segmentIndex {
+        case 0:
             expenses = transactions.filter { $0.amount < 0 }
             income = transactions.filter { $0.amount >= 0 }
-        } else {
-            income = transactions.filter { $0.amount >= 0 }
+        case 1:
             expenses = transactions.filter { $0.amount < 0 }
+        case 2:
+            income = transactions.filter { $0.amount >= 0 }
+        default:
+            break
         }
         delegate?.reloadView()
     }

@@ -13,30 +13,18 @@ class AccountViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     private lazy var viewModel = AccountViewModel(repository: AccountRepository(), delegate: self)
     
-    // MARK: - UISpecs Dependency
-    private let uiSpecs = UISpecs()
-    
     // MARK: - functions
-    private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(AccountViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.accountViewCellIdentifier)
-        tableView.separatorStyle = .singleLine
-        tableView.separatorColor = UIColor.black
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         viewModel.fetchAccounts()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: selectedIndexPath, animated: animated)
-        }
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(AccountViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.accountViewCellIdentifier)
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
 }
 
@@ -48,13 +36,14 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100.0
+        UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.accountViewCellIdentifier) as? AccountViewCell else { return UITableViewCell() }
         guard let account = viewModel.account(atIndex: indexPath.row) else { return UITableViewCell() }
         cell.populateWith(account: account)
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -71,6 +60,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
            let accountTransactionsViewController = segue.destination as? AccountTransactionsViewController {
             let selectedAccount = viewModel.account(atIndex: selectedIndexPath.row)
             accountTransactionsViewController.selectedAccount = selectedAccount
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
         }
     }
 }
