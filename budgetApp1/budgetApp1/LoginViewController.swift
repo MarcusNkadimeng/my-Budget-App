@@ -8,7 +8,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Variables
     private lazy var userViewModel = UserViewModel(authenticationRepository: AuthenticationRepository())
-    private var loggedInStatus = false
+    var loggedInStatus = false
     
     // MARK: - IBActions
     @IBAction func loginClicked(_ sender: Any) {
@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
         loggedInStatus = userViewModel.login(username: username, password: password)
         
         if loggedInStatus {
+            CoreDataHandler().saveLoggedInUser(username: username)
             performSegue(withIdentifier: Segues.loginSegue, sender: self)
         } else {
             let alertController = UIAlertController(
@@ -48,6 +49,11 @@ class LoginViewController: UIViewController {
                                                object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loggedInStatus = false
+    }
+    
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -61,5 +67,4 @@ class LoginViewController: UIViewController {
             self.view.frame.origin.y = 0
         }
     }
-    
 }

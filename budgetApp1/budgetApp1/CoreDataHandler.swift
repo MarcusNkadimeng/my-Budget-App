@@ -27,7 +27,6 @@ class CoreDataHandler: CoreDataHandlerType {
     }
     
     // MARK: - Public CRUD functions
-    
     func checkIfUserHasAccount(username: String, password: String) -> Bool {
         
         let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
@@ -45,6 +44,23 @@ class CoreDataHandler: CoreDataHandlerType {
         }
     }
     
+    func saveLoggedInUser(username: String) {
+        let loggedInuser = UserEntity(context: context)
+        loggedInuser.username = username
+        saveContext()
+    }
+
+    func getLoggedInUser() -> UserEntity? {
+        let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
+        do {
+            let users = try context.fetch(fetchRequest)
+            return users.first
+        } catch {
+            print("Error fetching user: \(error)")
+            return nil
+        }
+    }
+    
     func createUser(password: String, username: String) -> Bool {
         if !checkIfUserHasAccount(username: username, password: password) {
             let user = UserEntity(context: context)
@@ -57,7 +73,6 @@ class CoreDataHandler: CoreDataHandlerType {
     }
     
     // MARK: - Core Data Saving support
-    
     private func saveContext () {
         if context.hasChanges {
             do {

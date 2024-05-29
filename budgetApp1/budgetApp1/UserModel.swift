@@ -12,13 +12,9 @@ import Foundation
 struct User {
     var password: String
     var username: String
-    var fullname: String
-    var emailAddress: String
     
-    init(username: String, password: String, fullname: String, emailAddress: String) {
+    init(username: String, password: String) {
         self.username = username
         self.password = password
-        self.fullname = fullname
-        self.emailAddress = emailAddress
     }
 }
