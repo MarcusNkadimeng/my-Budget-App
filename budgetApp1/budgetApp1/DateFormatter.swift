@@ -32,6 +32,6 @@ class DataFormatterClass {
     }
     
     func formatDate(_ date: Date) -> String {
-        return displayFormatter.string(from: date)
+        displayFormatter.string(from: date)
     }
 }

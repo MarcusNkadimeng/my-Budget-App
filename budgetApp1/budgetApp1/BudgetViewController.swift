@@ -9,19 +9,7 @@ import UIKit
 
 class BudgetViewController: UIViewController {
     
-    // MARK: - Date Formatter
-//    private let dateFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-//        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-//        return formatter
-//    }()
-//
-//    private let displayFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.dateStyle = .medium
-//        return formatter
-//    }()
+    // MARK: - Dateformatter Dependency Injection
     let dateFormatter = DataFormatterClass()
     
     // MARK: - IBOutlets
