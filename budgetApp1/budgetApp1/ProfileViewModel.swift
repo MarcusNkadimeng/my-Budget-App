@@ -18,6 +18,6 @@ class ProfileViewModel {
     }
     
     func fetchLoggedInUser() -> UserEntity? {
-        coreDataHandler.getLoggedInUser()
+        coreDataHandler.fetchLoggedInUser()
     }
 }

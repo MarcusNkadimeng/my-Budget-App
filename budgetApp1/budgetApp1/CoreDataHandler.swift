@@ -50,7 +50,7 @@ class CoreDataHandler: CoreDataHandlerType {
         saveContext()
     }
 
-    func getLoggedInUser() -> UserEntity? {
+    func fetchLoggedInUser() -> UserEntity? {
         let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         do {
             let users = try context.fetch(fetchRequest)

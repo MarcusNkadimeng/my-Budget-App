@@ -10,7 +10,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var comingSoonLabel: UILabel!
+    @IBOutlet private weak var comingSoonLabel: UILabel!
     
     // MARK: - Functions
     override func viewDidLoad() {
