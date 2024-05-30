@@ -15,6 +15,7 @@ class TrackerViewController: UIViewController {
     
     // MARK: - functions
     override func viewDidLoad() {
+        Alert.showProgressView(on: self.view)
         viewModel.fetchCategoryGroups()
         setUpTableView()
     }
@@ -91,6 +92,7 @@ extension TrackerViewController: UITableViewDelegate, UITableViewDataSource {
 extension TrackerViewController: CategoryTrackerViewModelProtocol {
     func reloadView() {
         viewModel.groupCategories()
+        Alert.hideProgressView(from: self.view)
         tableView.reloadData()
     }
     

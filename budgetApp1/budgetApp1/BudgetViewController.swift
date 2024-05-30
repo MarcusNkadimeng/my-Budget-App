@@ -38,6 +38,7 @@ class BudgetViewController: UIViewController {
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        Alert.showProgressView(on: self.view)
         setUpScreen()
     }
 
@@ -95,6 +96,7 @@ extension BudgetViewController: ViewModelDelegate, AccountsTransactionViewModelD
     func reloadView() {
         guard let budget = overviewViewModel.budgetList?.first else { return }
         updateView(withBudget: budget)
+        Alert.hideProgressView(from: self.view)
         tableView.reloadData()
     }
     
