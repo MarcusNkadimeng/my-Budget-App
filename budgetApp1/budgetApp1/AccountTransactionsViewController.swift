@@ -32,7 +32,7 @@ class AccountTransactionsViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.TransactionViewCellIdentifier)
+        tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.transactionViewCellIdentifier)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 1.0, right: 0)
     }
     
@@ -75,7 +75,7 @@ extension AccountTransactionsViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.TransactionViewCellIdentifier) as? TransactionTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.transactionViewCellIdentifier) as? TransactionTableViewCell else { return UITableViewCell() }
         let transaction: Transaction?
         switch segmentedControl.selectedSegmentIndex {
         case 0:
@@ -102,6 +102,6 @@ extension AccountTransactionsViewController: AccountsTransactionViewModelDelegat
     }
     
     func show(error: String) {
-        print("Warning: \(AuthError.failedTofetchTransactions)")
+        showBasicAlert(title: "Error", message: "Failed to fetch account transactions")
     }
 }

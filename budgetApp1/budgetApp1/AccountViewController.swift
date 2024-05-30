@@ -16,7 +16,7 @@ class AccountViewController: UIViewController {
     // MARK: - functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alert.showProgressView(on: self.view)
+        LoadingIndicator.showProgressView(on: self.view)
         setupTableView()
         viewModel.fetchAccounts()
     }
@@ -41,8 +41,8 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.accountViewCellIdentifier) as? AccountViewCell else { return UITableViewCell() }
-        guard let account = viewModel.account(atIndex: indexPath.row) else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.accountViewCellIdentifier) as? AccountViewCell,
+              let account = viewModel.account(atIndex: indexPath.row) else { return UITableViewCell() }
         cell.populateWith(account: account)
         cell.selectionStyle = .none
         return cell
@@ -70,11 +70,11 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension AccountViewController: AccountViewModelDelegate {
     func reloadView() {
-        Alert.hideProgressView(from: self.view)
+        LoadingIndicator.hideProgressView(from: self.view)
         tableView.reloadData()
     }
     
     func show(error: String) {
-        print("Warning: \(AuthError.failedTofetchAccounts)")
+        showBasicAlert(title: "Error", message: "Failed to fetch accounts")
     }
 }

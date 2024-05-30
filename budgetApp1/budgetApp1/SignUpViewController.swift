@@ -53,14 +53,7 @@ class SignUpViewController: UIViewController {
         if isUserSignedUp {
             performSegue(withIdentifier: Segues.signUpSegue, sender: self)
         } else {
-            let alertController = UIAlertController(
-                title: UIComponents.userAlertTitleThree,
-                message: UIComponents.userAlertMessageThree,
-                preferredStyle: .alert
-            )
-            alertController.addAction(UIAlertAction(title: UIComponents.uiAlertAction, style: .default))
-            present(alertController, animated: true, completion: nil)
+            showBasicAlert(title: UIComponents.userAlertTitleThree, message: UIComponents.userAlertMessageThree)
         }
-
     }
 }

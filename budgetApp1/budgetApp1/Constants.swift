@@ -21,7 +21,7 @@ struct URLConstants {
 // MARK: - nib identifiers
 struct NibIdentifiers {
     static let accountViewCellIdentifier = "AccountViewCell"
-    static let TransactionViewCellIdentifier = "TransactionTableViewCell"
+    static let transactionViewCellIdentifier = "TransactionTableViewCell"
     static let categoryGroupHeaderCellIdentifier = "CategoryHeaderTableViewCell"
     static let categoryViewCellIdentifier = "CategoryTableViewCell"
     static let categoryGroupFootCellIdentifier = "CategoryFooterTableViewCell"

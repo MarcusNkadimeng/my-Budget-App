@@ -54,7 +54,6 @@ class APIHandler {
 }
 
 // MARK: - Http call type
-
 enum Method {
     case GET
     case POST

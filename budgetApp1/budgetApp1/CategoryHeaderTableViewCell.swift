@@ -19,7 +19,7 @@ class CategoryHeaderTableViewCell: UITableViewHeaderFooterView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let separatorHeight: CGFloat = 3.0
+        let separatorHeight = 3.0
         for subview in self.subviews {
             if subview != contentView && subview.frame.height < 2 {
                 subview.removeFromSuperview()

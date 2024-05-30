@@ -15,7 +15,7 @@ class TrackerViewController: UIViewController {
     
     // MARK: - functions
     override func viewDidLoad() {
-        Alert.showProgressView(on: self.view)
+        LoadingIndicator.showProgressView(on: self.view)
         viewModel.fetchCategoryGroups()
         setUpTableView()
     }
@@ -92,11 +92,11 @@ extension TrackerViewController: UITableViewDelegate, UITableViewDataSource {
 extension TrackerViewController: CategoryTrackerViewModelProtocol {
     func reloadView() {
         viewModel.groupCategories()
-        Alert.hideProgressView(from: self.view)
+        LoadingIndicator.hideProgressView(from: self.view)
         tableView.reloadData()
     }
     
     func show(error: String) {
-        print("Warning: \(AuthError.failedTofetchCategoryGroups)")
+        showBasicAlert(title: "Error", message: "Failed to fetch categories")
     }
 }

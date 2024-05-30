@@ -15,9 +15,6 @@ protocol AccountViewModelDelegate: AnyObject {
 class AccountViewModel {
  
     // MARK: - Variables
-    var accountListCount: Int {
-        accountList?.count ?? 0
-    }
     private var repository: AccountRepositoryType?
     private weak var delegate: AccountViewModelDelegate?
     private var accountList: [Account]?
@@ -25,6 +22,10 @@ class AccountViewModel {
     init(repository: AccountRepositoryType, delegate: AccountViewModelDelegate) {
         self.repository = repository
         self.delegate = delegate
+    }
+    
+    var accountListCount: Int {
+        accountList?.count ?? 0
     }
     
     // MARK: - Functions

@@ -21,13 +21,7 @@ class LoginViewController: UIViewController {
             CoreDataHandler().saveLoggedInUser(username: username)
             performSegue(withIdentifier: Segues.loginSegue, sender: self)
         } else {
-            let alertController = UIAlertController(
-                title: UIComponents.userAlertTitle,
-                message: UIComponents.userAlertMessage,
-                preferredStyle: .alert
-            )
-            alertController.addAction(UIAlertAction(title: UIComponents.uiAlertAction, style: .default))
-            present(alertController, animated: true, completion: nil)
+            showBasicAlert(title: UIComponents.userAlertTitle, message: UIComponents.userAlertMessage)
         }
     }
     

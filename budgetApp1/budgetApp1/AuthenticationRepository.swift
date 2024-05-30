@@ -23,10 +23,6 @@ class AuthenticationRepository: AuthenticationRepositoryType {
     }
     
     func loginUser(username: String, password: String) -> Bool {
-        if !coreDataHandler.checkIfUserHasAccount(username: username, password: password) {
-            return false
-        } else {
-            return true
-        }
+        coreDataHandler.checkIfUserHasAccount(username: username, password: password)
     }
 }

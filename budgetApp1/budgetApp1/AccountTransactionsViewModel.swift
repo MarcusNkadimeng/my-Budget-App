@@ -16,12 +16,12 @@ protocol AccountsTransactionViewModelDelegate: AnyObject {
 class AccountTransactionsViewModel {
     
     // MARK: - Variables
-    private var repository: TransactionRepositoryType?
-    private weak var delegate: AccountsTransactionViewModelDelegate?
-    private var transactionList: [Transaction]?
     var expenses: [Transaction]?
     var income: [Transaction]?
     var allTransactions: [Transaction]?
+    private var repository: TransactionRepositoryType?
+    private weak var delegate: AccountsTransactionViewModelDelegate?
+    private var transactionList: [Transaction]?
     
     init(repository: TransactionRepositoryType, delegate: AccountsTransactionViewModelDelegate) {
         self.repository = repository

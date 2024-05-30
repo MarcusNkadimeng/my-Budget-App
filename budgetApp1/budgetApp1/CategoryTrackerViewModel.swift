@@ -18,6 +18,8 @@ class CategoryTrackerViewModel {
     private var repository: CategoryTrackerRepositoryType?
     private weak var delegate: CategoryTrackerViewModelProtocol?
     private var categoryGroupList: [CategoryGroup]?
+    var groupedCategories: [String: [Category]] = [:]
+    var categoryGroupBalances: [String: Int] = [:]
     
     init(repository: CategoryTrackerRepositoryType, delegate: CategoryTrackerViewModelProtocol) {
         self.repository = repository
@@ -27,8 +29,6 @@ class CategoryTrackerViewModel {
     var categoryListCount: Int {
         categoryGroupList?.count ?? 0
     }
-    var groupedCategories: [String: [Category]] = [:]
-    var categoryGroupBalances: [String: Int] = [:]
     
     // MARK: - Functions
     func categoryGroup(atIndex: Int) -> CategoryGroup? {

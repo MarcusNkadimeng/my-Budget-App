@@ -10,18 +10,19 @@ import UIKit
 class BudgetViewController: UIViewController {
     
     // MARK: - Date Formatter
-    private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        return formatter
-    }()
-    
-    private let displayFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        return formatter
-    }()
+//    private let dateFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+//        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+//        return formatter
+//    }()
+//
+//    private let displayFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = .medium
+//        return formatter
+//    }()
+    let dateFormatter = DataFormatterClass()
     
     // MARK: - IBOutlets
     @IBOutlet private weak var recentTransactionsLabel: UILabel!
@@ -38,7 +39,7 @@ class BudgetViewController: UIViewController {
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alert.showProgressView(on: self.view)
+        LoadingIndicator.showProgressView(on: self.view)
         setUpScreen()
     }
 
@@ -48,8 +49,8 @@ class BudgetViewController: UIViewController {
         currentBalanceLabel.text = String(format: "%.2f", (overviewViewModel.budgetTotal) / 1000)
         lastModified.text = UIComponents.lastModifiedLabel
         let originalDateString = budget.lastModifiedOn
-        if let date = dateFormatter.date(from: originalDateString) {
-            lastModifiedLabel.text = displayFormatter.string(from: date)
+        if let formattedDate = dateFormatter.formatDateString(originalDateString) {
+            lastModifiedLabel.text = formattedDate
         } else {
             lastModifiedLabel.text = "Invalid Date"
         }
@@ -65,7 +66,7 @@ class BudgetViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.TransactionViewCellIdentifier)
+        tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: NibIdentifiers.transactionViewCellIdentifier)
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = UIColor.accent
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
@@ -83,7 +84,7 @@ extension BudgetViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.TransactionViewCellIdentifier) as? TransactionTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NibIdentifiers.transactionViewCellIdentifier) as? TransactionTableViewCell else { return UITableViewCell() }
         guard let transaction = overviewViewModel.transaction(atIndex: indexPath.item) else { return UITableViewCell() }
         cell.populateWith(transaction: transaction)
         return cell
@@ -96,11 +97,11 @@ extension BudgetViewController: ViewModelDelegate, AccountsTransactionViewModelD
     func reloadView() {
         guard let budget = overviewViewModel.budgetList?.first else { return }
         updateView(withBudget: budget)
-        Alert.hideProgressView(from: self.view)
+        LoadingIndicator.hideProgressView(from: self.view)
         tableView.reloadData()
     }
     
     func show(error: String) {
-        print("Warning: \(AuthError.failedTofetchBudgets)")
+        showBasicAlert(title: "Error", message: "Failed to fetch budgets")
     }
 }

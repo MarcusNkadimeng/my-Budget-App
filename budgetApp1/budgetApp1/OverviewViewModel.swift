@@ -26,15 +26,16 @@ class OverviewViewModel {
     var transactionListCount: Int {
         transactionList?.count ?? 0
     }
+    
     // MARK: - Variables
+    var budgetList: [Budget]?
+    var budgetTotal = 0.00
     private var repository: BudgetRepositoryType?
     private var repositoryTwo: AccountRepositoryType?
     private var repositoryThree: TransactionRepositoryType?
     private weak var delegate: ViewModelDelegate?
-    var budgetList: [Budget]?
     private var accountList: [Account]?
     private var transactionList: [Transaction]?
-    var budgetTotal = 0.00
     
     init(repository: BudgetRepositoryType, repositoryTwo: AccountRepositoryType, repositoryThree: TransactionRepositoryType, delegate: ViewModelDelegate) {
         self.repository = repository

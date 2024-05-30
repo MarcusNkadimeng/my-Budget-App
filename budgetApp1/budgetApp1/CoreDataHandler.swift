@@ -33,11 +33,7 @@ class CoreDataHandler: CoreDataHandlerType {
         fetchRequest.predicate = NSPredicate(format: "username == %@ AND password == %@", username, password)
         do {
             let results = try context.fetch(fetchRequest)
-            if !results.isEmpty {
-                return true
-            } else {
-                return false
-            }
+            return !results.isEmpty
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             return false
