@@ -34,6 +34,9 @@
 		4C6CA5BD2BFDF7050065871B /* CategoryFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CA5BB2BFDF7050065871B /* CategoryFooterTableViewCell.swift */; };
 		4C6CA5BE2BFDF7050065871B /* CategoryFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6CA5BC2BFDF7050065871B /* CategoryFooterTableViewCell.xib */; };
 		4C6CA5C42C01EB4B0065871B /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CA5C32C01EB4B0065871B /* OverviewViewModel.swift */; };
+		4C6CA5C72C0795290065871B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6CA5C62C0795290065871B /* Profile.storyboard */; };
+		4C6CA5C92C0798C00065871B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CA5C82C0798C00065871B /* ProfileViewController.swift */; };
+		4C6CA5CB2C07C48A0065871B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CA5CA2C07C48A0065871B /* ProfileViewModel.swift */; };
 		4CC71A2E2BB2ACFB009E2B53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A2D2BB2ACFB009E2B53 /* AppDelegate.swift */; };
 		4CC71A302BB2ACFB009E2B53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A2F2BB2ACFB009E2B53 /* SceneDelegate.swift */; };
 		4CC71A322BB2ACFB009E2B53 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC71A312BB2ACFB009E2B53 /* BudgetViewController.swift */; };
@@ -97,6 +100,9 @@
 		4C6CA5BB2BFDF7050065871B /* CategoryFooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFooterTableViewCell.swift; sourceTree = "<group>"; };
 		4C6CA5BC2BFDF7050065871B /* CategoryFooterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFooterTableViewCell.xib; sourceTree = "<group>"; };
 		4C6CA5C32C01EB4B0065871B /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
+		4C6CA5C62C0795290065871B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		4C6CA5C82C0798C00065871B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4C6CA5CA2C07C48A0065871B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		4CC71A2A2BB2ACFB009E2B53 /* budgetApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = budgetApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC71A2D2BB2ACFB009E2B53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CC71A2F2BB2ACFB009E2B53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +241,16 @@
 			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
+		4C6CA5C52C0795020065871B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4C6CA5C62C0795290065871B /* Profile.storyboard */,
+				4C6CA5C82C0798C00065871B /* ProfileViewController.swift */,
+				4C6CA5CA2C07C48A0065871B /* ProfileViewModel.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		4CC71A212BB2ACFB009E2B53 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +272,7 @@
 		4CC71A2C2BB2ACFB009E2B53 /* budgetApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				4C6CA5C52C0795020065871B /* Profile */,
 				4C37FB582BE4F1850060ADB6 /* API Handler */,
 				4C37FB552BE3C39D0060ADB6 /* CoreData */,
 				4C37FB262BD6B8410060ADB6 /* Constants */,
@@ -412,6 +429,7 @@
 				4CDD804E2BCDA1FE00BF1947 /* AccountViewCell.xib in Resources */,
 				4CDD805B2BCFBAA100BF1947 /* SignUpScreen.storyboard in Resources */,
 				4CDD80512BCFAB3B00BF1947 /* LoginScreen.storyboard in Resources */,
+				4C6CA5C72C0795290065871B /* Profile.storyboard in Resources */,
 				4CDD80462BCBF46000BF1947 /* Tracker.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +476,7 @@
 				4CDD803E2BCB3BD200BF1947 /* TransactionModel.swift in Sources */,
 				4C3D32242BF5FA1E00D7B4D3 /* CategoryTrackerRepository.swift in Sources */,
 				4C3D32302BF7AB3500D7B4D3 /* TrackerViewController.swift in Sources */,
+				4C6CA5C92C0798C00065871B /* ProfileViewController.swift in Sources */,
 				4CDD80492BCC1EFA00BF1947 /* TransactionTableViewCell.swift in Sources */,
 				4CC71A482BB2B8F8009E2B53 /* AccountModel.swift in Sources */,
 				4CC71A442BB2ADD0009E2B53 /* BudgetModel.swift in Sources */,
@@ -477,6 +496,7 @@
 				4C67D81A2BBD8AD10060BC06 /* AccountViewController.swift in Sources */,
 				4CC71A4A2BB2C532009E2B53 /* AccountsRepository.swift in Sources */,
 				4CDD80532BCFB2B900BF1947 /* LoginViewController.swift in Sources */,
+				4C6CA5CB2C07C48A0065871B /* ProfileViewModel.swift in Sources */,
 				4C3D322D2BF6C8D300D7B4D3 /* CategoryHeaderTableViewCell.swift in Sources */,
 				4C3D321E2BF43EEB00D7B4D3 /* BudgetRepository.swift in Sources */,
 				4C6CA5C42C01EB4B0065871B /* OverviewViewModel.swift in Sources */,
