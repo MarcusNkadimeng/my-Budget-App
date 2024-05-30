@@ -8,10 +8,10 @@ class LoginViewController: UIViewController {
     
     // MARK: - Variables
     private lazy var userViewModel = UserViewModel(authenticationRepository: AuthenticationRepository())
-    var loggedInStatus = false
+    private var loggedInStatus = false
     
     // MARK: - IBActions
-    @IBAction func loginClicked(_ sender: Any) {
+    @IBAction private func loginClicked(_ sender: Any) {
         guard let username = username.text,
               let password = password.text else { return }
         

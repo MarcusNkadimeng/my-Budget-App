@@ -47,6 +47,7 @@ struct UIComponents {
     static let currentBalanceLabel = "Current Balance (R)"
     static let lastModifiedLabel = "Last Modified"
     static let accountTypeLabel = "Account Type:"
+    static let comingsoonLabel = "Coming Soon😄"
 }
 
 // MARK: - Segues

@@ -8,32 +8,14 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
-    // MARK: - Variables
-    var username: String?
-    var loggedInStatus = true
-    private lazy var viewModel = ProfileViewModel()
     
     // MARK: - IBOutlets
-    @IBOutlet private weak var usernameLabel: UILabel!
-    @IBOutlet private weak var profileImage: UIImageView!
+    @IBOutlet weak var comingSoonLabel: UILabel!
     
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        customizeImage()
-        
-        if let loggedInUser = viewModel.getLoggedInUser(), let username = loggedInUser.username {
-            usernameLabel.text = username
-        } else {
-            usernameLabel.text = ""
-        }
-    }
-    
-    private func customizeImage() {
-        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
-        profileImage.layer.borderWidth = 2.0
-        profileImage.layer.borderColor = UIColor.black.cgColor
+        comingSoonLabel.text = UIComponents.comingsoonLabel
     }
     
     @IBAction private func logoutClicked(_ sender: Any) {
