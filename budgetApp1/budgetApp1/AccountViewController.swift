@@ -16,6 +16,7 @@ class AccountViewController: UIViewController {
     // MARK: - functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        Alert.showProgressView(on: self.view)
         setupTableView()
         viewModel.fetchAccounts()
     }
@@ -69,6 +70,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension AccountViewController: AccountViewModelDelegate {
     func reloadView() {
+        Alert.hideProgressView(from: self.view)
         tableView.reloadData()
     }
     
