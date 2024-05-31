@@ -2,25 +2,26 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Account View Controller-->
+        <!--Accounts-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="AccountViewController" customModule="budgetApp1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Accounts" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="AccountViewController" customModule="budgetApp1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sbv-MP-2hN">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="87" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sbv-MP-2hN">
+                                <rect key="frame" x="0.0" y="59" width="393" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="defaultCell" rowHeight="130" id="9Tg-CS-ucQ" customClass="AccountCell" customModule="budgetApp1" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountViewCell" rowHeight="130" id="9Tg-CS-ucQ" customClass="AccountCell" customModule="budgetApp1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Tg-CS-ucQ" id="Rie-PX-Rhd">
@@ -60,29 +61,43 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sbv-MP-2hN" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="2yR-S8-pdy"/>
-                            <constraint firstItem="sbv-MP-2hN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="FRw-c6-MNW"/>
-                            <constraint firstItem="sbv-MP-2hN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="aIJ-hT-Mab"/>
-                            <constraint firstItem="sbv-MP-2hN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pUb-t4-6XP"/>
+                            <constraint firstItem="sbv-MP-2hN" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="Njx-9S-jb4"/>
+                            <constraint firstItem="sbv-MP-2hN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="QVb-R0-EfK"/>
+                            <constraint firstItem="sbv-MP-2hN" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.773474" id="gjg-zK-o4x"/>
+                            <constraint firstItem="sbv-MP-2hN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hAV-Br-Iya"/>
+                            <constraint firstItem="sbv-MP-2hN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="yV1-Wu-C6c"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Accounts" image="baseball.diamond.bases" catalog="system" id="uzY-5v-Mto">
+                        <color key="badgeColor" red="0.38823530080000002" green="0.27450981740000002" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="sbv-MP-2hN" id="xda-OB-fI6"/>
+                        <segue destination="Afz-ey-MVO" kind="show" identifier="ShowAccountTransactions" id="Dpt-o6-sef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
+        <!--AccountTransactions-->
+        <scene sceneID="XIj-Up-kZS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AccountTransactions" id="Afz-ey-MVO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ig8-rJ-tvd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eol-ql-TO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981" y="-18"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="baseball.diamond.bases" catalog="system" width="128" height="67"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

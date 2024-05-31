@@ -7,13 +7,23 @@
 
 import Foundation
 
+// MARK: - Error enums
+
 enum APIError: String, Error {
     case internalError
     case serverError
     case parsingError
 }
 
-enum Method {
-    case GET
-    case POST
+enum AuthError: String, Error {
+    case invalidCredentialsFailure
+    case signUpFailure
+    case failedTofetchUsername
+    case failedTofetchPassword
+    case failedTofetchUsers
+    case failedToFetchUser
+    case failedTofetchAccounts
+    case failedTofetchBudgets
+    case failedTofetchTransactions
+    case failedTofetchCategoryGroups
 }

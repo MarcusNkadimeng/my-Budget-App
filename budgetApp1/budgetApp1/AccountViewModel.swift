@@ -14,37 +14,34 @@ protocol AccountViewModelDelegate: AnyObject {
 
 class AccountViewModel {
  
+    // MARK: - Variables
     private var repository: AccountRepositoryType?
     private weak var delegate: AccountViewModelDelegate?
-    var AccountList: [Account]?
-//    var accData: AccountDataClass?
+    private var accountList: [Account]?
     
     init(repository: AccountRepositoryType, delegate: AccountViewModelDelegate) {
         self.repository = repository
         self.delegate = delegate
     }
     
-    var AccountListCount: Int {
-        return AccountList?.count ?? 0
+    var accountListCount: Int {
+        accountList?.count ?? 0
     }
     
+    // MARK: - Functions
     func account(atIndex: Int) -> Account? {
-        return AccountList?[atIndex] ?? nil
+        accountList?[atIndex]
     }
     
-    func getAccounts() {
-        repository?.getAccounts(completion: { [weak self] result in
+    func fetchAccounts() {
+        repository?.fetchAccounts { [weak self] result in
             switch result {
             case .success(let response):
-//                self?.accData = response.data
-//                print(self?.accData)
-                self?.AccountList = response.data.accounts
+                self?.accountList = response.data.accounts
                 self?.delegate?.reloadView()
-                print(response.data.accounts)
             case .failure(let error):
                 self?.delegate?.show(error: error.rawValue)
-                print(error.rawValue)
             }
-        })
+        }
     }
 }
