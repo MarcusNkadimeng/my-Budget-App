@@ -13,7 +13,11 @@
 		4C37FB542BE0C7700060ADB6 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB532BE0C7700060ADB6 /* AuthenticationRepository.swift */; };
 		4C37FB572BE3C3BD0060ADB6 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB562BE3C3BD0060ADB6 /* CoreDataHandler.swift */; };
 		4C37FB5A2BE4F19E0060ADB6 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37FB592BE4F19E0060ADB6 /* APIHandler.swift */; };
-		4C3D32102BE8D6EA00D7B4D3 /* budgetApp1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D320F2BE8D6EA00D7B4D3 /* budgetApp1Tests.swift */; };
+		4C3941472C2C0629003D34D2 /* AccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3941462C2C0629003D34D2 /* AccountViewModelTests.swift */; };
+		4C39414D2C2D8B2F003D34D2 /* OverviewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39414C2C2D8B2F003D34D2 /* OverviewViewModelTests.swift */; };
+		4C39414F2C2DCED2003D34D2 /* CategoryTrackerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39414E2C2DCED2003D34D2 /* CategoryTrackerViewModelTests.swift */; };
+		4C3941512C2EA8E5003D34D2 /* AccountTransactionsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3941502C2EA8E5003D34D2 /* AccountTransactionsViewModelTests.swift */; };
+		4C3D32102BE8D6EA00D7B4D3 /* UserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D320F2BE8D6EA00D7B4D3 /* UserViewModelTests.swift */; };
 		4C3D32182BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D32172BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift */; };
 		4C3D321A2BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D32192BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift */; };
 		4C3D321C2BF10A4900D7B4D3 /* AccountTransactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3D321B2BF10A4900D7B4D3 /* AccountTransactions.storyboard */; };
@@ -80,8 +84,12 @@
 		4C37FB532BE0C7700060ADB6 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		4C37FB562BE3C3BD0060ADB6 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		4C37FB592BE4F19E0060ADB6 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		4C3941462C2C0629003D34D2 /* AccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModelTests.swift; sourceTree = "<group>"; };
+		4C39414C2C2D8B2F003D34D2 /* OverviewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModelTests.swift; sourceTree = "<group>"; };
+		4C39414E2C2DCED2003D34D2 /* CategoryTrackerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTrackerViewModelTests.swift; sourceTree = "<group>"; };
+		4C3941502C2EA8E5003D34D2 /* AccountTransactionsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTransactionsViewModelTests.swift; sourceTree = "<group>"; };
 		4C3D320D2BE8D6EA00D7B4D3 /* budgetApp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = budgetApp1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C3D320F2BE8D6EA00D7B4D3 /* budgetApp1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetApp1Tests.swift; sourceTree = "<group>"; };
+		4C3D320F2BE8D6EA00D7B4D3 /* UserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTests.swift; sourceTree = "<group>"; };
 		4C3D32172BF10A0B00D7B4D3 /* AccountTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTransactionsViewController.swift; sourceTree = "<group>"; };
 		4C3D32192BF10A2600D7B4D3 /* AccountTransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTransactionsViewModel.swift; sourceTree = "<group>"; };
 		4C3D321B2BF10A4900D7B4D3 /* AccountTransactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountTransactions.storyboard; sourceTree = "<group>"; };
@@ -211,7 +219,11 @@
 		4C3D320E2BE8D6EA00D7B4D3 /* budgetApp1Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4C3D320F2BE8D6EA00D7B4D3 /* budgetApp1Tests.swift */,
+				4C3D320F2BE8D6EA00D7B4D3 /* UserViewModelTests.swift */,
+				4C3941462C2C0629003D34D2 /* AccountViewModelTests.swift */,
+				4C39414C2C2D8B2F003D34D2 /* OverviewViewModelTests.swift */,
+				4C39414E2C2DCED2003D34D2 /* CategoryTrackerViewModelTests.swift */,
+				4C3941502C2EA8E5003D34D2 /* AccountTransactionsViewModelTests.swift */,
 			);
 			path = budgetApp1Tests;
 			sourceTree = "<group>";
@@ -468,7 +480,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C3D32102BE8D6EA00D7B4D3 /* budgetApp1Tests.swift in Sources */,
+				4C3941472C2C0629003D34D2 /* AccountViewModelTests.swift in Sources */,
+				4C3D32102BE8D6EA00D7B4D3 /* UserViewModelTests.swift in Sources */,
+				4C39414D2C2D8B2F003D34D2 /* OverviewViewModelTests.swift in Sources */,
+				4C39414F2C2DCED2003D34D2 /* CategoryTrackerViewModelTests.swift in Sources */,
+				4C3941512C2EA8E5003D34D2 /* AccountTransactionsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
