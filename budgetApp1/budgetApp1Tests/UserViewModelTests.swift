@@ -30,51 +30,35 @@ class UserViewModelTest: XCTestCase {
     }
     
     func testCreateUserSuccess() {
-        // Given
         mockRepository.shouldReturnError = false
-        
-        // When
         let userSignedUp = viewModel.createUser(username: "testUser", password: "testPassword")
         
-        // Then
         XCTAssertTrue(userSignedUp, "User creation should succeed")
         XCTAssertTrue(mockRepository.createUserCalled, "createUser should be called on the repository")
     }
     
     func testCreateUserFailure() {
-        // Given
         mockRepository.shouldReturnError = true
-        
-        // When
         let userSignedUp = viewModel.createUser(username: "testUser", password: "testPassword")
         
-        // Then
         XCTAssertFalse(userSignedUp, "User creation should fail")
     }
     
     func testLoginUserSuccess() {
-        // Given
         let username = "testUser"
         let password = "testPassword"
         mockRepository.loginResult = true
-        
-        // When
         let loginResult = viewModel.login(username: username, password: password)
         
-        // Then
         XCTAssertTrue(loginResult, "Login should succeed")
     }
     
     func testLoginUserFailure() {
-        // Given
         let username = "testUser"
         let password = "wrongPassword"
         mockRepository.loginResult = false
-        
-        // When
         let loginResult = viewModel.login(username: username, password: password)
         
-        // Then
         XCTAssertFalse(loginResult, "Login should fail")
     }
 }

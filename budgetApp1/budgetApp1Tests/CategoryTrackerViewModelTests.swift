@@ -138,7 +138,6 @@ class CategoryTrackerViewModelTests: XCTestCase {
     }
     
     func testCategoryGroupAtIndex() {
-        // Given
         let category1 = Category(
             id: "1",
             categoryGroupID: "1",
@@ -201,7 +200,6 @@ class CategoryTrackerViewModelTests: XCTestCase {
     }
     
     func testCategoryAtIndexPath() {
-        // Given
         let category1 = Category(
             id: "1",
             categoryGroupID: "1",
@@ -257,11 +255,8 @@ class CategoryTrackerViewModelTests: XCTestCase {
         viewModel.categoryGroupList = [
             CategoryGroup(id: "1", name: "Group 1", hidden: false, deleted: false, categories: [category1, category2])
         ]
-        
-        // When
         viewModel.groupCategories()
         
-        // Then
         let indexPath = IndexPath(row: 0, section: 0)
         let category = viewModel.category(atIndexPath: indexPath)
         XCTAssertNotNil(category)

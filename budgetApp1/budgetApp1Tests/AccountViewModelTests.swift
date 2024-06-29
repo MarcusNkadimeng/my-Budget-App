@@ -117,34 +117,6 @@ class AccountViewModelTests: XCTestCase {
         XCTAssertEqual(fetchedAccount2?.id, "2")
     }
     
-//    func testAccountAtIndexOutOfBounds() {
-//        let account1 = Account(
-//            id: "1",
-//            name: "Checking",
-//            type: "bank",
-//            onBudget: true,
-//            closed: false,
-//            note: nil,
-//            balance: 1000,
-//            clearedBalance: 800,
-//            unclearedBalance: 200,
-//            transferPayeeID: "payee1",
-//            directImportLinked: false,
-//            directImportInError: false,
-//            lastReconciledAt: nil,
-//            debtOriginalBalance: nil,
-//            debtInterestRates: Debt(),
-//            debtMinimumPayments: Debt(),
-//            debtEscrowAmounts: Debt(),
-//            deleted: false
-//        )
-//        mockRepository.accounts = [account1]
-//        viewModel.fetchAccounts()
-//        
-//        let fetchedAccount = viewModel.account(atIndex: 1)
-//        XCTAssertNil(fetchedAccount, "Expected account to be nil for out of bounds index")
-//    }
-    
     func testAccountListCount() {
         let account = Account(
             id: "1",
