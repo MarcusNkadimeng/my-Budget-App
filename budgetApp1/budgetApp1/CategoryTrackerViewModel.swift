@@ -17,7 +17,7 @@ class CategoryTrackerViewModel {
     // MARK: - Variables
     private var repository: CategoryTrackerRepositoryType?
     private weak var delegate: CategoryTrackerViewModelProtocol?
-    private var categoryGroupList: [CategoryGroup]?
+    var categoryGroupList: [CategoryGroup]?
     var groupedCategories: [String: [Category]] = [:]
     var categoryGroupBalances: [String: Int] = [:]
     

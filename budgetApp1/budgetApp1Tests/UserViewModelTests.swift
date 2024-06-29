@@ -9,13 +9,12 @@ import XCTest
 @testable import budgetApp1
 import CoreData
 
-// MARK: - UserViewModel being tested
 class UserViewModelTest: XCTestCase {
     
     // MARK: - Variables
     var viewModel: UserViewModel!
     var mockRepository: MockAuthenticationRepository!
-     
+    
     // MARK: - Functions
     override func setUpWithError() throws {
         super.setUp()
@@ -30,21 +29,53 @@ class UserViewModelTest: XCTestCase {
         super.tearDown()
     }
     
-    func testCreateUser() {
-        let mockContext = MockContext()
-        let mockRepository = MockAuthenticationRepository(context: mockContext)
-        let viewModel = UserViewModel(authenticationRepository: mockRepository)
+    func testCreateUserSuccess() {
+        // Given
+        mockRepository.shouldReturnError = false
         
+        // When
         let userSignedUp = viewModel.createUser(username: "testUser", password: "testPassword")
-        XCTAssertTrue(userSignedUp)
+        
+        // Then
+        XCTAssertTrue(userSignedUp, "User creation should succeed")
+        XCTAssertTrue(mockRepository.createUserCalled, "createUser should be called on the repository")
     }
     
-    func testloginUser() {
+    func testCreateUserFailure() {
+        // Given
+        mockRepository.shouldReturnError = true
+        
+        // When
+        let userSignedUp = viewModel.createUser(username: "testUser", password: "testPassword")
+        
+        // Then
+        XCTAssertFalse(userSignedUp, "User creation should fail")
+    }
+    
+    func testLoginUserSuccess() {
+        // Given
         let username = "testUser"
         let password = "testPassword"
         mockRepository.loginResult = true
+        
+        // When
         let loginResult = viewModel.login(username: username, password: password)
-        XCTAssertTrue(loginResult)
+        
+        // Then
+        XCTAssertTrue(loginResult, "Login should succeed")
+    }
+    
+    func testLoginUserFailure() {
+        // Given
+        let username = "testUser"
+        let password = "wrongPassword"
+        mockRepository.loginResult = false
+        
+        // When
+        let loginResult = viewModel.login(username: username, password: password)
+        
+        // Then
+        XCTAssertFalse(loginResult, "Login should fail")
     }
 }
 
@@ -58,6 +89,7 @@ class MockAuthenticationRepository: AuthenticationRepositoryType {
     }
     
     // MARK: - Variables
+    var shouldReturnError = false
     var users: Result<[UserEntity], Error>?
     var createUserCalled = false
     var createdUsername: String?
@@ -66,13 +98,20 @@ class MockAuthenticationRepository: AuthenticationRepositoryType {
     
     // MARK: - Functions
     func createUser(password: String, username: String) -> Bool {
-        createdUsername = username
-        createdPassword = password
         createUserCalled = true
-        return createUserCalled
+        if shouldReturnError {
+            return false
+        } else {
+            createdUsername = username
+            createdPassword = password
+            return true
+        }
     }
     
     func loginUser(username: String, password: String) -> Bool {
+        if let loginResult = loginResult {
+            return loginResult
+        }
         let expectedUsername = "testUser"
         let expectedPassword = "testPassword"
         return username == expectedUsername && password == expectedPassword
